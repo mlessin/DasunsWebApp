@@ -99,7 +99,7 @@ myvenv/
 *.DS_Store
 __pycache__
 *.pyc
-.vscode
+.vscode/
 vscode/
 
 .expo/*

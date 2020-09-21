@@ -1,0 +1,77 @@
+{
+  "name": "dasuns-web-app",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://127.0.0.1:8000",
+  "dependencies": {
+    "@date-io/date-fns": "1.x",
+    "@material-ui/core": "^4.10.1",
+    "@material-ui/pickers": "^3.2.10",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/react": "^16.9.46",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "dateformat": "^3.0.3",
+    "formik": "^2.1.4",
+    "material-ui": "^0.20.2",
+    "moment": "^2.27.0",
+    "react": "^16.13.1",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-bootstrap": "^1.2.1",
+    "react-dom": "^16.13.1",
+    "react-formik-ui": "^4.1.2",
+    "react-hook-form": "^5.7.2",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-toastify": "^6.0.6",
+    "react-transition-group": "^4.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "tcomb-form": "^0.9.21",
+    "yup": "^0.29.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "postinstall": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "The Digital Ability Support Network System (Dasuns) is to promote social and inclusive development through facilitating access to professional assistive support services and technologies to advance rights, choices ad opportunities for persons with disabilities.",
+  "main": "/src/App.js",
+  "devDependencies": {},
+  "keywords": [
+    "DASUNS",
+    "WEBAPP"
+  ],
+  "author": "Steven Kawooya, Roy Mukunde and Irene Nyakate",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlessin/DasunsWebApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlessin/DasunsWebApp/issues"
+  },
+  "homepage": "https://github.com/mlessin/DasunsWebApp#readme"
+}
