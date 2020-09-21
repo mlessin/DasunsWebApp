@@ -65,13 +65,5 @@
     "WEBAPP"
   ],
   "author": "Steven Kawooya, Roy Mukunde and Irene Nyakate",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mlessin/DasunsWebApp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mlessin/DasunsWebApp/issues"
-  },
-  "homepage": "https://github.com/mlessin/DasunsWebApp#readme"
+  "license": "ISC"
 }
