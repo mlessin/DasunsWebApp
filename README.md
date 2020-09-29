@@ -30,6 +30,6 @@ to start the App.
 
 
 ## Author 
-Steven Kawooya
-Roy Mukunde
+Steven Kawooya,
+Roy Mukunde,
 Irene Nyakate

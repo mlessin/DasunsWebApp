@@ -1,20 +1,19 @@
 .form-style {
     border-radius: 5px;
-    
-    /* padding: 20px; */
     margin: 10px;
-    /* width: 33%; */
-    /* color: #333; */
-    /* flex-basis: width; */
-    /* background-color:#fff; */
-
 }
+
 .card {
     width: 33%;
     height: 30rem;
     align-items: center;
     margin: auto;
     
+}
+#signup-card{
+    height: 43rem;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 .form-group{
@@ -26,6 +25,11 @@
     padding: 50px;
     height: 9999px;
     
+}
+.main-signup{
+    background-color: #35d187;
+    padding: 50px;
+    height: 100%;
 }
 
 .btn{
@@ -48,4 +52,7 @@
 
 .heading3{
     color: #35d187;
+    margin-top: 10px;
+    margin-left: 50px;
+
 }
