@@ -1,0 +1,51 @@
+.form-style {
+    border-radius: 5px;
+    
+    /* padding: 20px; */
+    margin: 10px;
+    /* width: 33%; */
+    /* color: #333; */
+    /* flex-basis: width; */
+    /* background-color:#fff; */
+
+}
+.card {
+    width: 33%;
+    height: 30rem;
+    align-items: center;
+    margin: auto;
+    
+}
+
+.form-group{
+    margin-top: 35px;
+}
+
+.main {
+    background-color: #35d187;
+    padding: 50px;
+    height: 9999px;
+    
+}
+
+.btn{
+    background-color: #35d187;
+    border: 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.forgot-password{
+    font-size: x-small;
+}
+
+.form-control{
+    border-color: #35d187;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.heading3{
+    color: #35d187;
+}
