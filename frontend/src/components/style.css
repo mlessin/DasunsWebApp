@@ -2,36 +2,48 @@
     border-radius: 5px;
     margin: 10px;
 }
-
 .card {
-    width: 33%;
-    height: 30rem;
+    width: 40%;
+    /* height: 30rem; */
     align-items: center;
-    margin: auto;
-    
+    margin: auto;  
 }
+
 #signup-card{
-    height: 43rem;
-    padding-left: 45px;
-    padding-right: 45px;
+    /* height: 43rem; */
+    padding-left: 50px;
+    padding-right: 50px;
+
 }
 
 .form-group{
     margin-top: 35px;
 }
-
 .main {
     background-color: #35d187;
     padding: 50px;
-    height: 9999px;
-    
+    height: 9999px; 
 }
-.main-signup{
+ .main-service{
+    background-color:gray ;
+    padding-bottom: 1em;
+} 
+
+/* .main-signup{
     background-color: #35d187;
     padding: 50px;
     height: 100%;
-}
+} */
+#signup-service-card{
+    width: 45%;
+    /* height: 30rem; */
+    align-items: center;
+    /* margin: auto;  */
+    padding-left: 50px;
+    padding-right: 50px;
+    /* margin-bottom: 10px; */
 
+}
 .btn{
     background-color: #35d187;
     border: 0;
@@ -48,6 +60,10 @@
     border-color: #35d187;
     border-width: 2px;
     border-radius: 10px;
+}
+
+#cardBody{
+    width: 80%;
 }
 
 .heading3{
