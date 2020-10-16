@@ -1,69 +1,85 @@
-import React from "react";
-import {
-  MDBPagination,
-  MDBPageItem,
-  MDBPageNav,
-  MDBCol,
-  MDBRow
-} from "mdbreact";
+import React, { Component } from "react";
+// import Logo from "../images/Logo.png";
+// import { Link } from "react-router-dom";
 import "./style.css";
 
-const PaginationPage = () => {
-  return (
-    <MDBRow>
-      <MDBCol>
-        <h4 className="title my-5 text-left" style={{marginLeft: 10 + 'em'}}>
-          Sign Up by following the process to join <strong>Dasuns</strong> community of service providers
-        </h4>
-        <MDBPagination circle style={{marginLeft: 23 + 'em'}}>
-          {/* <MDBPageItem disabled>
-            <MDBPageNav className="page-link">
-              <span>First</span>
-            </MDBPageNav>
-          </MDBPageItem> */}
-          {/* <MDBPageItem disabled>
-            <MDBPageNav className="page-link" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span className="sr-only">Previous</span>
-            </MDBPageNav>
-          </MDBPageItem> */}
-          <MDBPageItem active>
-            <MDBPageNav className="page-link">
-              1 <span className="sr-only">(current)</span>
-            </MDBPageNav>
-            <span>Personal Info</span>
-          </MDBPageItem>
-          {/* <span>Personal Info</span> */}
-          <MDBPageItem>
-            <MDBPageNav className="page-link">2</MDBPageNav>
-            <span>Eligibility</span>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav className="page-link">3</MDBPageNav>
-            <span>Evidence of Expertise</span>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav className="page-link">4</MDBPageNav>
-            <span>Referees</span>
-          </MDBPageItem>
-          <MDBPageItem>
-            <MDBPageNav className="page-link">5</MDBPageNav>
-            <span>Pricing & Availability</span>
-          </MDBPageItem>
-          {/* <MDBPageItem>
-            <MDBPageNav className="page-link">
-              &raquo;
-            </MDBPageNav>
-          </MDBPageItem> */}
-          {/* <MDBPageItem>
-            <MDBPageNav className="page-link">
-              Last
-            </MDBPageNav>
-          </MDBPageItem> */}
-        </MDBPagination>
-      </MDBCol>
-    </MDBRow>
-  );
-};
+export class PaginationPage extends Component {
+  render() {
+    const mystyle = {
+      color: "#fff",
+      backgroundColor: "#006734",
+      borderRadius: "6px",
+      fontFamily: "Montserrat"
+    };
+    const mystyle1 = {
+      color: "#fff",
+      backgroundColor: "#006712",
+      borderRadius: "50px",
+      fontFamily: "Montserrat"
+    };
 
+    return (
+      <div className="vendor_registration_tabs_main big_gray text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2
+                class="section_title_sm"
+                style={{ marginTop: "25px" }}
+              >
+                Sign Up by following the process to join <strong>Dasuns</strong> community of service providers
+              </h2>
+              <ul className="list-inline">
+                <li id="li_step_1" className="progres_bar active">
+                  <a href="javascript:void()">
+                    <div className="tab_number">
+                      <span>1</span>
+                    </div>
+                    <h5>Personal Details</h5>
+                  </a>
+                </li>
+
+                <li id="li_step_2" className="progres_bar">
+                  <a href="javascript:void()">
+                    <div className="tab_number">
+                      <span>2</span>
+                    </div>
+                    <h5>Eligibility</h5>
+                  </a>
+                </li>
+
+                <li id="li_step_3" className="progres_bar">
+                  <a href="javascript:void()">
+                    <div className="tab_number">
+                      <span>3</span>
+                    </div>
+                    <h5>Evidence of Expertise</h5>
+                  </a>
+                </li>
+
+                <li id="li_step_4" className="progres_bar">
+                  <a href="javascript:void()">
+                    <div className="tab_number">
+                      <span>4</span>
+                    </div>
+                    <h5>References</h5>
+                  </a>
+                </li>
+
+                <li id="li_step_5" className="progres_bar">
+                  <a href="javascript:void()">
+                    <div className="tab_number">
+                      <span>5</span>
+                    </div>
+                    <h5>Pricing & Availability</h5>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 export default PaginationPage;
