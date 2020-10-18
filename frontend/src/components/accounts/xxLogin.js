@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../style.css";
 import Logo from "../../images/Logo.png";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Banner from "../Banner";
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 // import { login } from "../../actions/auth";
@@ -39,14 +40,13 @@ export class Login extends Component {
                   <img src={Logo} alt={"logo"} />
                 </div>
               </div>
-              <h3 className="heading3">
-                Login
-              </h3>
+              <h3 className="heading3">Login</h3>
               <div className="form-group">
                 <input
                   type="phone"
                   className="form-control"
                   placeholder="Phone number"
+                  required
                 />
               </div>
 
@@ -55,6 +55,7 @@ export class Login extends Component {
                   type="password"
                   className="form-control"
                   placeholder="Password"
+                  required
                 />
               </div>
 

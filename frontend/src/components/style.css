@@ -3,35 +3,36 @@
     margin: 10px;
 }
 
-.card {
-    width: 33%;
-    height: 30rem;
+.card  {
+    width: 100%;
     align-items: center;
-    margin: auto;
-    
-}
-#signup-card{
-    height: 43rem;
-    padding-left: 45px;
-    padding-right: 45px;
+    margin: auto;  
 }
 
+#signup-card{
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
 .form-group{
     margin-top: 35px;
 }
-
-.main {
+/* .main {
     background-color: #35d187;
     padding: 50px;
-    height: 9999px;
-    
-}
-.main-signup{
-    background-color: #35d187;
-    padding: 50px;
-    height: 100%;
-}
+    height: 9999px; 
+} */
+ .main-service{
+    background-color:#edf0f5;
+    padding-bottom: 1em;
+} 
 
+#signup-service-card{
+    width: 45%;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 .btn{
     background-color: #35d187;
     border: 0;
@@ -45,9 +46,13 @@
 }
 
 .form-control{
-    border-color: #35d187;
+    /* border-color: #35d187; */
     border-width: 2px;
     border-radius: 10px;
+}
+
+#cardBody{
+    width: 80%;
 }
 
 .heading3{
@@ -55,4 +60,87 @@
     margin-top: 10px;
     margin-left: 50px;
 
+}
+
+.buttonbar{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+li, a {
+    display: inline;
+    padding: 8px;
+    color: #000;
+    font-family: "Montserrat";
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #111;
+    text-decoration: none;
+  }
+  
+.list-inline{
+    margin-top: 40px;
+}
+.list-inline > li{
+    display:inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.pag{
+    border-radius: 50%;
+}
+.vendor_registration_tabs_main ul li.active a {
+    color: #006734;
+    /* background-color: transparent; */
+    /* background: transparent; */
+}
+
+.vendor_registration_tabs_main ul li a {
+    text-decoration: none;
+    font-family: "Nunito Sans";
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.vendor_registration_tabs_main ul li {
+    width: 14%;
+    position: relative;
+}
+
+
+span, h5, h2,ul, li{ 
+    margin: 0;
+    padding: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    border: 0; 
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+span{
+    border:1px solid #c8c9cc;
+    background-color: #c8c9cc;
+    border-radius: 50%;
+    padding:10px;
+    display:inline-flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+h5{
+    margin-top: 1px;
 }
