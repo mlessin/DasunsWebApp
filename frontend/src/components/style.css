@@ -56,3 +56,23 @@
     margin-left: 50px;
 
 }
+
+
+.green-service {
+    background-color: #35d187;
+    font-size: 25px;
+   text-align: center;
+    color:#fff;
+}
+
+/* footer */
+.page-footer {
+	background-color: #222;
+	color: #ccc;
+	padding: 60px 0 30px;
+}
+
+.footer-copyright {
+	color: #666;
+	padding: 40px 0;
+}

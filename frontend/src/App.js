@@ -12,6 +12,7 @@ import './App.css';
 import Banner from "./components/Banner";
 import Signup from "./components/accounts/Signup";
 import Login from "./components/accounts/Login";
+import Landing from "./components/Landing";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -51,6 +52,7 @@ export default class App extends Component {
                 </div>
                 <Headers />
                 <Alerts /> */}
+                <Landing />
                 <Banner />
                 <Switch>
                   <Route path="/signup" exact component={Signup} />
