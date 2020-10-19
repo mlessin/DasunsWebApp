@@ -32,7 +32,7 @@ export class Landing extends Component {
     render() {
         return (
             <div>
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar collapseOnSelect expand="lg">
                     <Navbar.Brand href="#home">
                         <img src={Logo} alt={"logo"} />
                     </Navbar.Brand>
@@ -40,25 +40,6 @@ export class Landing extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link href="#features"></Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            <NavDropdown
-                                title="Dropdown"
-                                id="collasible-nav-dropdown"
-                            >
-                                <NavDropdown.Item href="#action/3.1">
-                                    Action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">
-                                    Something
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
-                                </NavDropdown.Item>
-                            </NavDropdown>
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets">Services</Nav.Link>
@@ -74,11 +55,26 @@ export class Landing extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                <div>
-                    <Image src={banner} alt={"banner"} fluid />
-                </div>
+                <section
+                    id="header"
+                    class="jumbotron text-right text-white img-responsive "
+                >
+                    <h1 class="display-6">
+                        Access Professional support service <br />
+                        providers at your fingertips
+                    </h1>
+                    <p class="lead">
+                        Leveraging technology to advance rights, choices and
+                        opportunities for
+                        <br />
+                        persons with disabilities
+                    </p>
+                    <a href="" class="btn btn-success">
+                        Request Service
+                    </a>
+                </section>
 
-                <div className="green-service" fluid="md">
+                <div className="green-service " fluid="md">
                     <Row>
                         <Col sm="3">
                             <Card
@@ -181,43 +177,170 @@ export class Landing extends Component {
 
                 <div className="white-services">
                     <h3>All services</h3>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#eee" }}>
-                        <Image src={physical} alt={"physical"} />
-                        <h4>Physical Support</h4> View service providers
-                    </div>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#eee" }}>
-                        <Image src={physical} alt={"physical"} />
-                        <h4>Physical Support</h4> View service providers
-                    </div>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#eee" }}>
-                        <Image src={physical} alt={"physical"} />
-                        <h4>Physical Support</h4> View service providers
-                    </div>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#eee" }}>
-                        <Image src={physical} alt={"physical"} />
-                        <h4>Physical Support</h4> View service providers
-                        <svg
-                            width="5em"
-                            height="5em"
-                            viewBox="0 0 16 16"
-                            class="bi bi-chevron-right"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                            float="left"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                            />
-                        </svg>
-                    </div>
+
+                    <Container className="" fluid>
+                        <Row>
+                            <Col>
+                                <div class="card w-100 whiteservice">
+                                    <div class="card-img-top d-flex align-items-center bg-light">
+                                        <div>
+                                            <Image
+                                                src={physical}
+                                                alt={"physical"}
+                                            />
+                                        </div>
+                                        <p class="col p-2 m-0">
+                                            <h4>Physical Support</h4>
+                                            <br />
+                                            View service providers
+                                        </p>
+                                        <p class="col p-2 m-0">
+                                            <svg
+                                                width="2em"
+                                                height="2em"
+                                                viewBox="0 0 16 16"
+                                                class="bi bi-chevron-right"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                float="right"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                                />
+                                            </svg>
+                                        </p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div class="card w-100 whiteservice">
+                                    <div class="card-img-top d-flex align-items-center bg-light">
+                                        <div>
+                                            <Image
+                                                src={physical}
+                                                alt={"physical"}
+                                            />
+                                        </div>
+                                        <p class="col p-2 m-0">
+                                            <h4>Physical Support</h4>
+                                            <br />
+                                            View service providers
+                                        </p>
+                                        <p class="col p-2 m-0">
+                                            <svg
+                                                width="2em"
+                                                height="2em"
+                                                viewBox="0 0 16 16"
+                                                class="bi bi-chevron-right"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                float="right"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                                />
+                                            </svg>
+                                        </p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div class="card w-100 whiteservice">
+                                    <div class="card-img-top d-flex align-items-center bg-light">
+                                        <div>
+                                            <Image
+                                                src={physical}
+                                                alt={"physical"}
+                                            />
+                                        </div>
+                                        <p class="col p-2 m-0">
+                                            <h4>Physical Support</h4>
+                                            <br />
+                                            View service providers
+                                        </p>
+                                        <p class="col p-2 m-0">
+                                            <svg
+                                                width="2em"
+                                                height="2em"
+                                                viewBox="0 0 16 16"
+                                                class="bi bi-chevron-right"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                float="right"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                                />
+                                            </svg>
+                                        </p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Container className="" fluid>
+                        <Row>
+                            <Col>
+                                <div class="card w-100 whiteservice">
+                                    <div class="card-img-top d-flex align-items-center bg-light">
+                                        <div>
+                                            <Image
+                                                src={physical}
+                                                alt={"physical"}
+                                            />
+                                        </div>
+                                        <p class="col p-2 m-0">
+                                            <h4>Physical Support</h4>
+                                            <br />
+                                            View service providers
+                                        </p>
+                                        <p class="col p-2 m-0">
+                                            <svg
+                                                width="2em"
+                                                height="2em"
+                                                viewBox="0 0 16 16"
+                                                class="bi bi-chevron-right"
+                                                fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                float="right"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                                />
+                                            </svg>
+                                        </p>
+                                    </div>
+                                </div>
+                            </Col>
+
+                            <Col>
+                                <div class="card w-100 whiteservice"></div>
+                            </Col>
+                            <Col>
+                                <div class="card w-100 whiteservice"></div>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
+
                 <div>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#eee" }}>
+                    <div class="w-20 p-4" style={{ backgroundColor: "#e8e8e8" }}>
                         <h3>Who we are</h3>
-                        <div>The Digital Ability Support Network System...</div>
+                        <br/>
+                        <div>The Digital Ability Support Network System (Dasuns) is a social enterprise company registered<br/>
+                        in Uganda to promote social and inclusive development through facilitating access to<br/>
+                        professional assisttive support services and technologies to advance rights and opportunities<br/>
+                        for persons with disabilities.</div>
                     </div>
                 </div>
+
+<div>
+    
+</div>
             </div>
         );
     }
