@@ -328,19 +328,112 @@ export class Landing extends Component {
                 </div>
 
                 <div>
-                    <div class="w-20 p-4" style={{ backgroundColor: "#e8e8e8" }}>
+                    <div
+                        class="w-20 p-4"
+                        style={{ backgroundColor: "#e8e8e8" }}
+                    >
                         <h3>Who we are</h3>
-                        <br/>
-                        <div>The Digital Ability Support Network System (Dasuns) is a social enterprise company registered<br/>
-                        in Uganda to promote social and inclusive development through facilitating access to<br/>
-                        professional assisttive support services and technologies to advance rights and opportunities<br/>
-                        for persons with disabilities.</div>
+                        <br />
+                        <div>
+                            The Digital Ability Support Network System (Dasuns)
+                            is a social enterprise company registered
+                            <br />
+                            in Uganda to promote social and inclusive
+                            development through facilitating access to
+                            <br />
+                            professional assisttive support services and
+                            technologies to advance rights and opportunities
+                            <br />
+                            for persons with disabilities.
+                        </div>
                     </div>
                 </div>
 
-<div>
-    
-</div>
+                <div>
+                    <h3>How it works</h3>
+                    <div>
+                        <Container fluid>
+                            <Row>
+                                <Col sm>
+                                    <div class="card w-100 whiteservice">
+                                        <div class="card-img-top d-flex align-items-center bg-light">
+                                            <div>
+                                                <Image
+                                                    src={physical}
+                                                    alt={"physical"}
+                                                />
+                                                <h4>Request Service</h4>
+                                                <p>
+                                                    Browse through our services,
+                                                    <br />
+                                                    submit request details and
+                                                    pay deposit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col sm>
+                                    <div class="card w-100 whiteservice">
+                                        <div class="card-img-top d-flex align-items-center bg-light">
+                                            <div>
+                                                <Image
+                                                    src={physical}
+                                                    alt={"physical"}
+                                                />
+                                                <h4>Request Service</h4>
+                                                <p>
+                                                    Browse through our services,
+                                                    <br />
+                                                    submit request details and
+                                                    pay deposit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col sm>
+                                    <div class="card w-100 whiteservice">
+                                        <div class="card-img-top d-flex align-items-center bg-light">
+                                            <div>
+                                                <Image
+                                                    src={physical}
+                                                    alt={"physical"}
+                                                />
+                                                <h4>Request Service</h4>
+                                                <p>
+                                                    Browse through our services,
+                                                    <br />
+                                                    submit request details and
+                                                    pay deposit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                                <Col sm>
+                                    <div class="card w-100 whiteservice">
+                                        <div class="card-img-top d-flex align-items-center bg-light">
+                                            <div>
+                                                <Image
+                                                    src={physical}
+                                                    alt={"physical"}
+                                                />
+                                                <h4>Request Service</h4>
+                                                <p>
+                                                    Browse through our services,
+                                                    <br />
+                                                    submit request details and
+                                                    pay deposit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </div>
+                </div>
             </div>
         );
     }
