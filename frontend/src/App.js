@@ -15,7 +15,7 @@ import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
 import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
 import Pag from "./components/Pag";
-import bookingForm from "./components/bookingForm";
+//import bookingForm from "./components/accounts/bookingForm";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
