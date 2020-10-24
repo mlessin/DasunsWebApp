@@ -80,14 +80,43 @@
     margin: 30px;
 }
 
-/* footer */
-.page-footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 60px 0 30px;
+.roundedCircle{
+    border-width: 1px;
 }
+/* footer */
+body {
+    font-family: Rubik,Arial,sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      overflow-x: hidden;
+      color: #607289;
+  }
+  
+  h5 {
+      font-size: 1rem;
+      line-height: 1.375;
+    font-family: Rubik,Arial,sans-serif;
+      font-weight: 500;
+      color: #fff;
+  }
+  
+  a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  
+  a:hover {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  footer {
+    background: #707070;
+  }
 
-.footer-copyright {
-    color: #666;
-    padding: 40px 0;
+.whoWeAre{
+  background-color: "#e8e8e8";
+  
 }
