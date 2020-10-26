@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../style.css";
 import Logo from "../../images/Logo.png";
+// import Banner from "../Banner";
 // import { Link, Redirect } from "react-router-dom";
 // import { connect } from "react-redux";
 // import PropTypes from "prop-types";
@@ -54,7 +55,7 @@ export default class Signup extends Component {
     // if (this.props.isAuthenticated) {
     //   return <Redirect to="/display" />;
     // }
-    const { fullname, email, phonenumber, password } = this.state;
+    // const { fullname, email, phonenumber, password } = this.state;
     return (
       <div className="main">
         <div className="card" id="signup-card">
@@ -72,8 +73,8 @@ export default class Signup extends Component {
                   className="form-control"
                   placeholder="Full Name"
                   name="fullname"
-                  onChange={this.onChange}
-                  value={fullname}
+                  // onChange={this.onChange}
+                  // value={fullname}
                   required
                 />
               </div>
@@ -83,8 +84,9 @@ export default class Signup extends Component {
                   className="form-control"
                   placeholder="Email"
                   name="email"
-                  onChange={this.onChange}
-                  value={email}
+                  // onChange={this.onChange}
+                  // value={email}
+                  required
                 />
               </div>
               <div className="form-group">
@@ -93,8 +95,9 @@ export default class Signup extends Component {
                   className="form-control"
                   placeholder="Phone Number"
                   name="phonenumber"
-                  onChange={this.onChange}
-                  value={phonenumber}
+                  // onChange={this.onChange}
+                  // value={phonenumber}
+                  required
                 />
               </div>
               <div className="form-group">
@@ -103,16 +106,17 @@ export default class Signup extends Component {
                   className="form-control"
                   placeholder="Create Password"
                   name="password"
-                  onChange={this.onChange}
-                  value={password}
+                  // onChange={this.onChange}
+                  // value={password}
+                  required
                 />
               </div>
-
               <div class="custom-control custom-switch">
                 <input
                   type="checkbox"
                   class="custom-control-input"
                   id="customSwitches"
+                  required
                 />
                 <label class="custom-control-label" for="customSwitches">
                   I agree to the terms and conditions set by Dasuns

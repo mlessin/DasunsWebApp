@@ -3,16 +3,22 @@ import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
   // Redirect
 } from "react-router-dom";
 // import { Provider as AlertProvider } from "react-alert";
 // import AlertTemplate from "react-alert-template-basic";
-import './App.css';
+import "./App.css";
 import Banner from "./components/Banner";
-import Signup from "./components/accounts/Signup";
-import Login from "./components/accounts/Login";
+
 import Landing from "./components/Landing";
+
+import SignupModal from "./components/accounts/SignupModal";
+import LoginModal from "./components/accounts/LoginModal";
+import PaginationPage from "./components/PaginationPage";
+import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
+import Pag from "./components/Pag";
+
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -43,32 +49,30 @@ export default class App extends Component {
     // };
     return (
       // <Provider store={store}>
-        // <AlertProvider template={AlertTemplate} {...alertOptions}>
-          <Router>
-            <Fragment>
-              <div className="App">
-                {/* <div className={styles.mainHeader}>
-                  <img src={} alt={"logo"} />
-                </div>
-                <Headers />
-                <Alerts /> */}
-                <Landing />
-                <Banner />
-                <Switch>
-                  <Route path="/signup" exact component={Signup} />
-                  <Route path="/login" exact component={Login} />
-                  {/* <PrivateRoute path="/display" exact component={DisplayData} /> */}
-                  {/* <PrivateRoute path="/newproject" component={NewProject} /> */}
-                  {/* <PrivateRoute
-                    path="/editproject/:id"
-                    component={EditProject}
-                  /> */}
-                  {/* <Route component={notfound} /> */}
-                </Switch>
-              </div>
-            </Fragment>
-          </Router>
-        // </AlertProvider>
+
+      // <AlertProvider template={AlertTemplate} {...alertOptions}>
+      <Router>
+        <Fragment>
+          <div className="App">
+            {/* <Headers /> */}
+            {/* <Alerts />  */}
+            <Banner />
+            <Switch>
+              <Route path="/signup" exact component={SignupModal} />
+              <Route path="/login" exact component={LoginModal} />
+              <Route path="/pag" exact component={PaginationPage} />
+              <Route path="/mypag" exact component={Pag} />
+              <Route
+                path="/signupserviceprov"
+                exact
+                component={SignupServiceProvider}
+              />
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
+      // </AlertProvider>
+
       // </Provider>
     );
   }
