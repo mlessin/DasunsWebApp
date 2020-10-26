@@ -10,11 +10,15 @@ import {
 // import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
 import Banner from "./components/Banner";
+
+import Landing from "./components/Landing";
+
 import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
 import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
 import Pag from "./components/Pag";
+
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -45,6 +49,7 @@ export default class App extends Component {
     // };
     return (
       // <Provider store={store}>
+
       // <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Fragment>
@@ -67,6 +72,7 @@ export default class App extends Component {
         </Fragment>
       </Router>
       // </AlertProvider>
+
       // </Provider>
     );
   }

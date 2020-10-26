@@ -1,3 +1,7 @@
+/* .body{
+    padding:10%
+} */
+
 .form-style {
     border-radius: 5px;
     margin: 10px;
@@ -6,6 +10,7 @@
 .card  {
     width: 100%;
     align-items: center;
+
     margin: auto;  
 }
 
@@ -15,11 +20,13 @@
 
 }
 .form-group{
+
     margin-top: 35px;
 }
 /* .main {
     background-color: #35d187;
     padding: 50px;
+
     height: 9999px; 
 } */
  .main-service{
@@ -34,6 +41,7 @@
     padding-right: 50px;
 }
 .btn{
+
     background-color: #35d187;
     border: 0;
     margin-top: 60px;
@@ -41,24 +49,106 @@
     border-radius: 10px;
 }
 
-.forgot-password{
+.forgot-password {
     font-size: x-small;
 }
 
+
 .form-control{
     /* border-color: #35d187; */
+
     border-width: 2px;
     border-radius: 10px;
 }
+
 
 #cardBody{
     width: 80%;
 }
 
 .heading3{
+
     color: #35d187;
     margin-top: 10px;
     margin-left: 50px;
+}
+
+#header {
+    background: url(../images/banner.jpg) center center / cover no-repeat;
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.header {
+    background: url(../images/banner.jpg) center center / cover no-repeat;
+    height: auto;
+    width: 100%;
+}
+
+
+.green-service {
+    background-color: #35d187;
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+.white-services {
+    height: auto;
+    margin: 30px;
+    padding-left: 100px;
+}
+
+.roundedCircle {
+    border-width: 1px;
+}
+/* footer */
+/* body {
+    font-family: Rubik,Arial,sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      overflow-x: hidden;
+      color: #607289;
+  } */
+
+/* .footer {
+    font-size: 1rem;
+    line-height: 1.375;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 100;
+} */
+
+a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer {
+    background: #707070;
+    color: #fff;
+    padding-bottom: 100px;
+}
+
+.whoWeAre {
+    background-color: #e8e8e8;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+}
+.howItWorks {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+}
 
 }
 
@@ -144,3 +234,4 @@ span{
 h5{
     margin-top: 1px;
 }
+
