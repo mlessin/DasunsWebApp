@@ -145,6 +145,7 @@ export class Landing extends Component {
                     <h3>All services</h3>
                     <Container fluid>
                         <Row>
+                        
                             <Col md="auto">
                                 <Card
                                     style={{
