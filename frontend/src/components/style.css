@@ -28,7 +28,7 @@
 } 
 
 #signup-service-card{
-    width: 45%;
+    width: 60%;
     align-items: center;
     padding-left: 50px;
     padding-right: 50px;
@@ -46,7 +46,6 @@
 }
 
 .form-control{
-    /* border-color: #35d187; */
     border-width: 2px;
     border-radius: 10px;
 }
@@ -66,9 +65,7 @@
     background: none!important;
     border: none;
     padding: 0!important;
-    /*optional*/
     font-family: arial, sans-serif;
-    /*input has OS specific font-family*/
     color: #069;
     text-decoration: underline;
     cursor: pointer;
@@ -101,8 +98,6 @@ li a:hover {
 }
 .vendor_registration_tabs_main ul li.active a {
     color: #006734;
-    /* background-color: transparent; */
-    /* background: transparent; */
 }
 
 .vendor_registration_tabs_main ul li a {
@@ -117,7 +112,6 @@ li a:hover {
     position: relative;
 }
 
-
 span, h5, h2,ul, li{ 
     margin: 0;
     padding: 0;
@@ -129,7 +123,6 @@ span, h5, h2,ul, li{
     vertical-align: baseline;
     background: transparent;
 }
-
 span{
     border:1px solid #c8c9cc;
     background-color: #c8c9cc;
@@ -143,4 +136,39 @@ span{
 }
 h5{
     margin-top: 1px;
+}
+.custom-control{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#btn-group{
+    flex-direction: row;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-success, #btn-default{
+    border-radius: 15px;
+    padding: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#btn-success{
+    margin-left: 4em;
+    margin-right: 0px;
+    background-color: #35d187;
+    color: #fff;
+}
+
+#btn-default{
+margin-right: 10%;
+margin-left: 0px;
+}
+
+.checkboxes{
+    margin-top: 2em;
+    margin-bottom: 3em;
 }

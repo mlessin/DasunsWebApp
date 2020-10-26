@@ -14,6 +14,7 @@ import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
 import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
+import SignupServiceP2 from "./components/serviceProvider/SignupServiceP2";
 import Pag from "./components/Pag";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
@@ -61,6 +62,11 @@ export default class App extends Component {
                 path="/signupserviceprov"
                 exact
                 component={SignupServiceProvider}
+              />
+              <Route
+                path="/signupserviceprov2"
+                exact
+                component={SignupServiceP2}
               />
             </Switch>
           </div>
