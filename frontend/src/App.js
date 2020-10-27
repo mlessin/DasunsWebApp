@@ -17,6 +17,7 @@ import SignupServiceProvider from "./components/serviceProvider/SignupServicePro
 import SignupServiceP2 from "./components/serviceProvider/SignupServiceP2";
 import SignupServiceP3 from "./components/serviceProvider/SignupServiceP3";
 import SignupServiceP4 from "./components/serviceProvider/SignupServiceP4";
+import SignupServiceP5 from "./components/serviceProvider/SignupServiceP5";
 import Pag from "./components/Pag";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
@@ -79,6 +80,11 @@ export default class App extends Component {
                 path="/signupserviceprov4"
                 exact
                 component={SignupServiceP4}
+              />
+                <Route
+                path="/signupserviceprov5"
+                exact
+                component={SignupServiceP5}
               />
             </Switch>
           </div>
