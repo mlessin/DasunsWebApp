@@ -1,47 +1,44 @@
 /* .body{
     padding:10%
 } */
-
+.navbar{
+    /* background-color: #fff;
+background: #fff; */
+background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
+}
 .form-style {
     border-radius: 5px;
     margin: 10px;
 }
 
-.card  {
-    width: 100%;
+.card {
+    width: 33%;
+    height: 30rem;
     align-items: center;
-
-    margin: auto;  
+    margin: auto;
+}
+#signup-card {
+    height: 43rem;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
-#signup-card{
-    padding-left: 50px;
-    padding-right: 50px;
-
-}
-.form-group{
-
+.form-group {
     margin-top: 35px;
 }
-/* .main {
+
+.main {
     background-color: #35d187;
     padding: 50px;
-
-    height: 9999px; 
-} */
- .main-service{
-    background-color:#edf0f5;
-    padding-bottom: 1em;
-} 
-
-#signup-service-card{
-    width: 45%;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    height: 9999px;
 }
-.btn{
+.main-signup {
+    background-color: #35d187;
+    padding: 50px;
+    height: 100%;
+}
 
+.btn {
     background-color: #35d187;
     border: 0;
     margin-top: 60px;
@@ -53,39 +50,35 @@
     font-size: x-small;
 }
 
-
-.form-control{
-    /* border-color: #35d187; */
-
+.form-control {
+    border-color: #35d187;
     border-width: 2px;
     border-radius: 10px;
 }
 
-
-#cardBody{
-    width: 80%;
-}
-
-.heading3{
-
+.heading3 {
     color: #35d187;
     margin-top: 10px;
     margin-left: 50px;
 }
 
 #header {
-    background: url(../images/banner.jpg) center center / cover no-repeat;
-    height: auto;
+    background: url(../images/banner.jpg);
+    height: 594px;
     width: 100%;
     border-radius: 0;
     margin-bottom: 0;
+    background-attachment: static;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 250px;
 }
-.header {
+/* .header {
     background: url(../images/banner.jpg) center center / cover no-repeat;
     height: auto;
     width: 100%;
-}
-
+} */
 
 .green-service {
     background-color: #35d187;
@@ -150,88 +143,17 @@ footer {
     padding-left: 100px;
 }
 
-
-
-.buttonbar{
-    background: none!important;
-    border: none;
-    padding: 0!important;
-    /*optional*/
-    font-family: arial, sans-serif;
-    /*input has OS specific font-family*/
-    color: #069;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-li, a {
-    display: inline;
-    padding: 8px;
-    color: #000;
-    font-family: "Montserrat";
-    text-decoration: none;
-}
-
-li a:hover {
-    color: #111;
-    text-decoration: none;
-  }
-  
-.list-inline{
-    margin-top: 40px;
-}
-.list-inline > li{
-    display:inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.pag{
-    border-radius: 50%;
-}
-.vendor_registration_tabs_main ul li.active a {
-    color: #006734;
-    /* background-color: transparent; */
-    /* background: transparent; */
-}
-
-.vendor_registration_tabs_main ul li a {
-    text-decoration: none;
-    font-family: "Nunito Sans";
-    font-size: 15px;
+.availHead{
+   text-align: center;
+   padding-top: 30px;
     font-weight: 400;
 }
 
-.vendor_registration_tabs_main ul li {
-    width: 14%;
-    position: relative;
-}
+.subavail{
+color: #35d187;
+text-align: center;
+ font-weight: 400;}
 
-
-span, h5, h2,ul, li{ 
-    margin: 0;
-    padding: 0;
-    padding-right: 0px;
-    padding-left: 0px;
-    border: 0; 
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+.availlist{
+    padding: 200px;
 }
-
-span{
-    border:1px solid #c8c9cc;
-    background-color: #c8c9cc;
-    border-radius: 50%;
-    padding:10px;
-    display:inline-flex;
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-}
-h5{
-    margin-top: 1px;
-}
-

@@ -16,6 +16,8 @@ import order from "../images/order.png";
 import getsp from "../images/getsp.png";
 import relax from "../images/relax.png";
 import book from "../images/book.png";
+import facebook from "../images/facebook.png";
+import twitter from "../images/twitter.png";
 
 import {
     Navbar,
@@ -60,7 +62,7 @@ export class Landing extends Component {
                 </Navbar>
                 <section
                     id="header"
-                    class="jumbotron text-right text-white img-responsive "
+                    class="jumbotron text-right text-white img-responsive"
                 >
                     <h1 class="display-6">
                         Access Professional support service <br />
@@ -535,6 +537,17 @@ export class Landing extends Component {
                                         <h6 class="mb-4 font-weight-bold">
                                             Follow Us On
                                         </h6>
+                                        <img
+                            src={facebook}
+                            alt={"facebook"}
+                            style={{ height: "40px" }}
+                        />
+                        {"  "}
+                        <img
+                            src={twitter}
+                            alt={"twitter"}
+                            style={{ height: "40px" }}
+                        />
                                     </div>
                                 </div>
                             </div>
