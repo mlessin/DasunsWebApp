@@ -36,6 +36,7 @@ export default class Banner extends Component {
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
+      
       borderRadius: "50px",
       fontFamily: "Montserrat",
       textDecoration: "none"
