@@ -12,6 +12,7 @@ import "./App.css";
 import Banner from "./components/Banner";
 
 import Landing from "./components/Landing";
+import SPlist from "./components/SPlist";
 
 import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
@@ -57,6 +58,8 @@ export default class App extends Component {
             {/* <Headers /> */}
             {/* <Alerts />  */}
             <Banner />
+            <SPlist />
+            <Landing />
             <Switch>
               <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
