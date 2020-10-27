@@ -32,16 +32,10 @@ export class bookingForm extends Component {
         return (
             <div>
                 <Form id="book">
+                    <h2>BOOKING MARK SHARNTY.</h2>
+                    <h5>From Muyenga Kampala UG</h5>
+                    <h5>20000UGX, Per Hour.</h5>
 
-                    <ul>
-                        <li class="list-group-item">
-                            Bootstrap Switch Success
-                                <label class="switch ">
-                                <input type="checkbox" class="success" />
-                                <span class="slider round"></span>
-                            </label>
-                        </li>
-                    </ul>
                     <Form.Group as={Row} controlId="meetPoint" >
                         <Form.Label column sm={2}>
                             Meeting Point:
@@ -50,7 +44,7 @@ export class bookingForm extends Component {
                             <Form.Control type="text" placeholder="Enter location" />
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row} controlId="meetDate"> 
+                    <Form.Group as={Row} controlId="meetDate">
                         <Form.Label column sm={2}>
                             Meeting Date:
     </Form.Label>
@@ -61,7 +55,7 @@ export class bookingForm extends Component {
 
                     <Form.Group as={Row} controlId="contact" >
                         <Form.Label column sm={2}>
-                            Contact:
+                            Phone No:
                           </Form.Label>
                         <Col sm={5} id="contact">
                             <Form.Control type="tel" name="phone" placeholder="Enter Phone Number" />
@@ -69,21 +63,26 @@ export class bookingForm extends Component {
                     </Form.Group>
 
 
-                    <Form.Row>
+                    <Form.Row >
                         <Form.Group as={Col} controlId="StartTime">
                             <Form.Label>Start Time:</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Starting time" id="start1" />
+                            <Col sm={5}>
+                            <Form.Control type="text" placeholder="Enter Starting time"  />
+                            </Col>
                         </Form.Group>
                         <Form.Group as={Col} controlId="endTime">
+                            
                             <Form.Label>End Time</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Ending time" id="start2 " />
+                            <Col sm={5} id="start2 ">
+                            <Form.Control type="text" placeholder="Enter Ending time"  />
+                            </Col>
                         </Form.Group>
                     </Form.Row>
 
 
 
                     <Form.Group as={Row}>
-                        <Col sm={{ span: 10, offset: 2 }}>
+                        <Col sm={{ span: 2, offset: 2 }}>
                             <Button type="submit">BOOK NOW</Button>
                         </Col>
                     </Form.Group>

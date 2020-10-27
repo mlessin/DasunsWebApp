@@ -193,18 +193,25 @@ h5{
  #meet2{
      padding-right: 250px;
  }
-
- #book{
-     text-align: center;
-     /* padding: left; */
- }
-
- #start1{
+ #contact{
      padding-right: 250px;
  }
-#contact{
-    padding-right: 250px;
-}
+
+ #book{
+     text-align: left;
+     padding-left: 350px;
+     
+ }
+
+ #start2{
+     padding: 250px;
+ }
+ /* #start2{ */
+     /* padding-left: 100px; */
+ /* } */
+/* #contact{ */
+    /* padding-right: 250px; */
+/* } */
 
 
 

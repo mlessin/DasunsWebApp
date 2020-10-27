@@ -45,24 +45,24 @@ export default class App extends Component {
     //   }
     // };
     return (
-      // <Provider store={store}>
+      //  <Provider store={store}>
       // <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Fragment>
           <div className="App">
             {/* <Headers /> */}
             {/* <Alerts />  */}
-            <Banner />
+            {/* <Banner /> */}
             <Switch>
-              <Route path="/signup" exact component={SignupModal} />
+              {/* <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/pag" exact component={PaginationPage} />
-              <Route path="/mypag" exact component={Pag} />
+              <Route path="/mypag" exact component={Pag} /> */}
                 <Route path="/bookingForm" exact component={bookingForm} /> 
               <Route
-                path="/signupserviceprov"
+                // path="/signupserviceprov"
                 exact
-                component={SignupServiceProvider}
+                // component={SignupServiceProvider}
               />
             </Switch>
           </div>
