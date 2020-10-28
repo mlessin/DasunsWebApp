@@ -4,13 +4,14 @@ import PaginationPage from "../PaginationPage";
 
 export default class SignupServiceP5 extends Component {
   render() {
-      const radios = {
-        fontSize:"12px"
-      }
+    const { history } = this.props;
+    const radios = {
+      fontSize: "12px",
+    };
 
-      const requiredInput ={
-          color:"red"
-      }
+    const requiredInput = {
+      color: "red",
+    };
     return (
       <div className="main-service">
         <PaginationPage />
@@ -33,12 +34,11 @@ export default class SignupServiceP5 extends Component {
                         Service Category
                         <small style={requiredInput}> (Required)</small>
                       </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Select Service Category"
-                        name="link"
-                      />
+                      <select value="{}" className="form-control" required>
+                        <option defaultValue>Select Service Category</option>
+                        <option value="1">Test</option>
+                        <option value="2">Test 2</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -50,12 +50,11 @@ export default class SignupServiceP5 extends Component {
                         Service
                         <small style={requiredInput}> (Required)</small>
                       </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Select Service"
-                        name="link"
-                      />
+                      <select value="{}" className="form-control" required>
+                        <option defaultValue>Select Service </option>
+                        <option value="1">Test</option>
+                        <option value="2">Test 2</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -87,7 +86,12 @@ export default class SignupServiceP5 extends Component {
 
                   <div className="col-3">
                     <div class="">
-                      <input type="radio" value="tuesday" name="tuesday" id="" />
+                      <input
+                        type="radio"
+                        value="tuesday"
+                        name="tuesday"
+                        id=""
+                      />
                       <label class="" for="">
                         TUESDAY
                       </label>
@@ -96,7 +100,12 @@ export default class SignupServiceP5 extends Component {
 
                   <div className="col-3">
                     <div class="">
-                      <input type="radio" value="wednesday" name="wednesday" id="" />
+                      <input
+                        type="radio"
+                        value="wednesday"
+                        name="wednesday"
+                        id=""
+                      />
                       <label class="" for="">
                         WEDNESDAY
                       </label>
@@ -107,7 +116,12 @@ export default class SignupServiceP5 extends Component {
                 <div className="row" style={radios}>
                   <div className="col-3">
                     <div class="">
-                      <input type="radio" value="thurday" name="thursday" id="" />
+                      <input
+                        type="radio"
+                        value="thurday"
+                        name="thursday"
+                        id=""
+                      />
                       <label class="" for="">
                         THURSDAY
                       </label>
@@ -125,7 +139,12 @@ export default class SignupServiceP5 extends Component {
 
                   <div className="col-3">
                     <div class="">
-                      <input type="radio" value="saturday" name="saturday" id="" />
+                      <input
+                        type="radio"
+                        value="saturday"
+                        name="saturday"
+                        id=""
+                      />
                       <label class="" for="">
                         SATURDAY
                       </label>
@@ -217,7 +236,11 @@ export default class SignupServiceP5 extends Component {
                 <div className="row">
                   <div className="col-5">
                     <div id="btn-group">
-                      <button type="submit" id="btn-default">
+                      <button
+                        type="submit"
+                        id="btn-default"
+                        onClick={() => history.push("/signupserviceprov4")}
+                      >
                         <strong>BACK TO PREVIOUS</strong>
                       </button>
                     </div>

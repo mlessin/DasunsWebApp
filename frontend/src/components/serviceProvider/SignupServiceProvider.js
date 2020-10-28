@@ -11,9 +11,10 @@ export default class SignupServiceProvider extends Component {
     nin: "",
     dob: "",
     gender: "",
-    physicaladdress: ""
+    physicaladdress: "",
   };
   render() {
+    const { history } = this.props;
     return (
       <div className="main-service">
         <PaginationPage />
@@ -96,7 +97,11 @@ export default class SignupServiceProvider extends Component {
                 />
               </div>
               <div className="form-group">
-                <button type="submit" className="btn btn-success btn-block">
+                <button
+                  type="submit"
+                  className="btn btn-success btn-block"
+                  onClick={() => history.push("/signupserviceprov2")}
+                >
                   <strong>SAVE & CONTINUE</strong>
                 </button>
               </div>

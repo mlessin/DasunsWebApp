@@ -4,6 +4,7 @@ import PaginationPage from "../PaginationPage";
 
 export default class SignupServiceP4 extends Component {
   render() {
+    const { history } = this.props;
     return (
       <div className="main-service">
         <PaginationPage />
@@ -158,7 +159,11 @@ export default class SignupServiceP4 extends Component {
                 <div className="row">
                   <div className="col-5">
                     <div id="btn-group">
-                      <button type="submit" id="btn-default">
+                      <button
+                        type="submit"
+                        id="btn-default"
+                        onClick={() => history.push("/signupserviceprov4")}
+                      >
                         <strong>BACK TO PREVIOUS</strong>
                       </button>
                     </div>
@@ -168,7 +173,11 @@ export default class SignupServiceP4 extends Component {
 
                   <div className="col-5">
                     <div id="btn-group">
-                      <button type="submit" id="btn-success">
+                      <button
+                        type="submit"
+                        id="btn-success"
+                        onClick={() => history.push("/signupserviceprov5")}
+                      >
                         <strong>SAVE & CONTINUE</strong>
                       </button>
                     </div>

@@ -4,6 +4,7 @@ import PaginationPage from "../PaginationPage";
 
 export default class SignupServiceP2 extends Component {
   render() {
+    const { history } = this.props;
     return (
       <div className="main-service">
         <PaginationPage />
@@ -20,34 +21,27 @@ export default class SignupServiceP2 extends Component {
                   <small style={{ color: "red" }}> (Required)</small>
                 </p>
                 <div className="checkboxes">
-                  <div class="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="defaultChecked2"
-                    />
-                    <label class="custom-control-label" for="defaultChecked2">
+                  <div class="">
+                    <input type="checkbox" value="sunday" name="sunday" id="" />
+                    <label class="" for="">
                       At least 1 year of experience in your profession
                     </label>
                   </div>
-
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="" />
-                    <label class="custom-control-label" for="">
+                  <div class="">
+                    <input type="checkbox" value="monday" name="monday" id="" />
+                    <label class="" for="">
                       You're not a middle man
                     </label>
                   </div>
-
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="" />
-                    <label class="custom-control-label" for="">
+                  <div class="">
+                    <input type="checkbox" value="monday" name="monday" id="" />
+                    <label class="" for="">
                       You have the skillset to give professional service
                     </label>
                   </div>
-
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="" />
-                    <label class="custom-control-label" for="">
+                  <div class="">
+                    <input type="checkbox" value="monday" name="monday" id="" />
+                    <label class="" for="">
                       You have a phone / Computer and active Phone Number
                     </label>
                   </div>
@@ -64,7 +58,11 @@ export default class SignupServiceP2 extends Component {
                 <div className="row">
                   <div className="col-5">
                     <div id="btn-group">
-                      <button type="submit" id="btn-default">
+                      <button
+                        type="submit"
+                        id="btn-default"
+                        onClick={() => history.push("/signupserviceprov")}
+                      >
                         <strong>BACK TO PREVIOUS</strong>
                       </button>
                     </div>
@@ -74,7 +72,11 @@ export default class SignupServiceP2 extends Component {
 
                   <div className="col-5">
                     <div id="btn-group">
-                      <button type="submit" id="btn-success">
+                      <button
+                        type="submit"
+                        id="btn-success"
+                        onClick={() => history.push("/signupserviceprov3")}
+                      >
                         <strong>SAVE & CONTINUE</strong>
                       </button>
                     </div>
