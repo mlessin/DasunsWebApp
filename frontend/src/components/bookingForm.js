@@ -30,15 +30,18 @@ export class bookingForm extends Component {
 
     render() {
         return (
-            <div>
-                <Form id="book">
-                    <h2>BOOKING MARK SHARNTY.</h2>
-                    <h5>From Muyenga Kampala UG</h5>
-                    <h5>20000UGX, Per Hour.</h5>
+            <div className="main">
+                <div className="card" id="booking-card">
+                    <div className="card-body">
+                
+                <Form onSubmit={this.onSubmit}>
+                    <h4 className="heading3">BOOKING MARK SHARNTY.</h4>
+                    <h6 className="heading3">From Muyenga Kampala UG</h6>
+                    <h6 className="heading3">20000UGX, Per Hour.</h6>
 
                     <Form.Group as={Row} controlId="meetPoint" >
                         <Form.Label column sm={2}>
-                            Meeting Point:
+                            Meet:
                           </Form.Label>
                         <Col sm={5} id="meet1">
                             <Form.Control type="text" placeholder="Enter location" />
@@ -46,7 +49,7 @@ export class bookingForm extends Component {
                     </Form.Group>
                     <Form.Group as={Row} controlId="meetDate">
                         <Form.Label column sm={2}>
-                            Meeting Date:
+                            Meet:
     </Form.Label>
                         <Col sm={5} id="meet2">
                             <Form.Control type="text" placeholder="Enter Date" />
@@ -55,12 +58,13 @@ export class bookingForm extends Component {
 
                     <Form.Group as={Row} controlId="contact" >
                         <Form.Label column sm={2}>
-                            Phone No:
+                            Phone:
                           </Form.Label>
                         <Col sm={5} id="contact">
                             <Form.Control type="tel" name="phone" placeholder="Enter Phone Number" />
                         </Col>
                     </Form.Group>
+                    <div> <b>Meeting Time:</b></div>
 
 
                     <Form.Row >
@@ -82,11 +86,14 @@ export class bookingForm extends Component {
 
 
                     <Form.Group as={Row}>
-                        <Col sm={{ span: 2, offset: 2 }}>
+                        <Col sm={{ span: 5, offset: 2 }}>
                             <Button type="submit">BOOK NOW</Button>
                         </Col>
                     </Form.Group>
                 </Form>
+                
+                </div>
+                </div>
             </div>
         );
 
