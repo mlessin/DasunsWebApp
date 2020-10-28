@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 import "bootstrap/dist/css/bootstrap.css";
+
 import Logo from "../images/Logo.png";
 import LogoWhite from "../images/LogoWhite.png";
 import facebook from "../images/facebook.png";
@@ -17,11 +18,11 @@ import {
     Card,
 } from "react-bootstrap";
 
-export class Request extends Component {
+export class SPlist extends Component {
     render() {
         return (
-            <div className="body">
-                <Navbar sticky="top" collapseOnSelect expand="md">
+            <div>
+                <Navbar className="navbar" bg-primary sticky="top" collapseOnSelect expand="md">
                     <Navbar.Brand href="#home">
                         <img
                             src={Logo}
@@ -37,7 +38,6 @@ export class Request extends Component {
                         <Nav>
                             <Nav.Link href="#deets">Services</Nav.Link>
                             <Nav.Link href="#req">My Requests</Nav.Link>
-
                             <Nav.Link href="#bell">Bell icon</Nav.Link>
                             <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
                             <Nav.Link href="#service">
@@ -48,60 +48,27 @@ export class Request extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-
-                <div className="green-service1 " fluid="md">
-                    <Container
-                        fluid
-                        style={{
-                            fontSize: 25,
-                            paddingBottom: "5px",
-                            marginBottom: "20px",
-                        }}
-                    >
-                        <Row>
-                            <Col>
-                                <div>
-                                    My Service Requests
-                                </div>
-
-                            </Col>
-                            <Col>
-
-                                <div>Ongoing</div>
-                            </Col>
-                            <Col>
-
-                                <div>Completed</div>
-                            </Col>
-
-                        </Row>
-                    </Container>
+                <section
+                    id="header"
+                    class="jumbotron text-center text-white img-responsive"
+                >
+                    <h1 class="display-6" >
+                       All available interpreters
+                    </h1>
+                    <p class="lead">
+                       Browse through the list of professional interpreters and make your booking
+                    </p>
+                   
+                </section>
+                <div className="availHead">
+<h2>Available Interpreters</h2>
+                </div> 
+                <div className="subavail">
+                Only allowed to book one interpreter
                 </div>
-
-                <div className="white-services">
-                    <h2>My Service Requests</h2>
-
+                <div className="availlist">
+[we shall have a list of available interpreters here for the user to select from; from the backend]
                 </div>
-               
-
-                <div className="requests">
-                    <h3>SIGN LANGUAGE INTERPRETER</h3>
-                    {/* <br /> */}
-                    <div>
-                        Mark Shanty
-                        <br />
-                        2hrs
-                        <br />
-                        14th Nov 2020
-                        <br />
-                        10:00am - 12:00pm
-                        <br />
-                        King Fahad Plaza Kampala Road
-                        <br />
-                        40,000ugx
-                    </div>
-                </div>
-
                 <div>
                     <footer className="footer">
                         <div class="container pt-5 border-bottom">
@@ -147,15 +114,16 @@ export class Request extends Component {
                             alt={"twitter"}
                             style={{ height: "40px" }}
                         />
+                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </footer>
                 </div>
-
             </div>
-        );
+        )
     }
 }
-export default Request;
+
+export default SPlist

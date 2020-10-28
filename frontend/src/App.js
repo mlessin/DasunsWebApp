@@ -10,12 +10,17 @@ import {
 // import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
 import Banner from "./components/Banner";
+
+import Landing from "./components/Landing";
+import SPlist from "./components/SPlist";
+
 import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
 import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
 import Pag from "./components/Pag";
 import bookingForm from "./components/bookingForm";
+import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -45,20 +50,24 @@ export default class App extends Component {
     //   }
     // };
     return (
-      //  <Provider store={store}>
+      // <Provider store={store}>
+
       // <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Fragment>
           <div className="App">
             {/* <Headers /> */}
             {/* <Alerts />  */}
-            {/* <Banner /> */}
+            <Banner />
+            <SPlist />
+            <Landing />
             <Switch>
               {/* <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/pag" exact component={PaginationPage} />
               <Route path="/mypag" exact component={Pag} /> */}
                 <Route path="/bookingForm" exact component={bookingForm} /> 
+                <Route path="/Request" exact component={Request} />
               <Route
                 // path="/signupserviceprov"
                 exact
@@ -69,6 +78,7 @@ export default class App extends Component {
         </Fragment>
       </Router>
       // </AlertProvider>
+
       // </Provider>
     );
   }
