@@ -4,10 +4,9 @@ import "../style.css";
 import Logo from "../../images/Logo.png";
 import Modal from "react-bootstrap/Modal";
 
-
 export class LoginModal extends Component {
-
   render() {
+    const { history } = this.props;
     return (
       <div>
         <Modal
@@ -19,12 +18,12 @@ export class LoginModal extends Component {
           <Modal.Header closeButton>
             {/* <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title> */}
             <div className>
-              <img src={Logo} alt={"logo"} />
+              <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
             </div>
           </Modal.Header>
           <Modal.Body>
-            <div className="main">
-              <div className="card">
+            <div className="main-card-login">
+              <div className="card" id="login-card">
                 <div className="card-body">
                   <form onSubmit={this.onSubmit}>
                     <h3 className="heading3">Login</h3>
@@ -46,11 +45,18 @@ export class LoginModal extends Component {
                       />
                     </div>
 
-                    <button type="submit" className="btn btn-success btn-block">
+                    <button
+                      type="submit"
+                      className="btn btn-success btn-block"
+                      onClick={() => history.push("/splist")}
+                    >
                       Submit
                     </button>
                     <p className="forgot-password text-center">
-                      Forgot Password? <a href="#">Reset Password</a>
+                      Forgot Password?{" "}
+                      <a className="password-reset" href="#">
+                        Reset Password
+                      </a>
                     </p>
                     {/* <p>
                       Don't have an account?

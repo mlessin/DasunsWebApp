@@ -31,7 +31,7 @@ export class PaginationPage extends Component {
               </h2>
               <ul className="list-inline">
                 <li id="li_step_1" className="progres_bar active">
-                  <a href="">
+                  <a className="pagn" href="">
                     <div className="tab_number">
                       <span>1</span>
                     </div>
@@ -40,7 +40,7 @@ export class PaginationPage extends Component {
                 </li>
 
                 <li id="li_step_2" className="progres_bar">
-                  <a href="">
+                  <a className="pagn" href="">
                     <div className="tab_number">
                       <span>2</span>
                     </div>
@@ -49,7 +49,7 @@ export class PaginationPage extends Component {
                 </li>
 
                 <li id="li_step_3" className="progres_bar">
-                  <a href="">
+                  <a className="pagn" href="">
                     <div className="tab_number">
                       <span>3</span>
                     </div>
@@ -58,7 +58,7 @@ export class PaginationPage extends Component {
                 </li>
 
                 <li id="li_step_4" className="progres_bar">
-                  <a href="">
+                  <a className="pagn" href="">
                     <div className="tab_number">
                       <span>4</span>
                     </div>
@@ -67,7 +67,7 @@ export class PaginationPage extends Component {
                 </li>
 
                 <li id="li_step_5" className="progres_bar">
-                  <a href="">
+                  <a className="pagn" href="">
                     <div className="tab_number">
                       <span>5</span>
                     </div>

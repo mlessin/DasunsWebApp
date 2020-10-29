@@ -6,13 +6,8 @@ import Logo from "../../images/Logo.png";
 import Modal from "react-bootstrap/Modal";
 
 export class SignupModal extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     addModalShow: false
-  //   };
-  // }
   render() {
+    const { history } = this.props;
     return (
       <div>
         <Modal
@@ -24,17 +19,17 @@ export class SignupModal extends Component {
           <Modal.Header closeButton>
             {/* <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title> */}
             <div className>
-              <img src={Logo} alt={"logo"} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
             </div>
           </Modal.Header>
           <Modal.Body>
-            <div className="main">
+            <div className="main-card-signup">
               <div className="card" id="signup-card">
                 <div className="card-body">
                   <form onSubmit={this.onSubmit}>
                     {/* <div>
                       <div className="dasuns-logo">
-                        <img src={Logo} alt={"logo"} />
+                         <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
                       </div>
                     </div> */}
                     <h3 className="heading3">Signup</h3>
@@ -89,6 +84,7 @@ export class SignupModal extends Component {
                       <button
                         type="submit"
                         className="btn btn-success btn-block"
+                        onClick={() => history.push("/splist")}
                       >
                         SIGNUP
                       </button>

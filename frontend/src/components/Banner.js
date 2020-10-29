@@ -51,15 +51,15 @@ export default class Banner extends Component {
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <a href="#">
-            <img src={Logo} alt={"logo"} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-right" style={{ marginLeft: "10em" }}>
-            <Nav.Link href="#">Services</Nav.Link>
-            <Nav.Link href="#">Who We Are</Nav.Link>
-            <Nav.Link href="#">How It Works</Nav.Link>
+            <Nav.Link href="# ">Services</Nav.Link>
+            <Nav.Link href="# ">Who We Are</Nav.Link>
+            <Nav.Link href="# ">How It Works</Nav.Link>
             <ButtonToolbar style={{ border: "none" }}>
               <button
                 style={button}
@@ -84,7 +84,7 @@ export default class Banner extends Component {
                 onHide={addModalCloseSign}
               />
             </ButtonToolbar>
-            <Link to="/#" style={mystyle}>
+            <Link to="/bookingForm" style={mystyle}>
               Request Now
             </Link>
             <Link to="/signupserviceprov" style={mystyle1}>

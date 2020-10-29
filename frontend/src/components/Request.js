@@ -16,9 +16,20 @@ import {
   Col,
   Card,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 export class Request extends Component {
   render() {
+    const { history } = this.props;
+
+    const mystyle1 = {
+      color: "#fff",
+      backgroundColor: "#006712",
+      borderRadius: "10px",
+      fontFamily: "Montserrat",
+      textDecoration: "none",
+    };
     return (
       <div className="body">
         <Navbar sticky="top" collapseOnSelect expand="md">
@@ -37,9 +48,9 @@ export class Request extends Component {
               <Nav.Link href="#bell">Bell icon</Nav.Link>
               <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
               <Nav.Link href="#service">
-                <Badge pill variant="success">
+                <Link to="/bookingForm" style={mystyle1}>
                   Request Service
-                </Badge>
+                </Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -121,7 +132,6 @@ export class Request extends Component {
                       alt={"facebook"}
                       style={{ height: "40px" }}
                     />
-                    {"  "}
                     <img
                       src={twitter}
                       alt={"twitter"}

@@ -9,7 +9,7 @@ import {
 // import { Provider as AlertProvider } from "react-alert";
 // import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
-import Banner from "./components/Banner";
+// import Banner from "./components/Banner";
 
 import Landing from "./components/Landing";
 import SPlist from "./components/SPlist";
@@ -22,7 +22,7 @@ import SignupServiceP2 from "./components/serviceProvider/SignupServiceP2";
 import SignupServiceP3 from "./components/serviceProvider/SignupServiceP3";
 import SignupServiceP4 from "./components/serviceProvider/SignupServiceP4";
 import SignupServiceP5 from "./components/serviceProvider/SignupServiceP5";
-import Pag from "./components/Pag";
+// import Pag from "./components/Pag";
 import bookingForm from "./components/bookingForm";
 import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
@@ -62,20 +62,22 @@ export default class App extends Component {
           <div className="App">
             {/* <Headers /> */}
             {/* <Alerts />  */}
-            <Banner />
-            <SPlist />
-            <Landing />
+            {/* <Banner /> */}
+            {/* <SPlist /> */}
+            {/* <Landing /> */}
             <Switch>
+              <Route path="/" exact component={Landing} />
               <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
+              <Route path="/splist" exact component={SPlist} />
               <Route path="/pag" exact component={PaginationPage} />
               {/* <Route path="/mypag" exact component={Pag} /> */}
-                <Route path="/bookingForm" exact component={bookingForm} /> 
-                <Route path="/Request" exact component={Request} />
+              <Route path="/bookingForm" exact component={bookingForm} /> 
+              <Route path="/Request" exact component={Request} />
               <Route
-                // path="/signupserviceprov"
+                path="/signupserviceprov"
                 exact
-                // component={SignupServiceProvider}
+                component={SignupServiceProvider}
               />
               <Route
                 path="/signupserviceprov2"
