@@ -10,19 +10,28 @@ background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
   border-radius: 5px;
   margin: 10px;
 }
-
+/* my card */
 /* .card {
   width: 100%;
   align-items: center;
   margin: auto;
 } */
+
+/* Kawooya's card */
 .card {
   width: 33%;
   height: 30rem;
   align-items: center;
   margin: auto;
 }
-
+/* Roy's card */
+/* .card {
+  width: 40%;
+  height: 40rem;
+  align-items: center;
+  margin: auto;
+} */
+ 
 #signup-card {
   padding-left: 50px;
   padding-right: 50px;
@@ -80,6 +89,7 @@ background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
   text-decoration: underline;
   cursor: pointer;
 }
+    
 
 li,
 a {
@@ -179,6 +189,7 @@ h5 {
     padding-left: 45px;
     padding-right: 45px;
 }
+
 
 .form-group {
     margin-top: 35px;
@@ -314,3 +325,23 @@ text-align: center;
 .availlist{
     padding: 200px;
 }
+
+#book{
+    padding-right: 350px;
+}
+
+.requests {
+    background-color: #e8e8e8;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+}
+.green-service1 {
+    background-color: #35d187;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+}
+/* #meetPoint{
+
+} */

@@ -23,7 +23,8 @@ import SignupServiceP3 from "./components/serviceProvider/SignupServiceP3";
 import SignupServiceP4 from "./components/serviceProvider/SignupServiceP4";
 import SignupServiceP5 from "./components/serviceProvider/SignupServiceP5";
 import Pag from "./components/Pag";
-
+import bookingForm from "./components/bookingForm";
+import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -68,11 +69,13 @@ export default class App extends Component {
               <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/pag" exact component={PaginationPage} />
-              <Route path="/mypag" exact component={Pag} />
+              {/* <Route path="/mypag" exact component={Pag} /> */}
+                <Route path="/bookingForm" exact component={bookingForm} /> 
+                <Route path="/Request" exact component={Request} />
               <Route
-                path="/signupserviceprov"
+                // path="/signupserviceprov"
                 exact
-                component={SignupServiceProvider}
+                // component={SignupServiceProvider}
               />
               <Route
                 path="/signupserviceprov2"
