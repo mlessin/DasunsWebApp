@@ -10,6 +10,10 @@ import {
 // import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
 import Banner from "./components/Banner";
+
+import Landing from "./components/Landing";
+import SPlist from "./components/SPlist";
+
 import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
@@ -19,6 +23,7 @@ import SignupServiceP3 from "./components/serviceProvider/SignupServiceP3";
 import SignupServiceP4 from "./components/serviceProvider/SignupServiceP4";
 import SignupServiceP5 from "./components/serviceProvider/SignupServiceP5";
 import Pag from "./components/Pag";
+
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -49,6 +54,7 @@ export default class App extends Component {
     // };
     return (
       // <Provider store={store}>
+
       // <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Fragment>
@@ -56,6 +62,8 @@ export default class App extends Component {
             {/* <Headers /> */}
             {/* <Alerts />  */}
             <Banner />
+            <SPlist />
+            <Landing />
             <Switch>
               <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
@@ -91,6 +99,7 @@ export default class App extends Component {
         </Fragment>
       </Router>
       // </AlertProvider>
+
       // </Provider>
     );
   }
