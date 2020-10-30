@@ -19,7 +19,7 @@ import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
 import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
 import Pag from "./components/Pag";
-import bookingForm from "./components/bookingForm";
+import bookingForm, { bookingModal } from "./components/bookingForm";
 import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
@@ -58,15 +58,15 @@ export default class App extends Component {
           <div className="App">
             {/* <Headers /> */}
             {/* <Alerts />  */}
-            <Banner />
+            {/* <Banner />
             <SPlist />
-            <Landing />
+            <Landing /> */}
             <Switch>
               {/* <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/pag" exact component={PaginationPage} />
               <Route path="/mypag" exact component={Pag} /> */}
-                <Route path="/bookingForm" exact component={bookingForm} /> 
+                <Route path="/bookingModal" exact component={bookingModal} /> 
                 <Route path="/Request" exact component={Request} />
               <Route
                 // path="/signupserviceprov"

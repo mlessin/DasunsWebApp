@@ -29,7 +29,7 @@ background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
 }
 
 .main {
-    background-color: #35d187;
+    /* background-color: #35d187; */
     padding: 50px;
     height: 9999px;
 }
@@ -52,7 +52,7 @@ background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
 }
 
 .form-control {
-    border-color: #35d187;
+    /* border-color:; */
     border-width: 2px;
     border-radius: 10px;
 }
