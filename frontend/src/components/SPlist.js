@@ -42,8 +42,10 @@ export class SPlist extends Component {
           expand="md"
         >
           <Navbar.Brand href="#home">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
-          </Navbar.Brand>
+          <a href="#">
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
+          </a>
+        </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">

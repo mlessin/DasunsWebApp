@@ -22,6 +22,7 @@ export default class Banner extends Component {
     };
   }
   render() {
+    const { history } = this.props;
     let addModalClose = () => this.setState({ addModalShow: false });
     let addModalCloseSign = () => this.setState({ addModalShowSign: false });
 
@@ -51,7 +52,7 @@ export default class Banner extends Component {
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home">
           <a href="#">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

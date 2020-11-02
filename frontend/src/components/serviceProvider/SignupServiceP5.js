@@ -39,13 +39,14 @@ export default class SignupServiceP5 extends Component {
                         </label>
                         <select value="{}" className="form-control" required>
                           <option defaultValue>Select Service Category</option>
-                          <option value="1">Test</option>
-                          <option value="2">Test 2</option>
+                          <option value="1">Deaf Physical</option>
+                          <option value="2">Deaf</option>
+                          <option value="3">Hard Of Hearing</option>
+                          <option value="4">Physical Support</option>
                         </select>
                       </div>
                     </div>
                   </div>
-
                   <div className="row">
                     <div className="col-12 ">
                       <div className="form-group">
@@ -55,8 +56,10 @@ export default class SignupServiceP5 extends Component {
                         </label>
                         <select value="{}" className="form-control" required>
                           <option defaultValue>Select Service </option>
-                          <option value="1">Test</option>
-                          <option value="2">Test 2</option>
+                          <option value="1">Personal Assistant</option>
+                          <option value="2">Interpreter</option>
+                          <option value="3">Captioner </option>
+                          <option value="4"> Personal Assistant</option>
                         </select>
                       </div>
                     </div>

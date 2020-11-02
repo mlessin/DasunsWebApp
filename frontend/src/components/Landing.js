@@ -75,9 +75,9 @@ export class Landing extends Component {
     return (
       <div>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
             <a href="#">
-              <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+              <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
             </a>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
