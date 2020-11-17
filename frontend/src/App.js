@@ -21,6 +21,7 @@ import SignupServiceProvider from "./components/serviceProvider/SignupServicePro
 import Pag from "./components/Pag";
 import bookingForm, { bookingModal } from "./components/bookingForm";
 import Request from "./components/Request";
+import rating from "./components/rating";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
@@ -68,6 +69,8 @@ export default class App extends Component {
               <Route path="/mypag" exact component={Pag} /> */}
                 <Route path="/bookingModal" exact component={bookingModal} /> 
                 <Route path="/Request" exact component={Request} />
+                <Route path="/rating" exact component={rating} />
+
               <Route
                 // path="/signupserviceprov"
                 exact

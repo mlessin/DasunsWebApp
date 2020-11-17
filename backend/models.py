@@ -1,6 +1,21 @@
 from django.db import models
 
 # Create your models here.
+class Signup(models.Model):
+    fullname = models.CharField(max_length=20)
+    phone = models.AutoField(max_length=10)
+    email = models.EmailField(max_length=70)
+    password = models.CharField(max_length=15)
+    Agree = models.TextField()
+
+
+class Login(models.Model):
+    phone = models.AutoField(max_length=15)
+    password = models.CharField(max_length=20)
+
+
+    
+
 class Book(models.Model):
     meetplace = models.CharField(max_length=20)
     meetdate = models.DateTimeField(auto_now_add=true)

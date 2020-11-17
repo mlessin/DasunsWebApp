@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Logo from "../images/Logo.png";
+// import Logo from "../images/Logo.png";
 import Modal from "react-bootstrap/Modal";
 //import "./style.css";
 //import { Link } from "react-router-dom";
 import {
-    Navbar,
-    Nav,
-    NavDropdown,
-    Badge,
-    Image,
-    Figure,
-    Container,
+
     Row,
     Col,
-    Card,
+    
     Button,
     Form,
     
@@ -100,7 +94,7 @@ export class bookingModal extends Component {
                                 <Col sm={{ span: 10, offset: 4 }}>
                                     <Button type="submit"
                                         // style={button}
-                                        onClick={() => this.setState({ addModalShow: true })}
+                                        // onClick={() => this.setState({ addModalShow: true })}
                                     >
                                         BOOK NOW
                                         <link to ="Request"></link>
