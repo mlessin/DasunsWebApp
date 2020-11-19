@@ -56,11 +56,11 @@ export default class App extends Component {
       <Router>
         <Fragment>
           <div className="App">
-            {/* <Headers /> */}
-            {/* <Alerts />  */}
-            {/* <Banner />
-            <SPlist />
-            <Landing /> */}
+             {/* <Headers />  */}
+            {/* <Alerts />   */}
+             {/* <Banner /> */}
+            <SPlist /> 
+             <Landing /> 
             <Switch>
               {/* <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />

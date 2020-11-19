@@ -5,16 +5,10 @@ import Modal from "react-bootstrap/Modal";
 //import "./style.css";
 //import { Link } from "react-router-dom";
 import {
-    Navbar,
-    Nav,
-    NavDropdown,
-    Badge,
-    Image,
-    Figure,
-    Container,
+   
     Row,
     Col,
-    Card,
+   
     Button,
     Form,
     
@@ -33,8 +27,8 @@ export class bookingModal extends Component {
 
     render() {
         return (
-            <Modal>
-                <Modal.Body>
+            // <Modal>
+            //     <Modal.Body>
             <div className="main">
                 <div className="card" id="booking-card">
                     <div className="card-body">
@@ -113,8 +107,8 @@ export class bookingModal extends Component {
                     </div>
                 </div>
             </div>
-            </Modal.Body>
-            </Modal>
+            // </Modal.Body>
+            // </Modal>
         );
 
 

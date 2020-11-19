@@ -2,8 +2,6 @@
 # yarn lockfile v1
 
 
-<<<<<<< HEAD
-=======
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
@@ -2361,4 +2359,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
->>>>>>> 7d13e3a44557b3c35fa85c0af4a66505fc16efcd

@@ -31,7 +31,7 @@ class Eligibility(models.Model):
 
 class Expertise(models.Model):
     qualifications = models.TextField(max_length=20)
-    portifolio = models.TextField(max_length=20)
+    portifolio = models.TextField(max_length=20,blank=True)
 
 
 
