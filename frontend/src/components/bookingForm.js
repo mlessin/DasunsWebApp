@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment, bind } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Logo from "../images/Logo.png";
 import Modal from "react-bootstrap/Modal";
 //import "./style.css";
-//import { Link } from "react-router-dom";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
+import {getBook,deleteBook} from "../actions/book";
 import {
    
     Row,
@@ -13,9 +15,20 @@ import {
     Form,
     
 } from "react-bootstrap";
+import book from "../reducers/book";
 
 
 export class bookingModal extends Component {
+    // static PropTypes =  {
+    //     book: PropTypes.array.isRequired,
+    // getBook:PropTypes.func.isRequired,
+    // deleteBook:PropTypes.func.isRequired,
+
+    // };
+    // componentDidMount() {
+    //     this.props.getBook();
+    // }
+
     state = {
         name: "",
         MeetingPlace: "",
@@ -23,7 +36,15 @@ export class bookingModal extends Component {
 
     };
 
+    onChange = e => this.setState({[e.target.name]:
+        e.target.value});
 
+
+onSubmit = e => {
+    e.preventDefault();
+    console.log("submit");
+
+}
 
     render() {
         return (
@@ -94,7 +115,7 @@ export class bookingModal extends Component {
                                 <Col sm={{ span: 10, offset: 4 }}>
                                     <Button type="submit"
                                         // style={button}
-                                        onClick={() => this.setState({ addModalShow: true })}
+                                        // onClick={this.props.deleteBook.bind(this,book.phoneNo)}
                                     >
                                         BOOK NOW
                                         <link to ="Request"></link>
@@ -102,6 +123,9 @@ export class bookingModal extends Component {
 
                                 </Col>
                             </Form.Group>
+                            {/* {this.props.book.map(book => (
+                                {book}
+                            ))} */}
                         </Form>
 
                     </div>
@@ -114,4 +138,8 @@ export class bookingModal extends Component {
 
     }
 }
-export default bookingModal; 
+
+const mapStateToProps = state => ({
+    book: state.book.book
+});
+export default connect(mapStateToProps, {getBook,deleteBook}) (bookingModal); 

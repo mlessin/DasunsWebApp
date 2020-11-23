@@ -24,8 +24,8 @@ import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
-// import { Provider } from "react-redux";
-// import store from "./store";
+import { Provider } from "react-redux";
+import store from "./store";
 // import { loadUser } from "./actions/auth";
 
 // const alertOptions = {
@@ -50,36 +50,36 @@ export default class App extends Component {
     //   }
     // };
     return (
-      // <Provider store={store}>
+      <Provider store={store}>
 
-      // <AlertProvider template={AlertTemplate} {...alertOptions}>
-      <Router>
-        <Fragment>
-          <div className="App">
-             {/* <Headers />  */}
-            {/* <Alerts />   */}
-             {/* <Banner /> */}
-            <SPlist /> 
-             <Landing /> 
-            <Switch>
-              {/* <Route path="/signup" exact component={SignupModal} />
+        {/* <AlertProvider template={AlertTemplate} {...alertOptions}> */}
+        <Router>
+          <Fragment>
+            <div className="App">
+              {/* <Headers />  */}
+              {/* <Alerts />   */}
+              {/* <Banner /> */}
+              <SPlist />
+              <Landing />
+              <Switch>
+                {/* <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
               <Route path="/pag" exact component={PaginationPage} />
               <Route path="/mypag" exact component={Pag} /> */}
-                <Route path="/bookingModal" exact component={bookingModal} /> 
+                <Route path="/bookingModal" exact component={bookingModal} />
                 <Route path="/Request" exact component={Request} />
-              <Route
-                // path="/signupserviceprov"
-                exact
+                <Route
+                  // path="/signupserviceprov"
+                  exact
                 // component={SignupServiceProvider}
-              />
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
-      // </AlertProvider>
+                />
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+        {/* </AlertProvider> */}
 
-      // </Provider>
+      </Provider>
     );
   }
 }

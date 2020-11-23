@@ -5,3 +5,4 @@ router= routers.DefaultRouter()
 router.register('api/Book', BookViewSet, 'book')
 
 urlpattern = router.urls
+
