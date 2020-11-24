@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'dasuns.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "dasuns",
+        'USER': "postgres",
+        'PASSWORD':"Omugezi",
+        'HOST': "localhost",
+        'PORT': "5432",
     }
 }
 
