@@ -132,6 +132,9 @@ import { Navbar, Nav, Row, Col, Button, Form } from "react-bootstrap";
 // import Banner from "./Banner";
 import { Link } from "react-router-dom";
 
+import { withRouter } from "react-router-dom";
+
+
 export class bookingForm extends Component {
   // state = {
   //   PaymentType: "",
@@ -158,8 +161,8 @@ export class bookingForm extends Component {
           collapseOnSelect
           expand="md"
         >
-          <Navbar.Brand href="#home">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+          <Navbar.Brand href="#">
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -265,4 +268,4 @@ export class bookingForm extends Component {
     );
   }
 }
-export default bookingForm;
+export default withRouter(bookingForm);

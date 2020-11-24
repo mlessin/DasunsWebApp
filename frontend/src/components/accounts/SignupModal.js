@@ -56,7 +56,7 @@ export class SignupModal extends Component {
                         type="text"
                         className="form-control"
                         placeholder="Phone Number"
-                        name="phonenumber"
+                        name="username"
                         required
                       />
                     </div>

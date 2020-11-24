@@ -17,11 +17,15 @@ import SPlist from "./components/SPlist";
 import SignupModal from "./components/accounts/SignupModal";
 import LoginModal from "./components/accounts/LoginModal";
 import PaginationPage from "./components/PaginationPage";
-import SignupServiceProvider from "./components/serviceProvider/SignupServiceProvider";
-import SignupServiceP2 from "./components/serviceProvider/SignupServiceP2";
-import SignupServiceP3 from "./components/serviceProvider/SignupServiceP3";
-import SignupServiceP4 from "./components/serviceProvider/SignupServiceP4";
-import SignupServiceP5 from "./components/serviceProvider/SignupServiceP5";
+import {SignupServiceProvider} from "./components/serviceProvider/SignupServiceProvider";
+import {SignupServiceP2} from "./components/serviceProvider/SignupServiceP2";
+import {SignupServiceP3} from "./components/serviceProvider/SignupServiceP3";
+import {SignupServiceP4} from "./components/serviceProvider/SignupServiceP4";
+import {SignupServiceP5} from "./components/serviceProvider/SignupServiceP5";
+import {SignupServiceP} from "./components/serviceProvider/SignupServiceP";
+
+// import StepperDemo from "./components/serviceProvider/Stepper";
+// import StepperExample from "./components/serviceProvider/StepperExample";
 // import Pag from "./components/Pag";
 import bookingForm from "./components/bookingForm";
 import Request from "./components/Request";
@@ -75,6 +79,11 @@ export default class App extends Component {
               <Route path="/bookingForm" exact component={bookingForm} /> 
               <Route path="/Request" exact component={Request} />
               <Route
+                path="/signupservicep"
+                exact
+                component={SignupServiceP}
+              />
+              <Route
                 path="/signupserviceprov"
                 exact
                 component={SignupServiceProvider}
@@ -99,6 +108,16 @@ export default class App extends Component {
                 exact
                 component={SignupServiceP5}
               />
+              {/* <Route
+                path="/stepper"
+                exact
+                component={StepperDemo}
+              /> */}
+              {/* <Route
+                path="/step"
+                exact
+                component={StepperExample}
+              /> */}
             </Switch>
           </div>
         </Fragment>

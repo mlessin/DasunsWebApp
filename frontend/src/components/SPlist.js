@@ -8,6 +8,9 @@ import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 import { Link } from "react-router-dom";
 
+import { withRouter } from "react-router-dom";
+
+
 import {
   Navbar,
   Nav,
@@ -41,7 +44,7 @@ export class SPlist extends Component {
           collapseOnSelect
           expand="md"
         >
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
           <a href="#">
             <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
           </a>
@@ -129,4 +132,4 @@ export class SPlist extends Component {
   }
 }
 
-export default SPlist;
+export default withRouter(SPlist);

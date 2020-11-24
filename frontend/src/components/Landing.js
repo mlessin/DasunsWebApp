@@ -19,6 +19,9 @@ import book from "../images/book.png";
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 
+import { withRouter } from "react-router-dom";
+
+
 // import Banner from "./Banner";
 
 import {
@@ -113,7 +116,7 @@ export class Landing extends Component {
               <Link to="/bookingForm" style={mystyle}>
                 Request Now
               </Link>
-              <Link to="/signupserviceprov" style={mystyle1}>
+              <Link to="/signupservicep" style={mystyle1}>
                 Provide a Service
               </Link>
             </Nav>
@@ -607,4 +610,4 @@ export class Landing extends Component {
   }
 }
 
-export default Landing;
+export default withRouter(Landing);

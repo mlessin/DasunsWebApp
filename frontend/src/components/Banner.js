@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 import SignupModal from "./accounts/SignupModal";
 import LoginModal from "./accounts/LoginModal";
 
-export default class Banner extends Component {
+import { withRouter } from "react-router-dom";
+
+export class Banner extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,7 +52,7 @@ export default class Banner extends Component {
 
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#">
           <a href="#">
             <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
           </a>
@@ -88,7 +90,7 @@ export default class Banner extends Component {
             <Link to="/bookingForm" style={mystyle}>
               Request Now
             </Link>
-            <Link to="/signupserviceprov" style={mystyle1}>
+            <Link to="/signupservicep" style={mystyle1}>
               Provide a Service
             </Link>
           </Nav>
@@ -97,3 +99,5 @@ export default class Banner extends Component {
     );
   }
 }
+
+export default withRouter(Banner)
