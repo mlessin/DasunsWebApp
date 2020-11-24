@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 import SignupModal from "./accounts/SignupModal";
 import LoginModal from "./accounts/LoginModal";
 
-export default class Banner extends Component {
+import { withRouter } from "react-router-dom";
+
+export class Banner extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +24,7 @@ export default class Banner extends Component {
     };
   }
   render() {
+    const { history } = this.props;
     let addModalClose = () => this.setState({ addModalShow: false });
     let addModalCloseSign = () => this.setState({ addModalShowSign: false });
 
@@ -36,6 +39,7 @@ export default class Banner extends Component {
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
+      
       borderRadius: "50px",
       fontFamily: "Montserrat",
       textDecoration: "none"
@@ -48,17 +52,17 @@ export default class Banner extends Component {
 
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#">
           <a href="#">
-            <img src={Logo} alt={"logo"} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-right" style={{ marginLeft: "10em" }}>
-            <Nav.Link href="#">Services</Nav.Link>
-            <Nav.Link href="#">Who We Are</Nav.Link>
-            <Nav.Link href="#">How It Works</Nav.Link>
+            <Nav.Link href="# ">Services</Nav.Link>
+            <Nav.Link href="# ">Who We Are</Nav.Link>
+            <Nav.Link href="# ">How It Works</Nav.Link>
             <ButtonToolbar style={{ border: "none" }}>
               <button
                 style={button}
@@ -83,10 +87,10 @@ export default class Banner extends Component {
                 onHide={addModalCloseSign}
               />
             </ButtonToolbar>
-            <Link to="/#" style={mystyle}>
+            <Link to="/bookingForm" style={mystyle}>
               Request Now
             </Link>
-            <Link to="/signupserviceprov" style={mystyle1}>
+            <Link to="/signupservicep" style={mystyle1}>
               Provide a Service
             </Link>
           </Nav>
@@ -95,3 +99,5 @@ export default class Banner extends Component {
     );
   }
 }
+
+export default withRouter(Banner)
