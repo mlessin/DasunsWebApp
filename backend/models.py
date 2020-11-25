@@ -1,69 +1,96 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Book(models.Model):
-    meetplace = models.CharField(max_length=20)
-    meetdate = models.DateTimeField(auto_now_add=true)
-    phone = models.AutoField(max_length=10)
-    starttime = models.DateTimeField(auto_now_add=true)
-    endtime = models.DateTimeField(auto_now_add=true)
+    meetplace = models.CharField(max_length=100)
+    meetdate = models.CharField(max_length=50)
+    phone = models.IntegerField()
+    starttime = models.CharField(max_length=50)
+    endtime = models.CharField(max_length=50)
 
 
-
-class PersonalInfo(models.Model):
-    fullname = models.CharField(max_length=25)
-    phone = models.AutoField(max_length=10)
-    email = models.EmailField(max_length=75)
+class Serviceprovider(models.Model):
+    fullname = models.CharField(max_length=50)
+    owner = models.ForeignKey(User, related_name='backend', on_delete=models.CASCADE, null=True)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
-    nin = models.AutoField(max_length=20)
-    dob = models.DateField(max_length=10)
-    gender = models.CharField(max_length=15)
-    physicaladdress = models.CharField(max_length=20)
+    nin = models.CharField(max_length=50)
+    dob =  models.CharField(max_length=50)
+    gender =  models.CharField(max_length=50)
+    physicaladdress =  models.CharField(max_length=100)
+    yearexp = models.CharField(max_length=50)
+    notmidman = models.CharField(max_length=50)
+    skillset = models.CharField(max_length=50)
+    access = models.CharField(max_length=50)
+    qualifications = models.CharField(max_length=50)
+    portifolio = models.CharField(max_length=100, blank=True)
+    description = models.CharField(max_length=100)
+    ref1name = models.CharField(max_length=50)
+    ref1email = models.EmailField(max_length=50, unique=True)
+    ref1description = models.CharField(max_length=100)
+    ref1phone = models.IntegerField()
+    ref2name = models.CharField(max_length=50)
+    ref2email = models.EmailField(max_length=50, unique=True)
+    ref2description = models.CharField(max_length=100)
+    ref2phone = models.IntegerField()
+    category = models.CharField(max_length=50)
+    service = models.CharField(max_length=50)
+    availability = models.CharField(max_length=50)
+    starttime = models.CharField(max_length=50)
+    endtime = models.CharField(max_length=50)
+    pricehour = models.CharField(max_length=50, blank=True)
+    pricevisit = models.CharField(max_length=50, blank=True)
+    agree = models.CharField(max_length=50)
 
 
-class Eligibility(models.Model):
-    yearexp = models.TextField(max_length=50)
-    notmidman = models.CharField(max_length=40)
-    skillset = models.TextField(max_length=50)
-    access = models.CharField(max_length=25)    
+# class PersonalInfo(models.Model):
+#     fullname = models.CharField(max_length=50)
+#     phone = models.IntegerField()
+#     email = models.EmailField(max_length=50, unique=True)
+#     password = models.CharField(max_length=50)
+#     nin = models.CharField(max_length=50)
+#     dob =  models.CharField(max_length=50)
+#     gender =  models.CharField(max_length=50)
+#     physicaladdress =  models.CharField(max_length=100)
 
 
-
-class Expertise(models.Model):
-    qualifications = models.TextField(max_length=20)
-    portifolio = models.TextField(max_length=20,blank=True)
-
-
-
-class Referees(models.Model):
-    description = models.CharField(max_length=80)
-    ref1name = models.CharField(max_length=15)
-    ref1email = models.EmailField(max_length=25)
-    ref1description = models.CharField(max_length=30)
-    ref1phone = models.AutoField(max_length=10)
-    ref2name = models.CharField(max_length=15)
-    ref2email = models.EmailField(max_length=25)
-    ref2description = models.CharField(max_length=30)
-    ref2phone = models.AutoField(max_length=10)
-
-
-
-class Service(models.Model):
-    category = models.CharField(max_length=30)
-    Availability = DateField(auto_now_add=true)
-    starttime = models.DateTimeField(auto_now_add=true)
-    endtime = models.DateTimeField(auto_now_add=true)
-    pricehour = models.AutoField(max_length=6)
-    Agree = models.TextField()
-
-
-
-
-
-
-
+# class Eligibility(models.Model):
+#     yearexp = models.CharField(max_length=50)
+#     notmidman = models.CharField(max_length=50)
+#     skillset = models.CharField(max_length=50)
+#     access = models.CharField(max_length=50) 
 
 
 
+# class Expertise(models.Model):
+#     qualifications = models.CharField(max_length=50)
+#     portifolio = models.CharField(max_length=100, blank=True)
+
+
+
+# class Referees(models.Model):
+#     description = models.CharField(max_length=100)
+#     ref1name = models.CharField(max_length=50)
+#     ref1email = models.EmailField(max_length=50, unique=True)
+#     ref1description = models.CharField(max_length=100)
+#     ref1phone = models.IntegerField()
+#     ref2name = models.CharField(max_length=50)
+#     ref2email = models.EmailField(max_length=50, unique=True)
+#     ref2description = models.CharField(max_length=100)
+#     ref2phone = models.IntegerField()
+
+
+
+# class Service(models.Model):
+#     category = models.CharField(max_length=50)
+#     service = models.CharField(max_length=50)
+#     availability = models.CharField(max_length=50)
+#     starttime = models.CharField(max_length=50)
+#     endtime = models.CharField(max_length=50)
+#     pricehour = models.CharField(max_length=50, blank=True)
+#     pricevisit = models.CharField(max_length=50, blank=True)
+#     agree = models.CharField(max_length=50)
 
 

@@ -7,25 +7,188 @@ background: #fff; */
 background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
 }
 .form-style {
-    border-radius: 5px;
-    margin: 10px;
+  border-radius: 5px;
+  margin: 10px;
 }
+/* my card */
+/* .card {
+  width: 100%;
+  align-items: center;
+  margin: auto;
+} */
 
+/* Kawooya's card */
 .card {
-    width: 40%;
-    height: 40rem;
-    align-items: center;
-    margin: auto;
+  width: 33%;
+  height: 30rem;
+  align-items: center;
+  margin: auto;
 }
-#signup-card {
-    height: 43rem;
-    padding-left: 45px;
-    padding-right: 45px;
+/* Roy's card */
+/* .card {
+  width: 40%;
+  height: 40rem;
+  align-items: center;
+  margin: auto;
+} */
+ 
+#signup-card, #login-card{
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
 }
-
+/* #signup-card {
+  height: 43rem;
+  padding-left: 45px;
+  padding-right: 45px;
+} */
 
 .form-group {
-    margin-top: 35px;
+  margin-top: 20px;
+}
+
+.main-service {
+  background-color: #edf0f5;
+  padding-bottom: 1em;
+}
+
+#signup-service-card {
+  width: 60%;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100%;
+}
+
+.btn {
+  background-color: #35d187;
+  border: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.forgot-password {
+  font-size: x-small;
+}
+
+.form-control {
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+#cardBody {
+  width: 80%;
+}
+
+.heading3 {
+  color: #35d187;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.buttonbar {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+    
+
+li,
+a {
+  display: inline;
+  padding: 8px;
+  color: #000;
+  font-family: "Montserrat";
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+.list-inline {
+  margin-top: 40px;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pag {
+  border-radius: 50%;
+}
+.vendor_registration_tabs_main ul li.active a {
+  color: #006734;
+}
+
+.vendor_registration_tabs_main ul li a {
+  text-decoration: none;
+  font-family: "Nunito Sans";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.vendor_registration_tabs_main ul li {
+  width: 14%;
+  position: relative;
+}
+
+span,
+h5,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+span {
+  border: 1px solid #c8c9cc;
+  background-color: #c8c9cc;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+h5 {
+  margin-top: 1px;
+}
+
+#btn-success,
+#btn-default {
+  border-radius: 12px;
+  padding: 6px;
+  margin-top: 1em;
+  width: 200px;
+}
+
+#btn-success {
+  background-color: #35d187;
+  color: #fff;
+}
+
+.checkboxes {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+.form-inputs {
+  margin-bottom: 10px;
 }
 
 .main {
@@ -33,10 +196,16 @@ background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
     padding: 50px;
     height: 9999px;
 }
-.main-signup {
+/* .main-signup {
     background-color: #35d187;
     padding: 50px;
     height: 100%;
+} */
+.main-card-login{
+  height: 22em;
+}
+#login-card{
+  height: 22em;
 }
 
 .btn {
@@ -121,6 +290,10 @@ a {
     background-color: transparent;
 }
 
+.password-reset{
+  color:#000;
+}
+
 a:hover {
     color: #007bff;
     text-decoration: none;
@@ -147,20 +320,20 @@ footer {
 .availHead{
    text-align: center;
    padding-top: 30px;
-    font-weight: 400;
+   font-weight: 400;
 }
 
 .subavail{
-color: #35d187;
-text-align: center;
- font-weight: 400;}
+  color: #35d187;
+  text-align: center;
+  font-weight: 400;}
 
 .availlist{
-    padding: 200px;
+  padding: 200px;
 }
 
 #book{
-    padding-right: 350px;
+  padding-right: 350px;
 }
 
 .requests {
@@ -174,4 +347,18 @@ text-align: center;
     font-size: 40px;
     text-align: center;
     color: #fff;
+}
+#booking-card{
+  /* padding-left: 50px; */
+  /* padding-right: 50px; */
+  width: 60%;
+  height: 46em;
+}
+/* #card-body{
+   padding-left: 50px;
+  padding-right: 50px;
+} */
+
+.pagn{
+  color:#000;
 }
