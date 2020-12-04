@@ -12,7 +12,6 @@ import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
 import SignupModal from "./accounts/SignupModal";
 import LoginModal from "./accounts/LoginModal";
-
 import { withRouter } from "react-router-dom";
 
 export class Banner extends Component {

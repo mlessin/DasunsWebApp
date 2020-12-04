@@ -24,6 +24,8 @@ import {SignupServiceP4} from "./components/serviceProvider/SignupServiceP4";
 import {SignupServiceP5} from "./components/serviceProvider/SignupServiceP5";
 import {SignupServiceP} from "./components/serviceProvider/SignupServiceP";
 
+import Home from "./components/accounts/Home";
+
 // import StepperDemo from "./components/serviceProvider/Stepper";
 // import StepperExample from "./components/serviceProvider/StepperExample";
 // import Pag from "./components/Pag";
@@ -32,8 +34,8 @@ import Request from "./components/Request";
 // import PrivateRoute from "./components/common/PrivateRoute";
 // import Headers from "./components/layout/Headers";
 // import Alerts from "./components/layout/Alerts";
-// import { Provider } from "react-redux";
-// import store from "./store";
+import { Provider } from "react-redux";
+import store from "./store";
 // import { loadUser } from "./actions/auth";
 
 // const alertOptions = {
@@ -58,9 +60,9 @@ export default class App extends Component {
     //   }
     // };
     return (
-      // <Provider store={store}>
+      <Provider store={store}>
 
-      // <AlertProvider template={AlertTemplate} {...alertOptions}>
+      {/* <AlertProvider template={AlertTemplate} {...alertOptions}> */}
       <Router>
         <Fragment>
           <div className="App">
@@ -70,6 +72,7 @@ export default class App extends Component {
             {/* <SPlist /> */}
             {/* <Landing /> */}
             <Switch>
+              <Route path="/home" exact component={Home} />
               <Route path="/" exact component={Landing} />
               <Route path="/signup" exact component={SignupModal} />
               <Route path="/login" exact component={LoginModal} />
@@ -78,11 +81,11 @@ export default class App extends Component {
               {/* <Route path="/mypag" exact component={Pag} /> */}
               <Route path="/bookingForm" exact component={bookingForm} /> 
               <Route path="/Request" exact component={Request} />
-              <Route
+              {/* <Route
                 path="/signupservicep"
                 exact
                 component={SignupServiceP}
-              />
+              /> */}
               <Route
                 path="/signupserviceprov"
                 exact
@@ -122,9 +125,9 @@ export default class App extends Component {
           </div>
         </Fragment>
       </Router>
-      // </AlertProvider>
+      {/* </AlertProvider> */}
 
-      // </Provider>
+      </Provider>
     );
   }
 }
