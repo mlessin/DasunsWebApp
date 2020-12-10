@@ -3,130 +3,76 @@ import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-  // Redirect
+  Route,
+  Redirect,
 } from "react-router-dom";
-// import { Provider as AlertProvider } from "react-alert";
-// import AlertTemplate from "react-alert-template-basic";
+import { Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
-// import Banner from "./components/Banner";
-
 import Landing from "./components/Landing";
 import SPlist from "./components/SPlist";
-
-import SignupModal from "./components/accounts/SignupModal";
-import LoginModal from "./components/accounts/LoginModal";
-import PaginationPage from "./components/PaginationPage";
-import {SignupServiceProvider} from "./components/serviceProvider/SignupServiceProvider";
-import {SignupServiceP2} from "./components/serviceProvider/SignupServiceP2";
-import {SignupServiceP3} from "./components/serviceProvider/SignupServiceP3";
-import {SignupServiceP4} from "./components/serviceProvider/SignupServiceP4";
-import {SignupServiceP5} from "./components/serviceProvider/SignupServiceP5";
-import {SignupServiceP} from "./components/serviceProvider/SignupServiceP";
-
-import Home from "./components/accounts/Home";
-
-// import StepperDemo from "./components/serviceProvider/Stepper";
-// import StepperExample from "./components/serviceProvider/StepperExample";
-// import Pag from "./components/Pag";
-import bookingForm from "./components/bookingForm";
+import { SignupServiceP } from "./components/serviceProvider/SignupServiceP";
+import PrivateRoute from "./components/common/PrivateRoute";
+import { ParentModal } from "./components/accounts/ParentModal";
+import BookingForm from "./components/BookingForm";
 import Request from "./components/Request";
-// import PrivateRoute from "./components/common/PrivateRoute";
-// import Headers from "./components/layout/Headers";
-// import Alerts from "./components/layout/Alerts";
+import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
-// import { loadUser } from "./actions/auth";
+import { loadUser } from "./actions/auth";
 
-// const alertOptions = {
-//   timeout: 3000,
-//   position: "top center"
-// };
+// import Banner from "./components/Banner";
+// import Headers from "./components/layout/Headers";
+
+const alertOptions = {
+  timeout: 3000,
+  position: "top right",
+};
 
 export default class App extends Component {
   state = {
-    redirect: true
+    redirect: true,
   };
 
-  // componentDidMount() {
-  //   store.dispatch(loadUser());
-  // }
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
 
   render() {
-    // const notfound = () => {
-    //   const { redirect } = this.state;
-    //   if (redirect) {
-    //     return <Redirect to="/newproject" />;
-    //   }
-    // };
+    const notfound = () => {
+      const { redirect } = this.state;
+      if (redirect) {
+        return <Redirect to="/" />;
+      }
+    };
     return (
       <Provider store={store}>
-
-      {/* <AlertProvider template={AlertTemplate} {...alertOptions}> */}
-      <Router>
-        <Fragment>
-          <div className="App">
-            {/* <Headers /> */}
-            {/* <Alerts />  */}
-            {/* <Banner /> */}
-            {/* <SPlist /> */}
-            {/* <Landing /> */}
-            <Switch>
-              <Route path="/home" exact component={Home} />
-              <Route path="/" exact component={Landing} />
-              <Route path="/signup" exact component={SignupModal} />
-              <Route path="/login" exact component={LoginModal} />
-              <Route path="/splist" exact component={SPlist} />
-              <Route path="/pag" exact component={PaginationPage} />
-              {/* <Route path="/mypag" exact component={Pag} /> */}
-              <Route path="/bookingForm" exact component={bookingForm} /> 
-              <Route path="/Request" exact component={Request} />
-              {/* <Route
-                path="/signupservicep"
-                exact
-                component={SignupServiceP}
-              /> */}
-              <Route
-                path="/signupserviceprov"
-                exact
-                component={SignupServiceProvider}
-              />
-              <Route
-                path="/signupserviceprov2"
-                exact
-                component={SignupServiceP2}
-              />
-              <Route
-                path="/signupserviceprov3"
-                exact
-                component={SignupServiceP3}
-              />
-              <Route
-                path="/signupserviceprov4"
-                exact
-                component={SignupServiceP4}
-              />
-                <Route
-                path="/signupserviceprov5"
-                exact
-                component={SignupServiceP5}
-              />
-              {/* <Route
-                path="/stepper"
-                exact
-                component={StepperDemo}
-              /> */}
-              {/* <Route
-                path="/step"
-                exact
-                component={StepperExample}
-              /> */}
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
-      {/* </AlertProvider> */}
-
+        <AlertProvider template={AlertTemplate} {...alertOptions}>
+          <Router>
+            <Fragment>
+              <div className="App">
+                {/* <Headers /> */}
+                <Alerts />
+                {/* <Banner /> */}
+                {/* <SPlist /> */}
+                {/* <Landing /> */}
+                <Switch>
+                  <Route path="/parent" exact component={ParentModal} />
+                  <Route path="/" exact component={Landing} />
+                  <PrivateRoute path="/splist" exact component={SPlist} />
+                  <PrivateRoute path="/bookingForm" exact component={BookingForm} />
+                  <PrivateRoute path="/request" exact component={Request} />
+                  <PrivateRoute
+                    path="/signupservicep"
+                    exact
+                    component={SignupServiceP}
+                  />
+                  <Route component={notfound} />
+                </Switch>
+              </div>
+            </Fragment>
+          </Router>
+        </AlertProvider>
       </Provider>
     );
   }

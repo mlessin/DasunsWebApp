@@ -13,7 +13,7 @@ import {
 export const addBooking = booking => (dispatch, getState) => {
     axios
       // .post("/api/bookings/", booking, tokenConfig(getState))
-      .post("/api/bookings/", booking, (getState))
+      .post("/backend/api/bookings/", booking, (getState))
       .then(res => {
         // dispatch(createMessage({ addBooking: "Booking made!" }));
         dispatch({
@@ -31,7 +31,7 @@ export const addBooking = booking => (dispatch, getState) => {
 export const getBookings = () => (dispatch, getState) => {
   axios
     // .get("/api/bookings/", tokenConfig(getState))
-    .get("/api/bookings/")
+    .get("/backend/api/bookings/")
     .then(res => {
       dispatch({
         type: GET_BOOKINGS,
@@ -48,7 +48,7 @@ export const getBookings = () => (dispatch, getState) => {
 export const oneBooking = id => (dispatch, getState) => {
     axios
       // .get(`/api/bookings/${id}/`, tokenConfig(getState))
-      .get(`/api/bookings/${id}/`)
+      .get(`/backend/api/bookings/${id}/`)
       .then(res => {
         console.log(res.data);
         dispatch({
@@ -66,7 +66,7 @@ export const oneBooking = id => (dispatch, getState) => {
 export const updateBooking = (id, booking) => (dispatch, getState) => {
     axios
       // .put(`/api/bookings/${id}/`, booking, tokenConfig(getState))
-      .put(`/api/bookings/${id}/`, booking)
+      .put(`/backend/api/bookings/${id}/`, booking)
       .then(res => {
         // dispatch(createMessage({ updateBooking: "Booking Modified" }));
         dispatch({
@@ -85,7 +85,7 @@ export const updateBooking = (id, booking) => (dispatch, getState) => {
 export const deleteBooking = id => (dispatch, getState) => {
   axios
     // .delete(`/api/bookings/${id}/`, tokenConfig(getState))
-    .delete(`/api/bookings/${id}/`)
+    .delete(`/backend/api/bookings/${id}/`)
     .then(res => {
       // dispatch(createMessage({ deleteBooking: "Booking Deleted" }));
       dispatch({

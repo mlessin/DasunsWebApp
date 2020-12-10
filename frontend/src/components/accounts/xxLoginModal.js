@@ -55,7 +55,7 @@ export class LoginModal extends Component {
                       Submit
                     </button>
                     <p className="forgot-password text-center">
-                      Forgot Password?{" "}
+                      Forgot Password?
                       <a className="password-reset" href="#">
                         Reset Password
                       </a>

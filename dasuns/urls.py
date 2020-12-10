@@ -1,57 +1,57 @@
+# Swagger docs settings
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="DASUNS WEB APP",
+        default_version='v1',
+        description="Application to connect service providers to service seekers",
+        terms_of_service="https://www.ourapp.com/policies/terms/",
+        contact=openapi.Contact(email="contact@expenses.local"),
+        license=openapi.License(name="Test License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html')),
-    path('', include('backend.urls')),
-    path('', include('accounts.urls')),
-    path('admin/', admin.site.urls),
-    
-    
+    path('index/', TemplateView.as_view(template_name='index.html')),
+    path('backend/', include('backend.urls')),
+    path('accounts/', include('accounts.urls')),
+
+    # path('admin/', admin.site.urls),
+    # path('auth/', include('authentication.urls')),
+    # path('social_auth/', include(('social_auth.urls', 'social_auth'),
+    #                              namespace="social_auth")),
+    path('', schema_view.with_ui('swagger',
+                                 cache_timeout=0), name='schema-swagger-ui'),
+
+    path('api/api.json/', schema_view.without_ui(cache_timeout=0),
+         name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc',
+                                       cache_timeout=0), name='schema-redoc'),
 ]
 
 
-
-# urlpatterns = [
-#     path("book/", book, name="book"),
-#     path("", index, name="index")
-# ]
-
-# Swagger docs settings/////////////////////
+# Without Swagger
 # from django.contrib import admin
 # from django.urls import path, include
-# from rest_framework import permissions
-# from drf_yasg.views import get_schema_view
-# from drf_yasg import openapi
-
-
-# schema_view = get_schema_view(
-#     openapi.Info(
-#         title="DASUNS WEB APP",
-#         default_version='v1',
-#         description="Test description",
-#         terms_of_service="https://www.ourapp.com/policies/terms/",
-#         contact=openapi.Contact(email="contact@expenses.local"),
-#         license=openapi.License(name="Test License"),
-#     ),
-#     public=True,
-#     permission_classes=(permissions.AllowAny,),
-# )
-
+# from django.views.generic import TemplateView
 
 # urlpatterns = [
+#     # path('', TemplateView.as_view(template_name='index.html')),
+#     path('', include('backend.urls')),
+#     path('', include('accounts.urls')),
 #     # path('admin/', admin.site.urls),
-#     # path('auth/', include('authentication.urls')),
-#     # path('social_auth/', include(('social_auth.urls', 'social_auth'),
-#     #                              namespace="social_auth")),
-#     path('api/', include('backend.urls')),
-#     path('', schema_view.with_ui('swagger',
-#                                  cache_timeout=0), name='schema-swagger-ui'),
-
-#     path('api/api.json/', schema_view.without_ui(cache_timeout=0),
-#          name='schema-swagger-ui'),
-#     path('redoc/', schema_view.with_ui('redoc',
-#                                        cache_timeout=0), name='schema-redoc'),
+    
+    
 # ]
+
 

@@ -20,14 +20,10 @@ import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 
 import { withRouter } from "react-router-dom";
-
-
-// import Banner from "./Banner";
-
 import {
   Navbar,
   Nav,
-  Badge,
+  // Badge,
   Image,
   Container,
   Row,
@@ -35,23 +31,28 @@ import {
   Card,
   ButtonToolbar,
 } from "react-bootstrap";
-
 import { Link } from "react-router-dom";
-import SignupModal from "./accounts/SignupModal";
-import LoginModal from "./accounts/LoginModal";
+// import SignupModal from "./accounts/xxSignupModal";
+// import LoginModal from "./accounts/xxLoginModal";
+import ParentModal from "./accounts/ParentModal"
+import BookingModal from "./BookingModal"
 
 export class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addModalShow: false,
-      addModalShowSign: false,
+      // addModalShow: false,
+      // addModalShowSign: false,
+      addModalShowParent: false,
+      addModalShowBooking: false,
     };
   }
   render() {
     const { history } = this.props;
-    let addModalClose = () => this.setState({ addModalShow: false });
-    let addModalCloseSign = () => this.setState({ addModalShowSign: false });
+    // let addModalClose = () => this.setState({ addModalShow: false });
+    // let addModalCloseSign = () => this.setState({ addModalShowSign: false });
+    let addModalCloseParent = () => this.setState({ addModalShowParent: false });
+    let addModalCloseBooking = () => this.setState({ addModalShowBooking: false });
 
     const mystyle = {
       color: "#fff",
@@ -60,14 +61,15 @@ export class Landing extends Component {
       fontFamily: "Montserrat",
       marginRight: "10px",
       textDecoration: "none",
+      padding: "8px",
     };
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
-
       borderRadius: "50px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
     };
     const button = {
       fontFamily: "Montserrat",
@@ -89,32 +91,32 @@ export class Landing extends Component {
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
               <Nav.Link href="#how-it-works">How It Works</Nav.Link>
-              <ButtonToolbar style={{ border: "none" }}>
+              <ButtonToolbar>
                 <button
                   style={button}
-                  onClick={() => this.setState({ addModalShow: true })}
+                  onClick={() => this.setState({ addModalShowParent: true })}
                 >
-                  Login
+                   SignIn / SignUp
                 </button>
-                <LoginModal
-                  show={this.state.addModalShow}
-                  onHide={addModalClose}
+                <ParentModal
+                  show={this.state.addModalShowParent}
+                  onHide={addModalCloseParent}
                 />
               </ButtonToolbar>
               <ButtonToolbar>
                 <button
-                  style={button}
-                  onClick={() => this.setState({ addModalShowSign: true })}
+                  style={mystyle}
+                  onClick={() => this.setState({ addModalShowBooking: true })}
                 >
-                  Signup
+                   Request Now
                 </button>
-                <SignupModal
-                  show={this.state.addModalShowSign}
-                  onHide={addModalCloseSign}
+                <BookingModal
+                  show={this.state.addModalShowBooking}
+                  onHide={addModalCloseBooking}
                 />
               </ButtonToolbar>
-              <Link to="/bookingForm" style={mystyle}>
-                Request Now
+              <Link to="/bookingForm" style={mystyle1}>
+              Request Now
               </Link>
               <Link to="/signupservicep" style={mystyle1}>
                 Provide a Service
@@ -125,13 +127,13 @@ export class Landing extends Component {
         <div className="body">
           <section
             id="header"
-            class="jumbotron text-right text-white img-responsive"
+            className="jumbotron text-right text-white img-responsive"
           >
-            <h1 class="display-6">
+            <h1 className="display-6">
               Access Professional support service <br />
               providers at your fingertips
             </h1>
-            <p class="lead">
+            <p className="lead">
               Leveraging technology to advance rights, choices and opportunities
               for
               <br />
@@ -244,7 +246,7 @@ export class Landing extends Component {
                               width="2em"
                               height="4em"
                               viewBox="0 0 16 16"
-                              class="bi bi-chevron-right"
+                              className="bi bi-chevron-right"
                               fill="currentColor"
                               xmlns="http://www.w3.org/2000/svg"
                               float="right"
@@ -291,7 +293,7 @@ export class Landing extends Component {
                               width="2em"
                               height="4em"
                               viewBox="0 0 16 16"
-                              class="bi bi-chevron-right"
+                              className="bi bi-chevron-right"
                               fill="currentColor"
                               xmlns="http://www.w3.org/2000/svg"
                               float="right"
@@ -306,7 +308,7 @@ export class Landing extends Component {
                       </Container>
                     </Card.Body>
                   </Card>
-                </Col>{" "}
+                </Col>
                 <Col md="auto">
                   <Card
                     style={{
@@ -338,7 +340,7 @@ export class Landing extends Component {
                               width="2em"
                               height="4em"
                               viewBox="0 0 16 16"
-                              class="bi bi-chevron-right"
+                              className="bi bi-chevron-right"
                               fill="currentColor"
                               xmlns="http://www.w3.org/2000/svg"
                               float="right"
@@ -389,7 +391,7 @@ export class Landing extends Component {
                               width="2em"
                               height="4em"
                               viewBox="0 0 16 16"
-                              class="bi bi-chevron-right"
+                              className="bi bi-chevron-right"
                               fill="currentColor"
                               xmlns="http://www.w3.org/2000/svg"
                               float="right"
@@ -448,7 +450,7 @@ export class Landing extends Component {
                             width="4em"
                             height="2em"
                             viewBox="0 0 16 16"
-                            class="bi bi-arrow-right"
+                            className="bi bi-arrow-right"
                             fill="#707070"
                             xmlns="http://www.w3.org/2000/svg"
                           >
@@ -485,7 +487,7 @@ export class Landing extends Component {
                             width="4em"
                             height="2em"
                             viewBox="0 0 16 16"
-                            class="bi bi-arrow-right"
+                            className="bi bi-arrow-right"
                             fill="#707070"
                             xmlns="http://www.w3.org/2000/svg"
                           >
@@ -521,7 +523,7 @@ export class Landing extends Component {
                             width="4em"
                             height="2em"
                             viewBox="0 0 16 16"
-                            class="bi bi-arrow-right"
+                            className="bi bi-arrow-right"
                             fill="#707070"
                             xmlns="http://www.w3.org/2000/svg"
                           >
@@ -564,30 +566,30 @@ export class Landing extends Component {
           </div>
           <div>
             <footer className="footer">
-              <div class="container pt-5 border-bottom">
-                <div class="row">
-                  <div class="col-md-3 col-sm-12 mb-3 ">
+              <div className="container pt-5 border-bottom">
+                <div className="row">
+                  <div className="col-md-3 col-sm-12 mb-3 ">
                     <img
                       src={LogoWhite}
                       alt={"logo"}
                       style={{ height: "50px" }}
                     />
                   </div>
-                  <div class="col-md-9 col-sm-12">
-                    <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
-                      <h6 class="mb-4 font-weight-bold">About Us</h6>
+                  <div className="col-md-9 col-sm-12">
+                    <div className="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                      <h6 className="mb-4 font-weight-bold">About Us</h6>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
-                      <h6 class="mb-2 font-weight-bold">FAQ</h6>
+                    <div className="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+                      <h6 className="mb-2 font-weight-bold">FAQ</h6>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                      <h6 class="mb-4 font-weight-bold">Contact Us</h6>
+                    <div className="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                      <h6 className="mb-4 font-weight-bold">Contact Us</h6>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
-                      <h6 class="mb-4 font-weight-bold">Follow Us On</h6>
+                    <div className="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                      <h6 className="mb-4 font-weight-bold">Follow Us On</h6>
                       <img
                         src={facebook}
                         alt={"facebook"}
