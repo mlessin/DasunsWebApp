@@ -94,3 +94,21 @@ class Serviceprovider(models.Model):
 #     agree = models.CharField(max_length=50)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

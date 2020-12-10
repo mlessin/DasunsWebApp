@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-from rest_framework import routers
-from .api import BookViewSet
-from .api import PersonalInfoViewset
-from .api import EligibilityViewset
-
-router= routers.DefaultRouter()
-router.register('api/Book', BookViewSet, 'book')
-
-urlpattern = router.urls
-
-
- 
-
-
-
-
-
-
-
-=======
 """dasuns URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -87,5 +66,4 @@ urlpatterns = [
 #     path('redoc/', schema_view.with_ui('redoc',
 #                                        cache_timeout=0), name='schema-redoc'),
 # ]
->>>>>>> 49947499720ab8bc03fed142598f6e0246ac264a
 
