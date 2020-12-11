@@ -147,7 +147,7 @@ export const SignupServiceP5 = (
                     type="time"
                     placeholder="Start Time"
                     name="starttime"
-                    className="form-control genral_input time"
+                    className="form-control"
                     // className="left-inputs"
                     // required
                   />
@@ -162,7 +162,7 @@ export const SignupServiceP5 = (
                     type="time"
                     placeholder="End Time"
                     name="endtime"
-                    className="form-control genral_input time"
+                    className="form-control"
                     // className="right-inputs"
                     // required
                   />

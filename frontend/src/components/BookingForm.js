@@ -214,19 +214,19 @@ class BookingForm extends Component {
                     <Field
                       name="starttime"
                       id="starttime"
-                      type="text"
+                      type="time"
                       placeholder="Enter Starting time"
                     />
                     <Field
                       name="endtime"
                       id="endtime"
-                      type="text"
+                      type="time"
                       placeholder="Enter Ending time"
-                    /> &nbsp;&nbsp;
+                    />
                      <br/>
                      <small style={err}>
                       <ErrorMessage name="starttime" />
-                    </small>
+                    </small> &nbsp;&nbsp; &nbsp;&nbsp;
                     <small style={err}>
                       <ErrorMessage name="endtime" />
                     </small>

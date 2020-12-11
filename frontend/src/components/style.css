@@ -2,9 +2,9 @@
     padding:10%
 } */
 .navbar{
-    /* background-color: #fff;
-background: #fff; */
-background-image: linear-gradient(15deg, #fff 0%, #35d187 100%);
+    /* background-color: #fff;*/
+background: #fff; 
+/* background-image: linear-gradient(15deg, #fff 0%, #35d187 100%); */
 }
 .form-style {
   border-radius: 5px;
@@ -422,21 +422,6 @@ input {
   font-size: 12px;
 }
 
-/* /////////////////////////////////////////// */
-/* #tabs_style{
-
-  border: 1px solid #c8c9cc;
-  background-color: #c8c9cc;
-  border-radius: 50%;
-  padding: 10px;
-  display: inline-flex;
-  width: 50px;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-
-} */
-
 .MuiTab-wrapper {
   width: 100%;
   display: inline-flex;
@@ -445,7 +430,6 @@ input {
   justify-content: center;
 }
 
-/* span.MuiTab-wrapper {} */
 
 .MuiTab-root {
   padding: 6px 12px;
@@ -456,28 +440,10 @@ input {
   min-width: 72px;
   box-sizing: border-box;
   min-height: 48px;
-  /* text-align: center; */
-  flex-shrink: 0;
-  /* font-family: "Montserrat"; */
+   flex-shrink: 0;
+  font-family: "Montserrat";
   font-weight: 500;
-  /* line-height: 1.75; */
-  /* white-space: normal; */
-  /* letter-spacing: 0.02857em; */
-  /* text-transform: uppercase; */
 }
-
-.MuiTouchRipple-root {
-  /* top: 0; */
-  /* left: 0; */
-  /* right: 0; */
-  /* bottom: 0; */
-  /* z-index: 0; */
-  /* overflow: hidden; */
-  /* position: absolute; */
-  border-radius: inherit;
-  /* pointer-events: none; */
-}
-/* span.MuiTouchRipple-root  */
 
 .MuiTabs-flexContainer {
   display: flex;

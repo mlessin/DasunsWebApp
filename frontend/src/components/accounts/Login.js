@@ -23,7 +23,7 @@ export class Login extends Component {
 
   render() {
     if (this.props.isAuthenticated) {
-      return <Redirect to="/splist" />;
+      return <Redirect to="/" />;
     }
     const { username, password } = this.state;
     // const { history } = this.props;
