@@ -14,13 +14,13 @@ import { withRouter } from "react-router-dom";
 import {
   Navbar,
   Nav,
-  Badge,
-  Image,
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
+  // Badge,
+  // Image,
+  // Container,
+  // Row,
+  // Col,
+  // Card,
+  // Button,
 } from "react-bootstrap";
 
 export class SPlist extends Component {
@@ -33,6 +33,7 @@ export class SPlist extends Component {
       borderRadius: "10px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
     };
 
     return (
@@ -50,7 +51,7 @@ export class SPlist extends Component {
           </a>
         </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#features"></Nav.Link>
             </Nav>

@@ -3,50 +3,62 @@ from rest_framework import viewsets, permissions
 from .serializers import *
 
 
-# # Book Viewset
-# class BookViewSet(viewsets.ModelViewSet):
-#     queryset = Book.objects.all()
-#     permission_class = [
-#         permissions.AllowAny
-#     ]
-#     serializer_class = BookSerializer
-
-
+# viewsets without authentication
 # Book Viewset
 class BookViewSet(viewsets.ModelViewSet):
-    # queryset = Book.objects.all()
+    queryset = Book.objects.all()
     permission_class = [
-        permissions.IsAuthenticated,
-     ]
-
+        permissions.AllowAny
+    ]
     serializer_class = BookSerializer
 
-    def get_queryset(self):
-        return self.request.user.Book.all()
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+class ServiceproviderViewSet(viewsets.ModelViewSet):
+    queryset = Serviceprovider.objects.all()
+    permission_class = [
+        permissions.AllowAny
+    ]
+    serializer_class = ServiceproviderSerializer
+
+
+# viewsets with authentication
+# Book Viewset
+# class BookViewSet(viewsets.ModelViewSet):
+#     # queryset = Book.objects.all()
+#     permission_class = [
+#         permissions.IsAuthenticated,
+#      ]
+
+#     serializer_class = BookSerializer
+
+#     def get_queryset(self):
+#         return self.request.user.Book.all()
+
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
 
 
 # Serviceprovider Viewset
-class ServiceproviderViewSet(viewsets.ModelViewSet):
-    # queryset = Serviceprovider.objects.all()
-    permission_class = [
-        permissions.IsAuthenticated,
-     ]
+# class ServiceproviderViewSet(viewsets.ModelViewSet):
+#     # queryset = Serviceprovider.objects.all()
+#     permission_class = [
+#         permissions.IsAuthenticated,
+#      ]
 
-    serializer_class = ServiceproviderSerializer
+#     serializer_class = ServiceproviderSerializer
 
-    def get_queryset(self):
-        return self.request.user.Serviceprovider.all()
+#     def get_queryset(self):
+#         return self.request.user.Serviceprovider.all()
 
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
-
-
+#     def perform_create(self, serializer):
+#         serializer.save(owner=self.request.user)
 
 
 
+
+
+
+# Separate viewsets //////////////////////
 # # PersonalInfo Viewset
 # class PersonalInfoViewSet(viewsets.ModelViewSet):
 #     # queryset = PersonalInfo.objects.all()

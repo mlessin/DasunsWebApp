@@ -9,12 +9,12 @@ import twitter from "../images/twitter.png";
 import {
   Navbar,
   Nav,
-  Badge,
-  Image,
+  // Badge,
+  // Image,
   Container,
   Row,
   Col,
-  Card,
+  // Card,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -29,12 +29,13 @@ export class Request extends Component {
       borderRadius: "10px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
     };
     return (
       <div className="body">
         <Navbar sticky="top" collapseOnSelect expand="md">
           <Navbar.Brand href="#home">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
