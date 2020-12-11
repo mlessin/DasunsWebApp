@@ -32,6 +32,7 @@ export class LoginModal extends Component {
                         type="phone"
                         className="form-control"
                         placeholder="Phone number"
+                        name="username"
                         required
                       />
                     </div>
@@ -41,6 +42,7 @@ export class LoginModal extends Component {
                         type="password"
                         className="form-control"
                         placeholder="Password"
+                        name="password"
                         required
                       />
                     </div>
@@ -53,7 +55,7 @@ export class LoginModal extends Component {
                       Submit
                     </button>
                     <p className="forgot-password text-center">
-                      Forgot Password?{" "}
+                      Forgot Password?
                       <a className="password-reset" href="#">
                         Reset Password
                       </a>

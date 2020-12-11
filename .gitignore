@@ -98,6 +98,8 @@ myvenv/
 .mypy_cache/
 *.DS_Store
 __pycache__
+__pycache__/
+*.py[cod]
 *.pyc
 .vscode/
 vscode/

@@ -10,10 +10,11 @@ import {
 } from "react-bootstrap";
 import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
-import SignupModal from "./accounts/SignupModal";
-import LoginModal from "./accounts/LoginModal";
+// import SignupModal from "./accounts/SignupModal";
+// import LoginModal from "./accounts/LoginModal";
+import { withRouter } from "react-router-dom";
 
-export default class Banner extends Component {
+export class Banner extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +23,9 @@ export default class Banner extends Component {
     };
   }
   render() {
-    let addModalClose = () => this.setState({ addModalShow: false });
-    let addModalCloseSign = () => this.setState({ addModalShowSign: false });
+    const { history } = this.props;
+    // let addModalClose = () => this.setState({ addModalShow: false });
+    // let addModalCloseSign = () => this.setState({ addModalShowSign: false });
 
     const mystyle = {
       color: "#fff",
@@ -31,15 +33,16 @@ export default class Banner extends Component {
       borderRadius: "6px",
       fontFamily: "Montserrat",
       marginRight: "10px",
-      textDecoration: "none"
+      textDecoration: "none",
+      padding: "8px",
     };
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
-      
       borderRadius: "50px",
       fontFamily: "Montserrat",
-      textDecoration: "none"
+      textDecoration: "none",
+      padding: "8px",
     };
     const button = {
       fontFamily: "Montserrat",
@@ -49,9 +52,9 @@ export default class Banner extends Component {
 
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#">
           <a href="#">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -60,7 +63,7 @@ export default class Banner extends Component {
             <Nav.Link href="# ">Services</Nav.Link>
             <Nav.Link href="# ">Who We Are</Nav.Link>
             <Nav.Link href="# ">How It Works</Nav.Link>
-            <ButtonToolbar style={{ border: "none" }}>
+            {/* <ButtonToolbar style={{ border: "none" }}>
               <button
                 style={button}
                 onClick={() => this.setState({ addModalShow: true })}
@@ -71,8 +74,8 @@ export default class Banner extends Component {
                 show={this.state.addModalShow}
                 onHide={addModalClose}
               />
-            </ButtonToolbar>
-            <ButtonToolbar>
+            </ButtonToolbar> */}
+            {/* <ButtonToolbar>
               <button
                 style={button}
                 onClick={() => this.setState({ addModalShowSign: true })}
@@ -83,11 +86,11 @@ export default class Banner extends Component {
                 show={this.state.addModalShowSign}
                 onHide={addModalCloseSign}
               />
-            </ButtonToolbar>
+            </ButtonToolbar> */}
             <Link to="/bookingForm" style={mystyle}>
               Request Now
             </Link>
-            <Link to="/signupserviceprov" style={mystyle1}>
+            <Link to="/signupservicep" style={mystyle1}>
               Provide a Service
             </Link>
           </Nav>
@@ -96,3 +99,5 @@ export default class Banner extends Component {
     );
   }
 }
+
+export default withRouter(Banner)

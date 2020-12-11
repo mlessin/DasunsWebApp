@@ -8,16 +8,19 @@ import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 import { Link } from "react-router-dom";
 
+import { withRouter } from "react-router-dom";
+
+
 import {
   Navbar,
   Nav,
-  Badge,
-  Image,
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
+  // Badge,
+  // Image,
+  // Container,
+  // Row,
+  // Col,
+  // Card,
+  // Button,
 } from "react-bootstrap";
 
 export class SPlist extends Component {
@@ -30,6 +33,7 @@ export class SPlist extends Component {
       borderRadius: "10px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
     };
 
     return (
@@ -41,11 +45,13 @@ export class SPlist extends Component {
           collapseOnSelect
           expand="md"
         >
-          <Navbar.Brand href="#home">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
-          </Navbar.Brand>
+          <Navbar.Brand href="#">
+          <a href="#">
+            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
+          </a>
+        </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#features"></Nav.Link>
             </Nav>
@@ -127,4 +133,4 @@ export class SPlist extends Component {
   }
 }
 
-export default SPlist;
+export default withRouter(SPlist);
