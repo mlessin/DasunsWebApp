@@ -25,8 +25,6 @@ class Alerts extends Component {
     }
 
     if (message !== prevProps.message) {
-      if (message.deleteProject) alert.success(message.deleteProject);
-      if (message.addProject) alert.success(message.addProject);
       if (message.login) alert.success(message.login);
       if (message.loginfail) alert.error(message.loginfail);
       if (message.register) alert.success(message.register);
@@ -36,7 +34,10 @@ class Alerts extends Component {
       if (message.username) alert.error(message.username);
       if (message.email) alert.error(message.email);
       if (message.password) alert.error(message.password);
-      if (message.updateProject) alert.success(message.updateProject);
+      if (message.addBooking) alert.success(message.addBooking);
+      if (message.updateBooking) alert.success(message.updateBooking);
+      if (message.deleteBooking) alert.success(message.deleteBooking);
+      
     }
   }
   render() {
