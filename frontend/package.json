@@ -21,6 +21,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.3",
     "bootstrap-steps": "^1.0.3",
+    "create-react-class": "^15.7.0",
     "dateformat": "^3.0.3",
     "formik": "^2.1.4",
     "material-ui": "^0.20.2",
@@ -33,11 +34,13 @@
     "react-dom": "^16.13.1",
     "react-formik-ui": "^4.1.2",
     "react-hook-form": "^5.7.2",
+    "react-md": "^2.4.3",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "react-responsive-modal": "^5.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
+    "react-swipeable-views": "^0.13.9",
     "react-toastify": "^6.0.6",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
@@ -68,7 +71,9 @@
   },
   "description": "The Digital Ability Support Network System (Dasuns) is to promote social and inclusive development through facilitating access to professional assistive support services and technologies to advance rights, choices ad opportunities for persons with disabilities.",
   "main": "/src/App.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-pwa-manifest": "^4.3.0"
+  },
   "keywords": [
     "DASUNS",
     "WEBAPP"

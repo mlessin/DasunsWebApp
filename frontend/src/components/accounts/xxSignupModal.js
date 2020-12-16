@@ -17,9 +17,8 @@ export class SignupModal extends Component {
           centered
         >
           <Modal.Header closeButton>
-            {/* <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title> */}
             <div className>
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+              <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
             </div>
           </Modal.Header>
           <Modal.Body>
@@ -27,11 +26,6 @@ export class SignupModal extends Component {
               <div className="card" id="signup-card">
                 <div className="card-body">
                   <form onSubmit={this.onSubmit}>
-                    {/* <div>
-                      <div className="dasuns-logo">
-                         <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
-                      </div>
-                    </div> */}
                     <h3 className="heading3">Signup</h3>
                     <div className="form-group">
                       <input

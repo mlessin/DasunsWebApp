@@ -81,14 +81,14 @@ import React from "react";
                     // required
                   />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <button
                     type="submit"
                     className="btn btn-success btn-block"
                   >
                     <strong>SAVE & CONTINUE</strong>
                   </button>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

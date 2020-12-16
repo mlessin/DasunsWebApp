@@ -10,10 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
+# from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv(verbose=True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,12 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'backend',
     'frontend',
     'drf_yasg',
     'knox',
-    'accounts'
+    'accounts',
+    
     
 ]
 
@@ -96,7 +102,9 @@ ROOT_URLCONF = 'dasuns.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend', 'build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,8 +125,31 @@ WSGI_APPLICATION = 'dasuns.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    # Connection to Local Database :nSqlite3
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+    # Connection to Local Database : PostgresQL
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dasunswebapp',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': 'Sweetmom1844.',
+        # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+      
+
+    # Connection to Remote / cloud Database : PostgresQL
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': os.getenv('AWS_PGDB_INITIAL_DATABASE_NAME'),
+        # 'HOST': os.getenv('AWS_PGDB_ENDPOINT'),
+        # 'PORT': os.getenv('AWS_PGDB_PORT'),
+        # 'USER': os.getenv('AWS_PGDB_MASTERUSERNAME'),
+        # 'PASSWORD': os.getenv('AWS_PGDB_MASTERPASSWORD'),
+
+
     }
 }
 
@@ -160,3 +191,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend', "build", "static"),  # update the STATICFILES_DIRS
+)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/build/static/')

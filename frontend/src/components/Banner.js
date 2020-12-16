@@ -10,9 +10,8 @@ import {
 } from "react-bootstrap";
 import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
-import SignupModal from "./accounts/SignupModal";
-import LoginModal from "./accounts/LoginModal";
-
+// import SignupModal from "./accounts/SignupModal";
+// import LoginModal from "./accounts/LoginModal";
 import { withRouter } from "react-router-dom";
 
 export class Banner extends Component {
@@ -25,8 +24,8 @@ export class Banner extends Component {
   }
   render() {
     const { history } = this.props;
-    let addModalClose = () => this.setState({ addModalShow: false });
-    let addModalCloseSign = () => this.setState({ addModalShowSign: false });
+    // let addModalClose = () => this.setState({ addModalShow: false });
+    // let addModalCloseSign = () => this.setState({ addModalShowSign: false });
 
     const mystyle = {
       color: "#fff",
@@ -34,15 +33,16 @@ export class Banner extends Component {
       borderRadius: "6px",
       fontFamily: "Montserrat",
       marginRight: "10px",
-      textDecoration: "none"
+      textDecoration: "none",
+      padding: "8px",
     };
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
-      
       borderRadius: "50px",
       fontFamily: "Montserrat",
-      textDecoration: "none"
+      textDecoration: "none",
+      padding: "8px",
     };
     const button = {
       fontFamily: "Montserrat",
@@ -63,7 +63,7 @@ export class Banner extends Component {
             <Nav.Link href="# ">Services</Nav.Link>
             <Nav.Link href="# ">Who We Are</Nav.Link>
             <Nav.Link href="# ">How It Works</Nav.Link>
-            <ButtonToolbar style={{ border: "none" }}>
+            {/* <ButtonToolbar style={{ border: "none" }}>
               <button
                 style={button}
                 onClick={() => this.setState({ addModalShow: true })}
@@ -74,8 +74,8 @@ export class Banner extends Component {
                 show={this.state.addModalShow}
                 onHide={addModalClose}
               />
-            </ButtonToolbar>
-            <ButtonToolbar>
+            </ButtonToolbar> */}
+            {/* <ButtonToolbar>
               <button
                 style={button}
                 onClick={() => this.setState({ addModalShowSign: true })}
@@ -86,7 +86,7 @@ export class Banner extends Component {
                 show={this.state.addModalShowSign}
                 onHide={addModalCloseSign}
               />
-            </ButtonToolbar>
+            </ButtonToolbar> */}
             <Link to="/bookingForm" style={mystyle}>
               Request Now
             </Link>
