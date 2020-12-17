@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import {
   Nav,
   Navbar,
-  Form,
-  FormControl,
-  NavDropdown,
-  Button,
-  ButtonToolbar
+  // Form,
+  // FormControl,
+  // NavDropdown,
+  // Button,
+  // ButtonToolbar
 } from "react-bootstrap";
 import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom";
@@ -44,11 +44,11 @@ export class Banner extends Component {
       textDecoration: "none",
       padding: "8px",
     };
-    const button = {
-      fontFamily: "Montserrat",
-      borderColor: "#fff",
-      marginRight: "10px"
-    };
+    // const button = {
+    //   fontFamily: "Montserrat",
+    //   borderColor: "#fff",
+    //   marginRight: "10px"
+    // };
 
     return (
       <Navbar bg="light" expand="lg">

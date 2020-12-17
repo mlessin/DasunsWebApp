@@ -76,6 +76,10 @@ export const register = ({ username, email, password }) => dispatch => {
     })
     .catch(err => {
       dispatch(returnErrors(err.response.data, err.response.status));
+      if(err.response.status != 200){
+        dispatch(createMessage({ registerfail: "Email already in use" }));
+      }
+      
       dispatch({
         type: REGISTER_FAIL
       });
@@ -85,7 +89,7 @@ export const register = ({ username, email, password }) => dispatch => {
 //LOGOUT USER
 export const logout = () => (dispatch, getState) => {
   axios
-    .post("/accounts/api/auth/logout/", null, tokenConfig(getState))
+    .post("/accounts/api/auth/logout", null, tokenConfig(getState))
     .then(res => {
       dispatch(createMessage({ logout: "User logged out" }));
       dispatch({

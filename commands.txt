@@ -1,0 +1,7 @@
+pip install requirements.txt 
+pip freeze > requirements.txt
+python manage.py runserver
+
+Credentials to login as admin
+username = dasunsadmin
+password = Dasuns2020
