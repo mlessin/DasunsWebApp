@@ -76,10 +76,7 @@ export const register = ({ username, email, password }) => dispatch => {
     })
     .catch(err => {
       dispatch(returnErrors(err.response.data, err.response.status));
-      if(err.response.status != 200){
-        dispatch(createMessage({ registerfail: "Email already in use" }));
-      }
-      
+      dispatch(createMessage({ registerfail: "Username or Email already in use" }));
       dispatch({
         type: REGISTER_FAIL
       });
