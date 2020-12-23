@@ -6,42 +6,69 @@ import { register } from "../../actions/auth";
 import { createMessage } from "../../actions/messages";
 
 export class Register extends Component {
-  state = {
-    username: "",
-    email: "",
-    password: "",
-    password2: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      email: "",
+      password: "",
+      password2: "",
+    };
+  }
 
   static propTypes = {
     register: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
   };
 
-  onSubmit = (e) => {
+  onSubmit = async (e) => {
     e.preventDefault();
     const { username, email, password, password2 } = this.state;
-    if (!username) {
-      this.props.createMessage({ non_field_errors: "Please provide your User Name" });
-    } else if (!email) {
+
+    const newUser = {
+      username,
+      email,
+      password,
+    };
+
+    const uName = /^[A-Za-z]+$/;
+    if (!username.match(uName)) {
+      this.props.createMessage({
+        non_field_errors: "Username must be alphabets only",
+      });
+      return false;
+    } 
+
+    const emailregex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!email.match(emailregex)) {
       this.props.createMessage({
         non_field_errors: "Correct email is required",
       });
-    } else if (!password) {
+      return false;
+    } 
+    
+    const passregex = /^\w{5,12}$/;
+    if (!password.match(passregex)) {
       this.props.createMessage({
-        non_field_errors: "Password is required",
+        non_field_errors: "Password must be 5 to 12 characters",
       });
-    } else if (password !== password2) {
+      return false;
+    } 
+    
+    if (password !== password2) {
       this.props.createMessage({
         passwordNotMatch: "Passwords do not match",
       });
-    } else {
-      const newUser = {
-        username,
-        email,
-        password,
-      };
-      this.props.register(newUser);
+      return false;
+    } 
+  
+    const response = await fetch(this.props.register(newUser));
+    if (response.status !== 200){
+      return false;
+    }
+
+    else{
+      return true;
     }
   };
 
@@ -51,8 +78,7 @@ export class Register extends Component {
     if (this.props.isAuthenticated) {
       return <Redirect to="/" />;
     }
-    const { username, email, password, password2 } = this.state;
-    // const { history } = this.props;
+    const { username, email, password, password2} = this.state;
     return (
       <div className="main-card-signup">
         <div className="card" id="signup-card">
@@ -106,15 +132,16 @@ export class Register extends Component {
                   id="customSwitches"
                   required
                 />
-                <label className="custom-control-label" for="customSwitches" id="terms">
+                <label
+                  className="custom-control-label"
+                  for="customSwitches"
+                  id="terms"
+                >
                   I agree to the terms and conditions set by Dasuns
                 </label>
               </div>
               <div className="form-group">
-                <button
-                  type="submit"
-                  className="btn btn-success btn-block"
-                >
+                <button type="submit" className="btn btn-success btn-block">
                   SIGNUP
                 </button>
               </div>
