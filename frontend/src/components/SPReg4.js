@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 
-import { debugContextDevtool } from 'react-context-devtool';
-
-
 export class SPReg1 extends Component {
   continue = (e) => {
     e.preventDefault();
@@ -17,10 +14,10 @@ export class SPReg1 extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-        <div className="main-service">
+      <div className="main-service">
         <div className="card" id="signup-service-card">
           <div className="card-body" id="cardBody">
-            <form >
+            <form>
               <div className="container">
                 <h4>
                   <b>We only work with Professionals</b>
@@ -29,7 +26,7 @@ export class SPReg1 extends Component {
                   We would like you to tell us more about yourself and your
                   professional services that you offer
                 </p>
-    
+
                 <div className="row">
                   <div className="col-12 ">
                     <div className="form-textarea">
@@ -37,6 +34,8 @@ export class SPReg1 extends Component {
                         type="text"
                         className="form-control"
                         name="profession"
+                        onChange={handleChange("profession")}
+                        defaultValue={values.profession}
                         // required
                       />
                       <p>100 words</p>
@@ -50,60 +49,68 @@ export class SPReg1 extends Component {
                 <p>
                   Referee 1<small style={{ color: "red" }}> (Required)</small>
                 </p>
-    
+
                 <div className="row">
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Full Name"
-                        name="fullname"
+                        name="ref1Name"
                         className="form-control"
+                        onChange={handleChange("ref1Name")}
+                        defaultValue={values.ref1Name}
                         // className="left-inputs"
                         // required
                       />
                     </div>
                   </div>
-    
+
                   <div className="col-2"></div>
-    
+
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Description/Title"
-                        name="description"
+                        name="ref1title"
                         className="form-control"
+                        onChange={handleChange("ref1title")}
+                        defaultValue={values.ref1title}
                         // className="right-inputs"
                         // required
                       />
                     </div>
                   </div>
                 </div>
-    
+
                 <div className="row">
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Email"
-                        name="email"
+                        name="ref1email"
                         className="form-control"
+                        onChange={handleChange("ref1email")}
+                        defaultValue={values.ref1email}
                         // className="left-inputs"
                         // required
                       />
                     </div>
                   </div>
-    
+
                   <div className="col-2"></div>
-    
+
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Phone Number"
-                        name="phonenumber"
+                        name="ref1phone"
                         className="form-control"
+                        onChange={handleChange("ref1phone")}
+                        defaultValue={values.ref1phone}
                         // className="right-inputs"
                         // required
                       />
@@ -113,108 +120,90 @@ export class SPReg1 extends Component {
                 <p>
                   Referee 2 <small style={{ color: "red" }}> (Required)</small>
                 </p>
-    
+
                 <div className="row">
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Full Name"
-                        name="fullname"
+                        name="ref2Name"
                         className="form-control"
+                        onChange={handleChange("ref2Name")}
+                        defaultValue={values.ref2Name}
                         // className="left-inputs"
                         // required
                       />
                     </div>
                   </div>
-    
+
                   <div className="col-2"></div>
-    
+
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Description/Title"
-                        name="description"
+                        name="ref2title"
                         className="form-control"
+                        onChange={handleChange("ref2title")}
+                        defaultValue={values.ref2title}
                         // className="right-inputs"
                         // required
                       />
                     </div>
                   </div>
                 </div>
-    
+
                 <div className="row">
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Email"
-                        name="email"
+                        name="ref2email"
                         className="form-control"
+                        onChange={handleChange("ref2email")}
+                        defaultValue={values.ref2email}
                         // className="left-inputs"
                         // required
                       />
                     </div>
                   </div>
-    
+
                   <div className="col-2"></div>
-    
+
                   <div className="col-5">
                     <div className="form-inputs">
                       <input
                         type="text"
                         placeholder="Phone Number"
-                        name="phonenumber"
+                        name="ref2phone"
                         className="form-control"
+                        onChange={handleChange("ref2phone")}
+                        defaultValue={values.ref2phone}
                         // className="right-inputs"
                         // required
                       />
                     </div>
                   </div>
                 </div>
-    
-                {/* <div className="row">
-                  <div className="col-5">
-                    <div id="btn-group">
-                      <button
-                        type="submit"
-                        id="btn-default"
-                        // onClick={() => history.push("/signupserviceprov4")}
-                      >
-                        <strong>BACK TO PREVIOUS</strong>
-                      </button>
-                    </div>
-                  </div>
-    
-                  <div className="col-2"></div>
-    
-                  <div className="col-5">
-                    <div id="btn-group">
-                      <button
-                        type="submit"
-                        id="btn-success"
-                        // onClick={() => history.push("/signupserviceprov5")}
-                      >
-                        <strong>SAVE & CONTINUE</strong>
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
+
+                
                 <div className="form-group">
-                <button
-                  className="btn btn-success btn-block"
-                  onClick={this.continue}
-                >
-                  <strong>SAVE & CONTINUE</strong>
-                </button>
-                <button
-                  className="btn btn-success btn-block"
-                  onClick={this.back}
-                >
-                  <strong>BACK</strong>
-                </button>
-              </div>
+                  <button
+                    className="btn btn-success btn-block"
+                    onClick={this.continue}
+                  >
+                    <strong>SAVE & CONTINUE</strong>
+                  </button>
+                  <button
+                    className="btn btn-success btn-block"
+                    onClick={this.back}
+                  >
+                    <strong>BACK</strong>
+                  </button>
+                </div>
               </div>
             </form>
           </div>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-import { debugContextDevtool } from 'react-context-devtool';
-
+import { debugContextDevtool } from "react-context-devtool";
 
 export class SPReg1 extends Component {
   continue = (e) => {
@@ -12,7 +11,7 @@ export class SPReg1 extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-        <div className="main-service">
+      <div className="main-service">
         <div className="card" id="signup-service-card">
           <div className="card-body" id="cardBody">
             <form>
@@ -27,7 +26,7 @@ export class SPReg1 extends Component {
                   name="fullname"
                   onChange={handleChange("fullname")}
                   defaultValue={values.fullname}
-                //   required
+                  //   required
                 />
               </div>
               <div className="form-group">
@@ -83,16 +82,21 @@ export class SPReg1 extends Component {
                   // required
                 />
               </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Gender(Required)"
-                  name="gender"
-                  onChange={handleChange("gender")}
-                  defaultValue={values.gender}
-                  // required
-                />
+              <div className="row">
+                <div className="col-12 ">
+                  <div className="form-group">
+                    <select
+                      className="form-control"
+                      name="gender"
+                      onChange={handleChange("gender")}
+                      defaultValue={values.gender}
+                    >
+                      <option value="Default">Select gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div className="form-group">
                 <input
