@@ -169,7 +169,7 @@ export class SPReg2 extends Component {
                     {/* </div> */}
                     {/* <div className="col-5"> */}
                       <button
-                        className="btn btn-success btn-block"
+                        className="btn btn-default btn-block"
                         onClick={this.back}
                       >
                         <strong>BACK</strong>

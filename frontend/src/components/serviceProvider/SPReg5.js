@@ -305,7 +305,7 @@ export class SPReg1 extends Component {
                 />
               </div>
 
-              <div className="row">
+              {/* <div className="row">
                 <div className="col-5">
                 <button
                     className="btn btn-success btn-block"
@@ -321,6 +321,20 @@ export class SPReg1 extends Component {
                     <strong>BACK</strong>
                   </button>
                 </div>
+              </div> */}
+              <div className="form-group">
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={this.continue}
+                >
+                  <strong>SAVE & CONTINUE</strong>
+                </button>
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={this.back}
+                >
+                  <strong>BACK</strong>
+                </button>
               </div>
             </form>
           </div>

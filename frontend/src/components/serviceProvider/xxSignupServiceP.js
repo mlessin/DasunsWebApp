@@ -8,11 +8,11 @@ import { Button } from "@progress/kendo-react-buttons";
 import { Stepper } from "@progress/kendo-react-layout";
 
 
-import { SignupServiceProvider } from "./SignupServiceProvider";
-import { SignupServiceP2 } from "./SignupServiceP2";
-import { SignupServiceP3 } from "./SignupServiceP3";
-import { SignupServiceP4 } from "./SignupServiceP4";
-import { SignupServiceP5 } from "./SignupServiceP5";
+import { SignupServiceProvider } from "./xxSignupServiceProvider";
+import { SignupServiceP2 } from "./xxSignupServiceP2";
+import { SignupServiceP3 } from "./xxSignupServiceP3";
+import { SignupServiceP4 } from "./xxSignupServiceP4";
+import { SignupServiceP5 } from "./xxSignupServiceP5";
 import Banner from "../Banner";
 
 const stepPages = [
