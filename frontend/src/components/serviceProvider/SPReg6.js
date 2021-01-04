@@ -5,7 +5,23 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
 
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addServiceProvider } from "../actions/serviceproviders";
+
 export class SPReg6 extends Component {
+
+  static propTypes = {
+    addServiceProvider: PropTypes.func.isRequired,
+    // isAuthenticated: PropTypes.bool
+  };
+
+  onSubmit = (values, { setSubmitting }) => {
+    this.props.addServiceProvider(values);
+    this.setSubmitting = setSubmitting;
+    this.props.history.push("/");
+  };
+
   continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
@@ -208,8 +224,8 @@ export class SPReg6 extends Component {
               Back
             </Button>
 
-            <Button color="primary" variant="contained" onClick={this.continue}>
-              Confirm & Continue
+            <Button color="primary" variant="contained" onClick={this.onSubmit}>
+              Confirm & Submit
             </Button>
           </Dialog>
         </>
@@ -218,4 +234,6 @@ export class SPReg6 extends Component {
   }
 }
 
-export default SPReg6;
+// export default SPReg6;
+
+export default connect(null, { addServiceProvider })(SPReg6);

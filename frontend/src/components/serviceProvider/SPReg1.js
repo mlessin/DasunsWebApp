@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { debugContextDevtool } from 'react-context-devtool';
+// import { debugContextDevtool } from 'react-context-devtool';
 
 
 export class SPReg1 extends Component {

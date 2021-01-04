@@ -47,10 +47,10 @@ export class Register extends Component {
       return false;
     } 
     
-    const passregex = /^\w{5,12}$/;
+    const passregex = /^\w{6,50}$/;
     if (!password.match(passregex)) {
       this.props.createMessage({
-        non_field_errors: "Password must be 5 to 12 characters",
+        non_field_errors: "Password must be 6 to 50 characters",
       });
       return false;
     } 
