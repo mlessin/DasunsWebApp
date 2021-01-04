@@ -16,6 +16,7 @@ import PrivateRoute from "./components/common/PrivateRoute";
 import { ParentModal } from "./components/accounts/ParentModal";
 import BookingForm from "./components/BookingForm";
 import Request from "./components/Request";
+import ServiceReg from "./components/ServiceReg";
 import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -51,7 +52,7 @@ export default class App extends Component {
           <Router>
             <Fragment>
               <div className="App">
-                {/* <Headers /> */}
+                <ServiceReg />
                 <Alerts />
                 {/* <Banner /> */}
                 {/* <SPlist /> */}
