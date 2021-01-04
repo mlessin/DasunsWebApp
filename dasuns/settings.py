@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yl=in@jv_waaq*@64v8g5dv@bo=l64zwj3)q$@iy1#-v&)ahf*'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,30 +125,27 @@ WSGI_APPLICATION = 'dasuns.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+
     # Connection to Local Database :nSqlite3
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
     # Connection to Local Database : PostgresQL
-        # 'ENGINE': 'django.db.backends.postgresql',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dasunswebapp',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'USER': 'postgres',
-        'PASSWORD': 'Sweetmom1844.',
-        # 'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-      
+        'NAME': os.getenv('DB_NAME'),
+        'HOST': os.getenv('DB_HOST_NAME'),
+        'PORT': os.getenv('DB_APP_PORT'),
+        'USER': os.getenv('DB_USERNAME'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),   
 
     # Connection to Remote / cloud Database : PostgresQL
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': os.getenv('AWS_PGDB_INITIAL_DATABASE_NAME'),
         # 'HOST': os.getenv('AWS_PGDB_ENDPOINT'),
         # 'PORT': os.getenv('AWS_PGDB_PORT'),
         # 'USER': os.getenv('AWS_PGDB_MASTERUSERNAME'),
         # 'PASSWORD': os.getenv('AWS_PGDB_MASTERPASSWORD'),
+
 
 
     }
