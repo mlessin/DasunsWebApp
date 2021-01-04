@@ -8,6 +8,7 @@ class Book(models.Model):
     phone = models.CharField(max_length=50)
     starttime = models.CharField(max_length=50)
     endtime = models.CharField(max_length=50)
+    owner = models.ForeignKey(User, related_name='booking', on_delete=models.CASCADE, null=True)
 
 
 class Serviceprovider(models.Model):

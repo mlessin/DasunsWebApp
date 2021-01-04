@@ -22,21 +22,24 @@ class Alerts extends Component {
         alert.error(error.msg.non_field_errors.join());
       if (error.msg.detail) alert.error(error.msg.detail.join());
       if (error.msg.username) alert.error(error.msg.username.join());
+      if (error.msg.error) alert.error(error.msg.error.join());
     }
 
     if (message !== prevProps.message) {
-      if (message.deleteProject) alert.success(message.deleteProject);
-      if (message.addProject) alert.success(message.addProject);
       if (message.login) alert.success(message.login);
       if (message.loginfail) alert.error(message.loginfail);
       if (message.register) alert.success(message.register);
+      if (message.registerfail) alert.error(message.registerfail);
       if (message.logout) alert.success(message.logout);
       if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
       if (message.non_field_errors) alert.error(message.non_field_errors);
       if (message.username) alert.error(message.username);
       if (message.email) alert.error(message.email);
       if (message.password) alert.error(message.password);
-      if (message.updateProject) alert.success(message.updateProject);
+      if (message.addBooking) alert.success(message.addBooking);
+      if (message.updateBooking) alert.success(message.updateBooking);
+      if (message.deleteBooking) alert.success(message.deleteBooking);
+      
     }
   }
   render() {

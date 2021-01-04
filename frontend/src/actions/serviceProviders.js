@@ -9,10 +9,10 @@ import {
 } from "./types";
 import { tokenConfig } from "./auth";
 
-//ADD BOOKING
+//ADD SERVICEPROVIDER
 export const addServiceProvider = serviceprovider => (dispatch, getState) => {
     axios
-      .post("/api/serviceproviders/", serviceprovider, tokenConfig(getState))
+      .post("/backend/api/serviceproviders/", serviceprovider, tokenConfig(getState))
       .then(res => {
         dispatch(createMessage({ addServiceProvider: "Service Provider Added!" }));
         dispatch({
@@ -25,10 +25,10 @@ export const addServiceProvider = serviceprovider => (dispatch, getState) => {
       );
   };
   
-//GET BOOKINGS
+//GET SERVICEPROVIDERS
 export const getServiceProviders = () => (dispatch, getState) => {
   axios
-    .get("/api/serviceproviders/", tokenConfig(getState))
+    .get("/backend/api/serviceproviders/", tokenConfig(getState))
     .then(res => {
       dispatch({
         type: GET_SERVICEPROVIDERS,
@@ -40,10 +40,10 @@ export const getServiceProviders = () => (dispatch, getState) => {
     );
 };
 
-// GET ONE BOOKING
+// GET ONE SERVICEPROVIDER
 export const oneServiceProvider = id => (dispatch, getState) => {
     axios
-      .get(`/api/serviceproviders/${id}/`, tokenConfig(getState))
+      .get(`/backend/api/serviceproviders/${id}/`, tokenConfig(getState))
       .then(res => {
         console.log(res.data);
         dispatch({
@@ -56,10 +56,10 @@ export const oneServiceProvider = id => (dispatch, getState) => {
       );
 };
 
-//UPDATE BOOKING 
+//UPDATE SERVICEPROVIDER 
 export const updateServiceProvider = (id, serviceprovider) => (dispatch, getState) => {
     axios
-      .put(`/api/serviceproviders/${id}/`, serviceprovider, tokenConfig(getState))
+      .put(`/backend/api/serviceproviders/${id}/`, serviceprovider, tokenConfig(getState))
       .then(res => {
         dispatch(createMessage({ updateServiceProvider: "Service Provider Updated" }));
         dispatch({
@@ -73,10 +73,10 @@ export const updateServiceProvider = (id, serviceprovider) => (dispatch, getStat
   };
   
  
-//DELETE_BOOKING
+//DELETE_SERVICEPROVIDER
 export const deleteServiceProvider = id => (dispatch, getState) => {
   axios
-    .delete(`/api/serviceproviders/${id}/`, tokenConfig(getState))
+    .delete(`/backend/api/serviceproviders/${id}/`, tokenConfig(getState))
     .then(res => {
       dispatch(createMessage({ deleteServiceProvider: "Service Provider Deleted" }));
       dispatch({

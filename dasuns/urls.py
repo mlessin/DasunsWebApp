@@ -22,15 +22,14 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-    path('index/', TemplateView.as_view(template_name='index.html')),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('backend/', include('backend.urls')),
     path('accounts/', include('accounts.urls')),
-
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # path('auth/', include('authentication.urls')),
     # path('social_auth/', include(('social_auth.urls', 'social_auth'),
     #                              namespace="social_auth")),
-    path('', schema_view.with_ui('swagger',
+    path('index/', schema_view.with_ui('swagger',
                                  cache_timeout=0), name='schema-swagger-ui'),
 
     path('api/api.json/', schema_view.without_ui(cache_timeout=0),

@@ -86,7 +86,7 @@ export class Landing extends Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-right" style={{ marginLeft: "10em" }}>
             <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ""}</strong>
+          <strong>{user ? `Welcome ${user.username}` : "Please login or Signup"}</strong>
            </span>
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
@@ -288,7 +288,7 @@ export class Landing extends Component {
                       </Container>
                     </Card.Body>
                   </Card>
-                </Col>{" "}
+                </Col>
                 <Col md="auto">
                   <Card
                     style={{
