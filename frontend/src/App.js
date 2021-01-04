@@ -11,11 +11,12 @@ import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
 import Landing from "./components/Landing";
 import SPlist from "./components/SPlist";
-import { SignupServiceP } from "./components/serviceProvider/SignupServiceP";
+// import { SignupServiceP } from "./components/serviceProvider/SignupServiceP";
 import PrivateRoute from "./components/common/PrivateRoute";
 import { ParentModal } from "./components/accounts/ParentModal";
 import BookingForm from "./components/BookingForm";
 import Request from "./components/Request";
+import ServiceReg from "./components/serviceProvider/ServiceReg";
 import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -51,7 +52,7 @@ export default class App extends Component {
           <Router>
             <Fragment>
               <div className="App">
-                {/* <Headers /> */}
+                {/* <ServiceReg /> */}
                 <Alerts />
                 {/* <Banner /> */}
                 {/* <SPlist /> */}
@@ -65,7 +66,7 @@ export default class App extends Component {
                   <PrivateRoute
                     path="/signupservicep"
                     exact
-                    component={SignupServiceP}
+                    component={ServiceReg}
                   />
                   <Route component={notfound} />
                 </Switch>

@@ -147,6 +147,7 @@ DATABASES = {
         # 'PASSWORD': os.getenv('AWS_PGDB_MASTERPASSWORD'),
 
 
+
     }
 }
 
