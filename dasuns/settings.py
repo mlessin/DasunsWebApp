@@ -127,8 +127,8 @@ WSGI_APPLICATION = 'dasuns.wsgi.application'
 DATABASES = {
     'default': {
     # Connection to Local Database :nSqlite3
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
     # Connection to Local Database : PostgresQL
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
