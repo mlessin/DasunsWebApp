@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.0e138deb.chunk.css",
     "main.js": "/static/js/main.6f7591e4.chunk.js",
     "main.js.map": "/static/js/main.6f7591e4.chunk.js.map",
@@ -14,13 +15,36 @@
     "static/css/2.6414bb7b.chunk.css.map": "/static/css/2.6414bb7b.chunk.css.map",
     "static/css/main.0e138deb.chunk.css.map": "/static/css/main.0e138deb.chunk.css.map",
     "static/js/2.45fbbf19.chunk.js.LICENSE.txt": "/static/js/2.45fbbf19.chunk.js.LICENSE.txt",
+=======
+    "main.css": "/static/css/main.43223385.chunk.css",
+    "main.js": "/static/js/main.238a333d.chunk.js",
+    "main.js.map": "/static/js/main.238a333d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.11b51e6e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.11b51e6e.js.map",
+    "static/css/2.5dc55297.chunk.css": "/static/css/2.5dc55297.chunk.css",
+    "static/js/2.5436a533.chunk.js": "/static/js/2.5436a533.chunk.js",
+    "static/js/2.5436a533.chunk.js.map": "/static/js/2.5436a533.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.eeb41c2df2b87441d76ccbd42a9f4aa3.js": "/precache-manifest.eeb41c2df2b87441d76ccbd42a9f4aa3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5dc55297.chunk.css.map": "/static/css/2.5dc55297.chunk.css.map",
+    "static/css/main.43223385.chunk.css.map": "/static/css/main.43223385.chunk.css.map",
+    "static/js/2.5436a533.chunk.js.LICENSE.txt": "/static/js/2.5436a533.chunk.js.LICENSE.txt",
+>>>>>>> f3f46aac1f3fe658e77872ab578dcdf1059c7f79
     "static/media/style.css": "/static/media/banner.1cbd7af9.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.11b51e6e.js",
+<<<<<<< HEAD
     "static/css/2.6414bb7b.chunk.css",
     "static/js/2.45fbbf19.chunk.js",
     "static/css/main.0e138deb.chunk.css",
     "static/js/main.6f7591e4.chunk.js"
+=======
+    "static/css/2.5dc55297.chunk.css",
+    "static/js/2.5436a533.chunk.js",
+    "static/css/main.43223385.chunk.css",
+    "static/js/main.238a333d.chunk.js"
+>>>>>>> f3f46aac1f3fe658e77872ab578dcdf1059c7f79
   ]
 }
