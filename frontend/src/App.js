@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
@@ -6,7 +6,7 @@ import {
   Route
   // Redirect
 } from "react-router-dom";
- import { Provider as AlertProvider } from "react-alert";
+ import { Provider as AlertProvider} from "react-alert";
  import AlertTemplate from "react-alert-template-basic";
 import "./App.css";
 // import Banner from "./components/Banner";
@@ -22,7 +22,7 @@ import {SignupServiceP2} from "./components/serviceProvider/SignupServiceP2";
 import {SignupServiceP3} from "./components/serviceProvider/SignupServiceP3";
 import {SignupServiceP4} from "./components/serviceProvider/SignupServiceP4";
 import {SignupServiceP5} from "./components/serviceProvider/SignupServiceP5";
-import {SignupServiceP} from "./components/serviceProvider/SignupServiceP";
+import {SignupServiceP } from "./components/serviceProvider/SignupServiceP";
 
 // import StepperDemo from "./components/serviceProvider/Stepper";
 // import StepperExample from "./components/serviceProvider/StepperExample";
@@ -82,7 +82,7 @@ export default class App extends Component {
                 path="/signupservicep"
                 exact
                 component={SignupServiceP}
-              />
+              /> 
               <Route
                 path="/signupserviceprov"
                 exact
@@ -128,3 +128,4 @@ export default class App extends Component {
     );
   }
 }
+ 

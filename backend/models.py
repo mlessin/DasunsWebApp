@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Book(models.Model):
-    meetplace = models.CharField(max_length=100)
+    meetplace = models.CharField(max_length=100) 
     meetdate = models.CharField(max_length=50)
     phone = models.IntegerField()
     starttime = models.CharField(max_length=50)
