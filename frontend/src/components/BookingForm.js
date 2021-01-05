@@ -11,7 +11,7 @@ import Logo from "../images/Logo.png";
 // import "./style.css";
 //import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-// import Banner from "./Banner";
+import Banner from "./Banner";
 import { Link } from "react-router-dom";
 // import { withRouter } from "react-router-dom";
 
@@ -89,39 +89,7 @@ class BookingForm extends Component {
 
     return (
       <div>
-        <Navbar
-          className="navbar"
-          bg-primary
-          sticky="top"
-          collapseOnSelect
-          expand="md"
-        >
-          <Navbar.Brand href="#">
-            <img
-              src={Logo}
-              alt={"logo"}
-              style={{ height: "50px" }}
-              onClick={() => history.push("/")}
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#features"></Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="#deets">Services</Nav.Link>
-              <Nav.Link href="#req">My Requests</Nav.Link>
-              <Nav.Link href="#bell">Bell icon</Nav.Link>
-              <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
-              <Nav.Link href="#service">
-                <Link to="/bookingForm" style={mystyle1}>
-                  Request Service
-                </Link>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Banner />
         <Formik
           initialValues={initialValues}
           validationSchema={formSchema}
