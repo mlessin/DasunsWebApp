@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addServiceProvider } from "../actions/serviceproviders";
+import { addServiceProvider } from "../../actions/serviceProviders";
 
 export class SPReg6 extends Component {
 

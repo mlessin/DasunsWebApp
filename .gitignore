@@ -31,7 +31,7 @@ db.sqlite3
 /site/
 /htmlcov/
 /coverage/
-/build/
+# /build/
 /dist/
 /*.egg-info/
 /env/
