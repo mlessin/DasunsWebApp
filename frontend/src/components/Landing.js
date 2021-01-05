@@ -28,11 +28,10 @@ import {
   ButtonToolbar,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ParentModal from "./accounts/ParentModal"
+import ParentModal from "./accounts/ParentModal";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../actions/auth";
-
 
 export class Landing extends Component {
   constructor(props) {
@@ -43,13 +42,14 @@ export class Landing extends Component {
   }
   static propTypes = {
     auth: PropTypes.object.isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
   };
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
     const { history } = this.props;
-    let addModalCloseParent = () => this.setState({ addModalShowParent: false });
+    let addModalCloseParent = () =>
+      this.setState({ addModalShowParent: false });
 
     const mystyle = {
       color: "#fff",
@@ -75,77 +75,86 @@ export class Landing extends Component {
       marginRight: "10px",
     };
 
-    const authLinks =(
+    const authLinks = (
       <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#">
-            <a href="#">
-              <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
-            </a>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-right" style={{ marginLeft: "10em" }}>
+        <Navbar.Brand href="#">
+          <a href="#">
+            <img
+              src={Logo}
+              alt={"logo"}
+              style={{ height: "50px" }}
+              onClick={() => history.push("/")}
+            />
+          </a>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-right" style={{ marginLeft: "10em" }}>
             <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}` : "Please login or Signup"}</strong>
-           </span>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
-              <Nav.Link href="#how-it-works">How It Works</Nav.Link>
-              <Link to="/bookingForm" style={mystyle}>
+              <strong>{user ? `Welcome ${user.username}` : ""}</strong>
+            </span>
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
+            <Nav.Link href="#how-it-works">How It Works</Nav.Link>
+            <Link to="/bookingForm" style={mystyle}>
               Request Now
-              </Link>
-              <Link to="/signupservicep" style={mystyle1}>
-                Provide a Service
-              </Link>
-        <li >
-          <button
-            style={mystyle}
-            onClick={this.props.logout}
-            className="nav-link"
-          >
-            Logout
-          </button>
-        </li>
-
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+            </Link>
+            <Link to="/signupservicep" style={mystyle1}>
+              Provide a Service
+            </Link>
+            <li>
+              <button
+                style={mystyle}
+                onClick={this.props.logout}
+                className="nav-link"
+              >
+                Logout
+              </button>
+            </li>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
 
     const guestLinks = (
       <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#">
-            <a href="#">
-              <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
-            </a>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-right" style={{ marginLeft: "10em" }}>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
-              <Nav.Link href="#how-it-works">How It Works</Nav.Link>
-              <ButtonToolbar>
-                <button
-                  style={button}
-                  onClick={() => this.setState({ addModalShowParent: true })}
-                >
-                   SignIn / SignUp
-                </button>
-                <ParentModal
-                  show={this.state.addModalShowParent}
-                  onHide={addModalCloseParent}
-                />
-              </ButtonToolbar>
-              <Link to="/bookingForm" style={mystyle}>
+        <Navbar.Brand href="#">
+          <a href="#">
+            <img
+              src={Logo}
+              alt={"logo"}
+              style={{ height: "50px" }}
+              onClick={() => history.push("/")}
+            />
+          </a>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-right" style={{ marginLeft: "10em" }}>
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
+            <Nav.Link href="#how-it-works">How It Works</Nav.Link>
+            <ButtonToolbar>
+              <button
+                style={button}
+                onClick={() => this.setState({ addModalShowParent: true })}
+              >
+                SignIn / SignUp
+              </button>
+              <ParentModal
+                show={this.state.addModalShowParent}
+                onHide={addModalCloseParent}
+              />
+            </ButtonToolbar>
+            <Link to="/bookingForm" style={mystyle}>
               Request Now
-              </Link>
-              <Link to="/signupservicep" style={mystyle1}>
-                Provide a Service
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+            </Link>
+            <Link to="/signupservicep" style={mystyle1}>
+              Provide a Service
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
 
     return (
@@ -639,14 +648,12 @@ export class Landing extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logout })(Landing);
 // export default withRouter(Landing);
-
-
 
 // return (
 //   <div>
