@@ -3,15 +3,7 @@ from rest_framework import viewsets, permissions
 from .serializers import *
 
 
-# # Book Viewset
-# class BookViewSet(viewsets.ModelViewSet):
-#     queryset = Book.objects.all()
-#     permission_class = [
-#         permissions.AllowAny
-#     ]
-#     serializer_class = BookSerializer
-
-
+# viewsets with authentication
 # Book Viewset
 class BookViewSet(viewsets.ModelViewSet):
     # queryset = Book.objects.all()
@@ -45,8 +37,25 @@ class ServiceproviderViewSet(viewsets.ModelViewSet):
 
 
 
+# viewsets without authentication
+# # Book Viewset
+# class BookViewSet(viewsets.ModelViewSet):
+#     queryset = Book.objects.all()
+#     permission_class = [
+#         permissions.AllowAny
+#     ]
+#     serializer_class = BookSerializer
 
 
+# class ServiceproviderViewSet(viewsets.ModelViewSet):
+#     queryset = Serviceprovider.objects.all()
+#     permission_class = [
+#         permissions.AllowAny
+#     ]
+#     serializer_class = ServiceproviderSerializer
+
+
+# Separate viewsets //////////////////////
 # # PersonalInfo Viewset
 # class PersonalInfoViewSet(viewsets.ModelViewSet):
 #     # queryset = PersonalInfo.objects.all()

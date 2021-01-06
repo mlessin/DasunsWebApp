@@ -42,7 +42,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Full Name"
                     name="fullname"
-                    className="left-inputs"
+                    className="form-control"
+                    // className="left-inputs"
                     // required
                   />
                 </div>
@@ -56,7 +57,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Description/Title"
                     name="description"
-                    className="right-inputs"
+                    className="form-control"
+                    // className="right-inputs"
                     // required
                   />
                 </div>
@@ -70,7 +72,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Email"
                     name="email"
-                    className="left-inputs"
+                    className="form-control"
+                    // className="left-inputs"
                     // required
                   />
                 </div>
@@ -84,7 +87,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Phone Number"
                     name="phonenumber"
-                    className="right-inputs"
+                    className="form-control"
+                    // className="right-inputs"
                     // required
                   />
                 </div>
@@ -101,7 +105,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Full Name"
                     name="fullname"
-                    className="left-inputs"
+                    className="form-control"
+                    // className="left-inputs"
                     // required
                   />
                 </div>
@@ -115,7 +120,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Description/Title"
                     name="description"
-                    className="right-inputs"
+                    className="form-control"
+                    // className="right-inputs"
                     // required
                   />
                 </div>
@@ -129,7 +135,8 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Email"
                     name="email"
-                    className="left-inputs"
+                    className="form-control"
+                    // className="left-inputs"
                     // required
                   />
                 </div>
@@ -143,14 +150,15 @@ export const SignupServiceP4 = (
                     type="text"
                     placeholder="Phone Number"
                     name="phonenumber"
-                    className="right-inputs"
+                    className="form-control"
+                    // className="right-inputs"
                     // required
                   />
                 </div>
               </div>
             </div>
 
-            <div className="row">
+            {/* <div className="row">
               <div className="col-5">
                 <div id="btn-group">
                   <button
@@ -176,7 +184,9 @@ export const SignupServiceP4 = (
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+            
           </div>
         </form>
       </div>

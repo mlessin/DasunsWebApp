@@ -9,15 +9,15 @@ import twitter from "../images/twitter.png";
 import {
   Navbar,
   Nav,
-  Badge,
-  Image,
+  // Badge,
+  // Image,
   Container,
   Row,
   Col,
-  Card,
+  // Card,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import Banner from "./Banner";
 
 export class Request extends Component {
   render() {
@@ -29,33 +29,11 @@ export class Request extends Component {
       borderRadius: "10px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
     };
     return (
       <div className="body">
-        <Navbar sticky="top" collapseOnSelect expand="md">
-          <Navbar.Brand href="#home">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#features"></Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="#deets">Services</Nav.Link>
-              <Nav.Link href="#req">My Requests</Nav.Link>
-
-              <Nav.Link href="#bell">Bell icon</Nav.Link>
-              <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
-              <Nav.Link href="#service">
-                <Link to="/bookingForm" style={mystyle1}>
-                  Request Service
-                </Link>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-
+        <Banner />
         <div className="green-service1 " fluid="md">
           <Container
             fluid
@@ -68,6 +46,7 @@ export class Request extends Component {
             <Row>
               <Col>
                 <div>My Service Requests</div>
+                
               </Col>
               <Col>
                 <div>Ongoing</div>

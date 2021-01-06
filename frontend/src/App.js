@@ -21,8 +21,10 @@ import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
+
 // import Banner from "./components/Banner";
 // import Headers from "./components/layout/Headers";
+
 const alertOptions = {
   timeout: 3000,
   position: "middle right",
@@ -31,9 +33,11 @@ export default class App extends Component {
   state = {
     redirect: true,
   };
+
   componentDidMount() {
     store.dispatch(loadUser());
   }
+
   render() {
     const notfound = () => {
       const { redirect } = this.state;
