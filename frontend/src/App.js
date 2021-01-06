@@ -22,7 +22,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 
-// import Banner from "./components/Banner";
+
+ import Rating from "./components/Rating";
 // import Headers from "./components/layout/Headers";
 
 const alertOptions = {
@@ -51,7 +52,7 @@ export default class App extends Component {
           <Router>
             <Fragment>
               <div className="App">
-                {/* <ServiceReg /> */}
+                <Rating />
                 <Alerts />
                 {/* <Banner /> */}
                 {/* <SPlist /> */}
@@ -62,6 +63,7 @@ export default class App extends Component {
                   <PrivateRoute path="/splist" exact component={SPlist} />
                   <PrivateRoute path="/bookingForm" exact component={BookingForm} />
                   <PrivateRoute path="/request" exact component={Request} />
+
                   <PrivateRoute
                     path="/signupservicep"
                     exact

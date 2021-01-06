@@ -338,7 +338,7 @@ footer {
     padding-left: 100px;
 }
 .green-service1 {
-    background-color: #35d187;
+    background-color: #6c867a;
     font-size: 40px;
     text-align: center;
     color: #fff;
@@ -555,3 +555,21 @@ span.k-step-text {
   position: relative;
 } */
 
+.rate{
+  
+  padding-left: 35%;
+
+}
+.submiting{
+  width:160px;
+  margin-right: auto;
+  /* margin-left: 20px; */
+  height: 40px;
+  border-radius: 8px;
+  background-color:#35d187;
+  color:#FFF;
+  /* padding-bottom: 80px; */
+}
+.texting{
+  width:200px;
+}
