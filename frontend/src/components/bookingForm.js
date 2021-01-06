@@ -1,272 +1,198 @@
-// import React, { Component } from "react";
-// import "bootstrap/dist/css/bootstrap.css";
-// import Logo from "../images/Logo.png";
-// import Modal from "react-bootstrap/Modal";
-// //import "./style.css";
-// //import { Link } from "react-router-dom";
-// import {
-//   Row,
-//   Col,
-//   Button,
-//   Form,
-// } from "react-bootstrap";
-
-// export class bookingModal extends Component {
-//   state = {
-//     name: "",
-//     MeetingPlace: "",
-//     payment: "",
-//   };
-
-//   render() {
-//     return (
-//       <Modal>
-//         <Modal.Body>
-//           <div className="main">
-//             <div className="card" id="booking-card">
-//               <div className="card-body">
-//                 <Form onSubmit={this.onSubmit}>
-//                   <h4 className="heading3">
-//                     BOOKING MARK SHARNTY
-//                     {this.state.name}.
-//                   </h4>
-//                   <h6 className="heading3">
-//                     From Muyenga Kampala UG
-//                     {this.state.MeetingPlace}
-//                   </h6>
-//                   <h6 className="heading3">
-//                     20000UGX, Per Hour.
-//                     {this.state.payment}
-//                   </h6>
-
-//                   <Form.Group as={Row} controlId="meetPoint">
-//                     <Form.Label column sm={4}>
-//                       Meeting Place:
-//                     </Form.Label>
-//                     <Col sm={8} id="meet1">
-//                       <Form.Control
-//                         type="text"
-//                         placeholder="Preffered meeting place"
-//                       />
-//                     </Col>
-//                   </Form.Group>
-//                   <Form.Group as={Row} controlId="meetDate">
-//                     <Form.Label column sm={4}>
-//                       Meeting Date:
-//                     </Form.Label>
-//                     <Col sm={8} id="meet2">
-//                       <Form.Control
-//                         type="text"
-//                         placeholder="Schedule your preffered Date"
-//                       />
-//                     </Col>
-//                   </Form.Group>
-
-//                   <Form.Group as={Row} controlId="contact">
-//                     <Form.Label column sm={4}>
-//                       Phone No:
-//                     </Form.Label>
-//                     <Col sm={8} id="contact">
-//                       <Form.Control
-//                         type="tel"
-//                         name="phone"
-//                         placeholder="Enter your Phone Number"
-//                       />
-//                     </Col>
-//                   </Form.Group>
-//                   <div>
-//                     {" "}
-//                     <b>Meeting Time:</b>
-//                   </div>
-
-//                   <Form.Row>
-//                     <Form.Group as={Col} controlId="StartTime">
-//                       <Form.Label>Start Time:</Form.Label>
-//                       <Col sm={11}>
-//                         <Form.Control
-//                           type="text"
-//                           placeholder="Enter Starting time"
-//                         />
-//                       </Col>
-//                     </Form.Group>
-//                     <Form.Group as={Col} controlId="endTime">
-//                       <Form.Label>End Time</Form.Label>
-//                       <Col sm={13} id="start2 ">
-//                         <Form.Control
-//                           type="text"
-//                           placeholder="Enter Ending time"
-//                         />
-//                       </Col>
-//                     </Form.Group>
-//                   </Form.Row>
-
-//                   <Form.Group as={Row}>
-//                     <Col sm={{ span: 10, offset: 4 }}>
-//                       <Button
-//                         type="submit"
-//                         // style={button}
-//                         onClick={() => this.setState({ addModalShow: true })}
-//                       >
-//                         BOOK NOW
-//                         <link to="Request"></link>
-//                       </Button>
-//                     </Col>
-//                   </Form.Group>
-//                 </Form>
-//               </div>
-//             </div>
-//           </div>
-//         </Modal.Body>
-//       </Modal>
-//     );
-//   }
-// }
-// export default bookingModal;
-
+import { Formik, Field, Form, ErrorMessage } from "formik";
+// import { Form, Datepicker, Button, Textarea, Input } from "react-formik-ui";
+import * as Yup from "yup";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addBooking } from "../actions/bookings";
 import "bootstrap/dist/css/bootstrap.css";
 import Logo from "../images/Logo.png";
-import Modal from "react-bootstrap/Modal";
-//import "./style.css";
+// import "./style.css";
 //import { Link } from "react-router-dom";
-import { Navbar, Nav, Row, Col, Button, Form } from "react-bootstrap";
-// import Banner from "./Banner";
+import { Navbar, Nav } from "react-bootstrap";
+import Banner from "./Banner";
 import { Link } from "react-router-dom";
-
-import { withRouter } from "react-router-dom";
-
-
-export class bookingForm extends Component {
-  // state = {
-  //   PaymentType: "",
-  //   MeetingTime: "",
-  // };
-
+// import { withRouter } from "react-router-dom";
+import "./style.css"
+const formSchema = Yup.object().shape({
+  meetplace: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("You must specify the Meeting place"),
+  meetdate: Yup.date().required("Please specify the meeting date"),
+  phone: Yup.string()
+    .min(9, "Too Short!")
+    .max(13, "Too Long!")
+    .required("Please specify the Phone number"),
+  starttime: Yup.string().required("Please specify the start time"),
+  endtime: Yup.string().required("Please specify the end time"),
+});
+const initialValues = {
+  meetplace: "",
+  meetdate: "",
+  phone: "",
+  starttime: "",
+  endtime: "",
+};
+class BookingForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meetplace: "",
+      meetdate: "",
+      phone: "",
+      starttime: "",
+      endtime: "",
+    };
+  }
+  static propTypes = {
+    addBooking: PropTypes.func.isRequired,
+    // isAuthenticated: PropTypes.bool,
+  };
+  onSubmit = (values, { setSubmitting }) => {
+    this.props.addBooking(values);
+    this.setSubmitting = setSubmitting;
+    this.props.history.push("/request");
+  };
   render() {
     const { history } = this.props;
-
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
       borderRadius: "10px",
       fontFamily: "Montserrat",
       textDecoration: "none",
+      padding: "8px",
+    };
+    const field = {
+      marginLeft: "25px",
+      borderWidth: "2px",
+      borderRadius: "5px",
+      height: "2.5em",
+    };
+    const err = {
+      color: "red",
     };
     return (
       <div>
-        {/* <Banner /> */}
-        <Navbar
-          className="navbar"
-          bg-primary
-          sticky="top"
-          collapseOnSelect
-          expand="md"
+        <Banner />
+        <Formik
+          initialValues={initialValues}
+          validationSchema={formSchema}
+          onSubmit={this.onSubmit}
         >
-          <Navbar.Brand href="#">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")}/>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#features"></Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="#deets">Services</Nav.Link>
-              <Nav.Link href="#req">My Requests</Nav.Link>
-              <Nav.Link href="#bell">Bell icon</Nav.Link>
-              <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
-              <Nav.Link href="#service">
-                <Link to="/bookingForm" style={mystyle1}>
-                  Request Service
-                </Link>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <div className="main">
-          <div className="card" id="booking-card">
-            <div className="card-body" id="card-body">
-              <Form onSubmit={this.onSubmit}>
-                <h4 className="heading3">BOOKING MARK SHARNTY.</h4>
-                <h6 className="heading3">From Muyenga Kampala UG</h6>
-                <h6 className="heading3">20000UGX, Per Hour.</h6>
-
-                <Form.Group as={Row} controlId="meetPoint">
-                  <Form.Label column sm={4}>
-                    Meeting Place:
-                  </Form.Label>
-                  <Col sm={8} id="meet1">
-                    <Form.Control
+          {({
+            values,
+            errors,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            setFieldValue,
+            setFieldTouched,
+          }) => (
+            <div className="main-booking">
+              <div className="card" id="booking-card">
+                {/* <div className="card-body" id="card-body"> */}
+                <Form id="form">
+                  <h4 className="heading3">
+                    <small
+                      style={{
+                        color: "black",
+                        fontSize: "30px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      BOOKING
+                    </small>
+                    MARK SHARNTY.
+                  </h4>
+                  <h6 className="heading3">From Muyenga Kampala UG</h6>
+                  <h6 className="heading3">20000UGX, Per Hour.</h6>
+                  <div className="form-group">
+                    <label htmlFor="meetplace">Meeting Place:</label>
+                    <Field
+                      style={field}
+                      name="meetplace"
                       type="text"
                       placeholder="Preferred Meeting Place"
                     />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="meetDate">
-                  <Form.Label column sm={4}>
-                    Meeting Date:
-                  </Form.Label>
-                  <Col sm={8} id="meet2">
-                    <Form.Control
-                      type="text"
+                    <br />
+                    <small style={err}>
+                      <ErrorMessage name="meetplace" style={err} />
+                    </small>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="meetdate">Meeting Date:</label>
+                    <Field
+                      style={field}
+                      name="meetdate"
+                      type="date"
                       placeholder="Schedule Your Preferred Date"
                     />
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="contact">
-                  <Form.Label column sm={4}>
-                    Phone No:
-                  </Form.Label>
-                  <Col sm={8} id="contact">
-                    <Form.Control
-                      type="tel"
+                    <br />
+                    <small style={err}>
+                      <ErrorMessage name="meetdate" />
+                    </small>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phone"> Phone No:</label>
+                    <Field
+                      style={field}
                       name="phone"
+                      type="text"
                       placeholder="Enter Your Phone Number"
                     />
-                  </Col>
-                </Form.Group>
-                <div>
-                  <b>Meeting Time:</b>
-                </div>
-
-                <Form.Row>
-                  <Form.Group as={Col} controlId="StartTime">
-                    <Form.Label>Start Time:</Form.Label>
-                    <Col sm={11}>
-                      <Form.Control
-                        type="text"
-                        placeholder="Enter Starting time"
-                      />
-                    </Col>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="endTime">
-                    <Form.Label>End Time:</Form.Label>
-                    <Col sm={11} id="start2 ">
-                      <Form.Control
-                        type="text"
-                        placeholder="Enter Ending time"
-                      />
-                    </Col>
-                  </Form.Group>
-                </Form.Row>
-
-                <Form.Group as={Row}>
-                  <Col sm={{ span: 10, offset: 4 }}>
-                    <Button
-                      type="submit"
-                      onClick={() => history.push("/Request")}
-                    >
-                      BOOK NOW
-                    </Button>
-                  </Col>
-                </Form.Group>
-              </Form>
+                    <br />
+                    <small style={err}>
+                      <ErrorMessage name="phone" />
+                    </small>
+                  </div>
+                  <div className="form-group">
+                    <div>
+                      <label><b>Meeting Time:</b></label>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="form-group">
+                    <label htmlFor="starttime">Start Time:</label>
+                    <label htmlFor="endtime">End Time:</label>
+                  </div>
+                  <br />
+                  <div className="form-group">
+                    <Field
+                      name="starttime"
+                      id="starttime"
+                      type="time"
+                      placeholder="Enter Starting time"
+                    />
+                    <Field
+                      name="endtime"
+                      id="endtime"
+                      type="time"
+                      placeholder="Enter Ending time"
+                    />
+                    <br />
+                    <small style={err}>
+                      <ErrorMessage name="starttime" />
+                    </small> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <small style={err}>
+                      <ErrorMessage name="endtime" />
+                    </small>
+                  </div>
+                  <div className="form-group">
+                    <button type="submit" id="booking" className="btn btn-success btn-block">
+                      <strong>BOOK NOW</strong>
+                    </button>
+                  </div>
+                </Form>
+              </div>
             </div>
-          </div>
-        </div>
+            // </div>
+          )}
+        </Formik>
       </div>
     );
   }
 }
-export default withRouter(bookingForm);
+export default connect(null, { addBooking })(BookingForm);
