@@ -568,8 +568,17 @@ span.k-step-text {
   border-radius: 8px;
   background-color:#35d187;
   color:#FFF;
-  /* padding-bottom: 80px; */
+  margin-top: 4px;
 }
 .texting{
   width:200px;
+}
+.extending{
+  background-color:#35d187;
+  color:#FFF;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+.extension{
+  margin-top:85px; 
 }

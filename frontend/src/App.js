@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+ import React, { Component, Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   BrowserRouter as Router,
@@ -21,6 +21,7 @@ import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
+import Footer from "./components/Footer";
 
 
  import Rating from "./components/Rating";
