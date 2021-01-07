@@ -44,10 +44,10 @@ export class SPReg2 extends Component {
                     <Checkbox
                       // checked={state.checkedB}
                       // onChange={handleChange}
-                      name="oneYrExp"
+                      name="yearexp"
                       // checked={state.notMiddle}
-                      onChange={handleChange("oneYrExp")}
-                      checked={values.oneYrExp}
+                      onChange={handleChange("yearexp")}
+                      checked={values.yearexp}
                       color="primary"
                     />
                   }
@@ -62,10 +62,10 @@ export class SPReg2 extends Component {
                     <Checkbox
                       // checked={state.checkedB}
                       // onChange={handleChange}
-                      name="notMiddle"
-                      // checked={state.notMiddle}
-                      onChange={handleChange("notMiddle")}
-                      checked={values.notMiddle}
+                      name="notmidman"
+                      // checked={state.notmidman}
+                      onChange={handleChange("notmidman")}
+                      checked={values.notmidman}
                       color="primary"
                     />
                   }
@@ -169,7 +169,7 @@ export class SPReg2 extends Component {
                     {/* </div> */}
                     {/* <div className="col-5"> */}
                       <button
-                        className="btn btn-default btn-block"
+                        className="btn btn-success btn-block"
                         onClick={this.back}
                       >
                         <strong>BACK</strong>

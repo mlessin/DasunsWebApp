@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-export class SPReg1 extends Component {
+export class SPReg5 extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -70,17 +70,11 @@ export class SPReg1 extends Component {
                         defaultValue={values.service}
                       >
                         <option value="Default">Select Service </option>
-                        <option value="1personal assistant">
+                        <option value="personal assistant">
                           Personal Assistant
                         </option>
                         <option value="Interpreter">Interpreter</option>
                         <option value="Captioner">Captioner </option>
-                        <option value=" Personal Assistant">
-                          {" "}
-                          Personal Assistant
-                        </option>
-                        onChange={handleChange("PhyAdd")}
-                        defaultValue={values.PhyAdd}
                       </select>
                     </div>
                   </div>
@@ -258,10 +252,10 @@ export class SPReg1 extends Component {
                     <input
                       type="text"
                       placeholder="Price Per Visit(UGX)"
-                      name="priceVisit"
+                      name="pricevisit"
                       className="form-control"
-                      onChange={handleChange("priceVisit")}
-                      defaultValue={values.priceVisit}
+                      onChange={handleChange("pricevisit")}
+                      defaultValue={values.pricevisit}
                       // className="right-inputs"
                       // required
                     />
@@ -344,4 +338,4 @@ export class SPReg1 extends Component {
   }
 }
 
-export default SPReg1;
+export default SPReg5;
