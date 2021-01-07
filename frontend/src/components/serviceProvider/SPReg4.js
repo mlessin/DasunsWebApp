@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class SPReg1 extends Component {
+export class SPReg4 extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -56,10 +56,10 @@ export class SPReg1 extends Component {
                       <input
                         type="text"
                         placeholder="Full Name"
-                        name="ref1Name"
+                        name="ref1name"
                         className="form-control"
-                        onChange={handleChange("ref1Name")}
-                        defaultValue={values.ref1Name}
+                        onChange={handleChange("ref1name")}
+                        defaultValue={values.ref1name}
                         // className="left-inputs"
                         // required
                       />
@@ -127,10 +127,10 @@ export class SPReg1 extends Component {
                       <input
                         type="text"
                         placeholder="Full Name"
-                        name="ref2Name"
+                        name="ref2name"
                         className="form-control"
-                        onChange={handleChange("ref2Name")}
-                        defaultValue={values.ref2Name}
+                        onChange={handleChange("ref2name")}
+                        defaultValue={values.ref2name}
                         // className="left-inputs"
                         // required
                       />
@@ -213,4 +213,4 @@ export class SPReg1 extends Component {
   }
 }
 
-export default SPReg1;
+export default SPReg4;

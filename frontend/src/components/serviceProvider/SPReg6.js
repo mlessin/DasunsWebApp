@@ -42,34 +42,34 @@ export class SPReg6 extends Component {
         nin,
         dob,
         gender,
-        PhyAdd,
-        oneYrExp,
-        notMiddle,
+        phyadd,
+        yearexp,
+        notmidman,
         skillset,
         internet,
         qualification,
-        link,
+        portifolio,
         profession,
-        ref1Name,
-        ref1title,
+        ref1name,
         ref1email,
+        ref1title,
         ref1phone,
-        ref2Name,
-        ref2title,
+        ref2name,
         ref2email,
+        ref2title,
         ref2phone,
+        category,
+        service,
         sunday,
         monday,
         tuesday,
         wednesday,
         thursday,
         friday,
-        service,
-        category,
         saturday,
         starttime,
         endtime,
-        priceVisit,
+        pricevisit,
         terms,
       },
     } = this.props;
@@ -98,18 +98,18 @@ export class SPReg6 extends Component {
                 <ListItemText primary="Gender" secondary={gender} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Physical Address" secondary={PhyAdd} />
+                <ListItemText primary="Physical Address" secondary={phyadd} />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="One year Experience in your profession"
-                  secondary={oneYrExp}
+                  secondary={yearexp}
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="You're not a middleman"
-                  secondary={notMiddle}
+                  secondary={notmidman}
                 />
               </ListItem>
               <ListItem>
@@ -131,7 +131,7 @@ export class SPReg6 extends Component {
                 />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Web link" secondary={link} />
+                <ListItemText primary="Web link" secondary={portifolio} />
               </ListItem>
               <ListItem>
                 <ListItemText
@@ -140,7 +140,7 @@ export class SPReg6 extends Component {
                 />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Ref 1 name" secondary={ref1Name} />
+                <ListItemText primary="Ref 1 name" secondary={ref1name} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Ref 1 title" secondary={ref1title} />
@@ -155,7 +155,7 @@ export class SPReg6 extends Component {
                 />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Ref 2 name" secondary={ref2Name} />
+                <ListItemText primary="Ref 2 name" secondary={ref2name} />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Ref 2 title" secondary={ref2title} />
@@ -208,7 +208,7 @@ export class SPReg6 extends Component {
               <ListItem>
                 <ListItemText
                   primary="Price per visit"
-                  secondary={priceVisit}
+                  secondary={pricevisit}
                 />
               </ListItem>
               <ListItem>
@@ -224,7 +224,7 @@ export class SPReg6 extends Component {
               Back
             </Button>
 
-            <Button color="primary" variant="contained" onClick={this.onSubmit}>
+            <Button color="primary" variant="contained" type="submit" onClick={this.onSubmit}>
               Confirm & Submit
             </Button>
           </Dialog>

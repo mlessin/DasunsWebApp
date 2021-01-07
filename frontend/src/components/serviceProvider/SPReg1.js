@@ -102,9 +102,9 @@ export class SPReg1 extends Component {
                   type="text"
                   className="form-control"
                   placeholder="Physical Address(Required)"
-                  name="PhyAdd"
-                  onChange={handleChange("PhyAdd")}
-                  defaultValue={values.PhyAdd}
+                  name="phyadd"
+                  onChange={handleChange("phyadd")}
+                  defaultValue={values.phyadd}
                   // required
                 />
               </div>
