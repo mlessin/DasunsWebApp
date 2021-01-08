@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-export class SPReg1 extends Component {
+export class SPReg3 extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -45,9 +45,9 @@ export class SPReg1 extends Component {
                     type="text"
                     className="form-control"
                     placeholder="Please Add your link here (Optional)"
-                    name="link"
-                    onChange={handleChange("link")}
-                    defaultValue={values.link}
+                    name="portifolio"
+                    onChange={handleChange("portifolio")}
+                    defaultValue={values.portifolio}
                   />
                 </div>
                 <p>Please leave it blank if you have no online portfolio</p>
@@ -75,4 +75,4 @@ export class SPReg1 extends Component {
   }
 }
 
-export default SPReg1;
+export default SPReg3;
