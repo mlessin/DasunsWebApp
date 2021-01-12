@@ -3,9 +3,9 @@ import "./style.css"
 import ReactStars from "react-rating-stars-component";
 import Banner from "./Banner";
 import Footer from "./Footer";
-// import Log oWhite from "../images/LogoWhite.png";
-// import facebook from "../images/facebook.png";
-// import twitter from "../images/twitter.png";
+import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+
 
 
 
@@ -33,8 +33,39 @@ const FirstRate = {
     // }
 };
 
+const initialValues = {
+    Rating: "",
+    firstrate: "",
+    extend: "",
+    comment: "",
+    
+  };
+  
+
 
 export default class Rating extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          Rating: "",
+          FirstRate: "",
+          Extend: "",
+          Comment: "",
+          
+        };
+      }
+    
+      static propTypes = {
+        addRating: PropTypes.func.isRequired,
+       
+      };
+     
+      onSubmit = (values, { setSubmitting }) => {
+        this.props.addRating(values);
+        this.setSubmitting = setSubmitting;
+        
+      };
+    
     render() {
         return (
             <div>
@@ -104,3 +135,4 @@ export default class Rating extends Component {
         );
     }
 }
+// export default connect(null, { addRating})(Rating);

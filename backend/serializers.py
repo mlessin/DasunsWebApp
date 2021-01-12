@@ -16,6 +16,17 @@ class ServiceproviderSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
+
+#Rating Serialiser
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = '__all__'
+
+        
+
+
 # #PersonalInfo Serialiser
 # class PersonalInfoSerializer(serializers.ModelSerializer):
 #     class Meta:

@@ -37,6 +37,22 @@ class ServiceproviderViewSet(viewsets.ModelViewSet):
 
 
 
+# rating viewsets
+class RatigViewSet(viewsets.ModelViewSet):
+   
+    permission_class = [
+        permissions.IsAuthenticated,
+     ]
+
+    serializer_class = RatingSerializer
+
+    def get_queryset(self):
+        return self.request.user.Ratig.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+
 # viewsets without authentication
 # # Book Viewset
 # class BookViewSet(viewsets.ModelViewSet):

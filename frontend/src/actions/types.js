@@ -22,3 +22,10 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 export const GET_ERRORS = "GET_ERRORS";
 export const CREATE_MESSAGE = "CREATE_MESSAGE";
 
+
+
+export const ADD_RATING= "ADD_RATING";
+export const GET_RATINGS = "GET_RATINGS";
+export const GET_ONE_RATING = "GET_ONE_RATING";
+export const UPDATE_RATING = "UPDATE_RATING"
+export const DELETE_RATING = "DELETE_RATING";
