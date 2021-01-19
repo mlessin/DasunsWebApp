@@ -124,36 +124,16 @@ export class ServiceReg extends Component {
           pricevisit: this.state.pricevisit,
           terms: this.state.terms,
         };
-        console.log(data)
-    axios.post('http://localhost:8000/backend/api/serviceproviders/',  data )
+        console.log({data})
+    axios.post('http://localhost:8000/backend/api/serviceproviders/',  {data} )
       .then(res=>{
         console.log(res);
         console.log(res.data);
-        // window.location = "/retrieve" //This line of code will redirect you once the submission is succeed
       })
       .catch(err => console.log(err));
   }
 
-  // handleChange = input => e => {
-  //     this.setState({[input]: e.target.value});
-  // }
-
-  //  handleChange = evt => {
-  //     const value =
-  //       evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
-  //     this.setState({
-  //       ...state,
-  //       [evt.target.name]: value
-  //     });
-  //   }
-
-  // handleCheckboxChange = checkbox => e =>
-  // this.setState({ [checkbox]: e.target.checked })
-
-  // handleCheck = event =>{
-  // this.setState({ checked: event.target.checked })
-  // }
-
+ 
   render() {
     const { step } = this.state;
     const {
