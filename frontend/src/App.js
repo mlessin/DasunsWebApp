@@ -52,7 +52,7 @@ export default class App extends Component {
           <Router>
             <Fragment>
               <div className="App">
-                {/* <ServiceReg /> */}
+                <ServiceReg />
                 <Alerts />
                 {/* <Banner /> */}
                 {/* <SPlist /> */}

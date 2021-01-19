@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import axios from "axios";
+
 // import { Stepper } from "@progress/kendo-react-layout";
 
 import SPReg1 from "./SPReg1";
@@ -80,6 +83,56 @@ export class ServiceReg extends Component {
         : event.target.value,
     });
   };
+
+
+  handleSubmit = ()  => {
+   
+    const data = {
+          fullname: this.state.fullname,
+          phone: this.state.phone,
+          email: this.state.email,
+          nin: this.state.nin,
+          dob: this.state.dob,
+          gender: this.state.gender,
+          phyadd: this.state.phyadd,
+          yearexp: this.state.yearexp,
+          notmidman: this.state.notmidman,
+          skillset: this.state.skillset,
+          internet: this.state.internet,
+          qualification: this.state.qualification,
+          portifolio: this.state.portifolio,
+          profession: this.state.profession,
+          ref1name: this.state.ref1name,
+          ref1email: this.state.ref1email,
+          ref1title: this.state.ref1title,
+          ref1phone: this.state.ref1phone,
+          ref2name: this.state.ref2name,
+          ref2email: this.state.ref2email,
+          ref2title: this.state.ref2title,
+          ref2phone: this.state.ref2phone,
+          category: this.state.category,
+          service: this.state.service,
+          sunday: this.state.sunday,
+          monday: this.state.monday,
+          tuesday: this.state.tuesday,
+          wednesday: this.state.wednesday,
+          thursday: this.state.thursday,
+          friday: this.state.friday,
+          saturday: this.state.saturday,
+          starttime: this.state.starttime,
+          endtime: this.state.endtime,
+          pricevisit: this.state.pricevisit,
+          terms: this.state.terms,
+        };
+        console.log(data)
+    axios.post('http://localhost:8000/backend/api/serviceproviders/',  data )
+      .then(res=>{
+        console.log(res);
+        console.log(res.data);
+        // window.location = "/retrieve" //This line of code will redirect you once the submission is succeed
+      })
+      .catch(err => console.log(err));
+  }
 
   // handleChange = input => e => {
   //     this.setState({[input]: e.target.value});
@@ -178,7 +231,7 @@ export class ServiceReg extends Component {
       pricevisit,
       terms,
     };
-
+    console.log(this.state)
     switch (step) {
       case 1:
         return (
@@ -249,6 +302,7 @@ export class ServiceReg extends Component {
               prevStep={this.prevStep}
               handleChange={this.handleChange}
               values={values}
+              handleSubmit={this.handleSubmit}
             />
           </>
         );
