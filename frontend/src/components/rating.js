@@ -66,6 +66,19 @@ export default class Rating extends Component {
         
       };
     
+
+      validateRating(value) {
+
+        let error;
+        if (!value || value === 0) {
+            error = 'Required';
+        }
+        return error;
+    }  
+    
+
+
+
     render() {
         return (
             <div>
