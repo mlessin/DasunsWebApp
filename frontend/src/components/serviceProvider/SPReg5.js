@@ -95,6 +95,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("sunday")}
                           checked={values.sunday}
                           name="sunday"
+                          value="Sunday"
                           color="primary"
                         />
                       }
@@ -109,6 +110,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("monday")}
                           checked={values.monday}
                           name="monday"
+                          value="Monday"
                           color="primary"
                         />
                       }
@@ -123,6 +125,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("tuesday")}
                           checked={values.tuesday}
                           name="tuesday"
+                          value="Tuesday"
                           color="primary"
                         />
                       }
@@ -137,6 +140,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("wednesday")}
                           checked={values.wednesday}
                           name="wednesday"
+                          value="Wednesday"
                           color="primary"
                         />
                       }
@@ -151,6 +155,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("thursday")}
                           checked={values.thursday}
                           name="thursday"
+                          value="Thursday"
                           color="primary"
                         />
                       }
@@ -165,6 +170,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("friday")}
                           checked={values.friday}
                           name="friday"
+                          value="Friday"
                           color="primary"
                         />
                       }
@@ -179,6 +185,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("saturday")}
                           checked={values.saturday}
                           name="saturday"
+                          value="Saturday"
                           color="primary"
                         />
                       }
@@ -292,6 +299,7 @@ export class SPReg5 extends Component {
                       onChange={handleChange("terms")}
                       checked={values.terms}
                       name="terms"
+                      value="Agree"
                       color="primary"
                     />
                   }

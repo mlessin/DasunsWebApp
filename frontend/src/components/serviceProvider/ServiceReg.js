@@ -75,13 +75,17 @@ export class ServiceReg extends Component {
 
   //Handle field change
 
-  handleChange = (input) => (event) => {
-    const isCheckbox = event.target.type === "checkbox";
-    this.setState({
-      [event.target.name]: isCheckbox
-        ? event.target.checked
-        : event.target.value,
-    });
+  // handleChange = (input) => (event) => {
+  //   const isCheckbox = event.target.type === "checkbox";
+  //   this.setState({
+  //     [event.target.name]: isCheckbox
+  //       ? event.target.value
+  //       : event.target.value,
+  //   });
+  // };
+
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
   };
 
 
@@ -122,10 +126,13 @@ export class ServiceReg extends Component {
           starttime: this.state.starttime,
           endtime: this.state.endtime,
           pricevisit: this.state.pricevisit,
-          terms: this.state.terms,
+          terms: this.state.terms
         };
-        console.log({data})
-    axios.post('http://localhost:8000/backend/api/serviceproviders/',  {data} )
+        console.log(data)
+    axios.post('http://localhost:8000/backend/api/serviceproviders/',  data, {headers: {
+      // Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json;charset=utf-8'
+   } })
       .then(res=>{
         console.log(res);
         console.log(res.data);

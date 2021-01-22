@@ -39,16 +39,31 @@ export class SPReg2 extends Component {
                   }}
                 ></div>
 
+{/* <div>
+  <input
+  type="checkbox"
+  name="yearexp"
+  value="one year experience"
+  onChange={handleChange("yearexp")}
+  defaultValue={values.yearexp} />
+  <label>
+                      <b>You have at least one year of experience in your profession</b>
+                    </label>
+</div> */}
+
+
                 <FormControlLabel
                   control={
                     <Checkbox
                       // checked={state.checkedB}
                       // onChange={handleChange}
                       name="yearexp"
-                      // checked={state.notMiddle}
+                      value="one year experience"
                       onChange={handleChange("yearexp")}
                       checked={values.yearexp}
                       color="primary"
+                      defaultValue={values.yearexp}
+                      value="One year experince"
                     />
                   }
                   label="You have at least one year of experience in your profession"
@@ -63,10 +78,12 @@ export class SPReg2 extends Component {
                       // checked={state.checkedB}
                       // onChange={handleChange}
                       name="notmidman"
+                      value="I am not a middle man"
                       // checked={state.notmidman}
                       onChange={handleChange("notmidman")}
                       checked={values.notmidman}
                       color="primary"
+                      defaultValue={values.notmidman}
                     />
                   }
                   label="You're not a middleman"
@@ -81,7 +98,9 @@ export class SPReg2 extends Component {
                       name="skillset"
                       onChange={handleChange("skillset")}
                       checked={values.skillset}
+                      value="I have the required skillset"
                       color="primary"
+                      defaultValue={values.skillset}
                     />
                   }
                   label="You have the skillset to give proffesional service"
@@ -99,6 +118,8 @@ export class SPReg2 extends Component {
                       onChange={handleChange("internet")}
                       checked={values.internet}
                       color="primary"
+                      value="I have a reliable internet and device"
+                      defaultValue={values.internet}
                     />
                   }
                   label="You have a phone/computer with active internet"
