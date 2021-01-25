@@ -193,7 +193,7 @@ export class JointForm extends Component {
     }
 
     let data = {
-      checkbox: checkArray.toString(),
+      // checkbox: checkArray.toString(),
       fullname: this.state.fullname,
       phone: this.state.phone,
       email: this.state.email,

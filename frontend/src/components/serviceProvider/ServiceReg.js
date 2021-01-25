@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Stepper } from "@progress/kendo-react-layout";
-import axios from "axios"
+
+import axios from "axios";
 
 import SPReg1 from "./SPReg1";
 import SPReg2 from "./SPReg2";
@@ -59,114 +59,12 @@ export class ServiceReg extends Component {
     terms: false,
   };
 
-  // static propTypes = {
-  //   addServiceProvider: PropTypes.func.isRequired,
-  //   isAuthenticated: PropTypes.bool
-  // };
+  static propTypes = {
+    addServiceProvider: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+  };
 
-  // handleSubmit = (values) => {
-  //   this.props.addServiceProvider(values);
-  //   // this.props.history.push("/");
-  // };
-//////////////////////////from kawooya
-  // handleSubmit = ()  => {
-  //   const data = {
-  //         fullname: this.state.fullname,
-  //         phone: this.state.phone,
-  //         email: this.state.email,
-  //         nin: this.state.nin,
-  //         dob: this.state.dob,
-  //         gender: this.state.gender,
-  //         phyadd: this.state.phyadd,
-  //         yearexp: this.state.yearexp,
-  //         notmidman: this.state.notmidman,
-  //         skillset: this.state.skillset,
-  //         internet: this.state.internet,
-  //         qualification: this.state.qualification,
-  //         portifolio: this.state.portifolio,
-  //         profession: this.state.profession,
-  //         ref1name: this.state.ref1name,
-  //         ref1email: this.state.ref1email,
-  //         ref1title: this.state.ref1title,
-  //         ref1phone: this.state.ref1phone,
-  //         ref2name: this.state.ref2name,
-  //         ref2email: this.state.ref2email,
-  //         ref2title: this.state.ref2title,
-  //         ref2phone: this.state.ref2phone,
-  //         category: this.state.category,
-  //         service: this.state.service,
-  //         sunday: this.state.sunday,
-  //         monday: this.state.monday,
-  //         tuesday: this.state.tuesday,
-  //         wednesday: this.state.wednesday,
-  //         thursday: this.state.thursday,
-  //         friday: this.state.friday,
-  //         saturday: this.state.saturday,
-  //         starttime: this.state.starttime,
-  //         endtime: this.state.endtime,
-  //         pricevisit: this.state.pricevisit,
-  //         terms: this.state.terms,
-  //       };
-  //       console.log({data})
-  //   axios.post('http://localhost:8000/backend/api/serviceproviders/',  {data} )
-  //     .then(res=>{
-  //       console.log(res);
-  //       console.log(res.data);
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-
-
-  handleSubmit = () => {
-    // event.preventDefault();
-
-    const serviceProv = {
-      fullname:this.state.fullname,
-      phone:this.state.phone,
-      email:this.state.email,
-      nin:this.state.nin,
-      dob:this.state.dob,
-      gender:this.state.gender,
-      phyadd:this.state.phyadd,
-      yearexp: this.state.yearexp,
-      notmidman: this.state.notmidman,
-      skillset: this.state.skillset,
-      internet: this.state.internet,
-      qualification:this.state.qualification,
-      portifolio:this.state.portifolio,
-      profession:this.state.profession,
-      ref1name:this.state.ref1name,
-      ref1title:this.state.ref1title,
-      ref1email:this.state.ref1email,
-      ref1phone:this.state.ref1phone,
-      ref2name:this.state.ref2name,
-      ref2title:this.state.ref2title,
-      ref2email:this.state.ref2email,
-      ref2phone:this.state.ref2phone,
-      category:this.state.category,
-      service:this.state.service,
-      sunday: this.state.sunday,
-      monday: this.state.monday,
-      tuesday: this.state.tuesday,
-      wednesday: this.state.wednesday,
-      thursday: this.state.thursday,
-      friday: this.state.friday,
-      saturday: this.state.saturday,
-      starttime:this.state.starttime,
-      endtime:this.state.endtime,
-      pricevisit:this.state.pricevisit,
-      terms: this.state.terms,
-    
-    };
-
-    axios.post(`/backend/api/serviceproviders/`, { serviceProv })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
-  }
-  
-  
+ 
   //go to next step
   nextStep = () => {
     const { step } = this.state;
@@ -185,16 +83,66 @@ export class ServiceReg extends Component {
 
   //Handle field change
 
-  handleChange  = (input) => (event) => {
-    const isCheckbox = event.target.type === "checkbox";
-    this.setState({
-      [event.target.name]: isCheckbox
-        ? event.target.checked
-        : event.target.value,
-    });
+  // handleChangeCheck = (input) => (event) => {
+  //   const isCheckbox = event.target.type === "checkbox";
+  //   this.setState({
+  //     [event.target.name]: isCheckbox
+  //       ? event.target.value
+  //       : event.target.value,
+  //   });
+  // };
+
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
   };
 
 
+  handleSubmit = ()  => {
+   
+    const data = {
+          fullname: this.state.fullname,
+          phone: this.state.phone,
+          email: this.state.email,
+          nin: this.state.nin,
+          dob: this.state.dob,
+          gender: this.state.gender,
+          phyadd: this.state.phyadd,
+          yearexp: this.state.yearexp.toString(),
+          notmidman: this.state.notmidman.toString(),
+          skillset: this.state.skillset.toString(),
+          internet: this.state.internet.toString(),
+          qualification: this.state.qualification,
+          portifolio: this.state.portifolio,
+          profession: this.state.profession,
+          ref1name: this.state.ref1name,
+          ref1email: this.state.ref1email,
+          ref1title: this.state.ref1title,
+          ref1phone: this.state.ref1phone,
+          ref2name: this.state.ref2name,
+          ref2email: this.state.ref2email,
+          ref2title: this.state.ref2title,
+          ref2phone: this.state.ref2phone,
+          category: this.state.category,
+          service: this.state.service,
+          sunday: this.state.sunday.toString(),
+          monday: this.state.monday.toString(),
+          tuesday: this.state.tuesday.toString(),
+          wednesday: this.state.wednesday.toString(),
+          thursday: this.state.thursday.toString(),
+          friday: this.state.friday.toString(),
+          saturday: this.state.saturday.toString(),
+          starttime: this.state.starttime,
+          endtime: this.state.endtime,
+          pricevisit: this.state.pricevisit,
+          terms: this.state.terms.toString()
+        };
+        console.log(data)
+
+        this.props.addServiceProvider(data);
+        this.props.history.push("/Request");
+  }
+
+ 
   render() {
     const { step } = this.state;
     const {
@@ -272,7 +220,7 @@ export class ServiceReg extends Component {
       pricevisit,
       terms,
     };
-
+    console.log(this.state)
     switch (step) {
       case 1:
         return (
@@ -294,6 +242,7 @@ export class ServiceReg extends Component {
               nextStep={this.nextStep}
               prevStep={this.prevStep}
               handleChange={this.handleChange}
+              // handleChange={this.handleChangeCheck}
               values={values}
             />
           </>
@@ -330,6 +279,7 @@ export class ServiceReg extends Component {
               nextStep={this.nextStep}
               prevStep={this.prevStep}
               handleChange={this.handleChange}
+              // handleChange={this.handleChangeCheck}
               values={values}
              
             />
@@ -340,10 +290,9 @@ export class ServiceReg extends Component {
           <>
             <Banner />
             <SPReg6
-              // nextStep={this.nextStep}
               prevStep={this.prevStep}
               values={values}
-              handleSubmit = {this.handleSubmit}
+              handleSubmit={this.handleSubmit}
             />
           </>
         );
@@ -353,5 +302,4 @@ export class ServiceReg extends Component {
   }
 }
 
-export default ServiceReg;
-// export default connect(null, { addServiceProvider })(ServiceReg);
+export default connect(null, { addServiceProvider })(ServiceReg);

@@ -14,7 +14,6 @@ export class SPReg2 extends Component {
     this.props.prevStep();
   };
 
-
   render() {
     const { values, handleChange } = this.props;
     return (
@@ -46,10 +45,11 @@ export class SPReg2 extends Component {
                       // checked={state.checkedB}
                       // onChange={handleChange}
                       name="yearexp"
-                      // checked={state.notMiddle}
                       onChange={handleChange("yearexp")}
                       checked={values.yearexp}
                       color="primary"
+                      defaultValue={values.yearexp}
+                      value="One year experince"
                     />
                   }
                   label="You have at least one year of experience in your profession"
@@ -64,10 +64,12 @@ export class SPReg2 extends Component {
                       // checked={state.checkedB}
                       // onChange={handleChange}
                       name="notmidman"
+                      value="I am not a middle man"
                       // checked={state.notmidman}
                       onChange={handleChange("notmidman")}
                       checked={values.notmidman}
                       color="primary"
+                      defaultValue={values.notmidman}
                     />
                   }
                   label="You're not a middleman"
@@ -82,7 +84,9 @@ export class SPReg2 extends Component {
                       name="skillset"
                       onChange={handleChange("skillset")}
                       checked={values.skillset}
+                      value="I have the required skillset"
                       color="primary"
+                      defaultValue={values.skillset}
                     />
                   }
                   label="You have the skillset to give proffesional service"
@@ -101,84 +105,25 @@ export class SPReg2 extends Component {
                       checked={values.internet}
                       // defaultChecked={isChecked()}
                       color="primary"
+                      value="I have a reliable internet and device"
+                      defaultValue={values.internet}
                     />
                   }
                   label="You have a phone/computer with active internet"
                 />
 
-                {/* <div className="checkboxes">
-                  <div class="">
-                    <input type="checkbox" value="sunday" name="sunday" id="" />
-                    <label class="" for="">
-                      At least 1 year of experience in your profession
-                    </label>
-                  </div>
-                  <div class="">
-                    <input type="checkbox" value="monday" name="monday" id="" />
-                    <label class="" for="">
-                      You're not a middle man
-                    </label>
-                  </div>
-                  <div class="">
-                    <input type="checkbox" value="monday" name="monday" id="" />
-                    <label class="" for="">
-                      You have the skillset to give professional service
-                    </label>
-                  </div>
-                  <div class="">
-                    <input type="checkbox" value="monday" name="monday" id="" />
-                    <label class="" for="">
-                      You have a phone / Computer and active Phone Number
-                    </label>
-                  </div>
-                </div>
-                <div> */}
-                {/* <p>
-                    Only allowed to proceed to the other step by checking all
-                    fields. If you do not have the above eligibility requirements,
-                    We can not proceed to the next step. You can always signup later
-                    when you meet all the above eligibility requirements
-                  </p>
-                </div> */}
-                {/* <div className="row">
-                  <div className="col-5">
-                    <div id="btn-group">
-                      <button type="submit" id="btn-default">
-                        <strong>BACK TO PREVIOUS</strong>
-                      </button>
-                    </div>
-                  </div>
-    
-                  <div className="col-2"></div>
-    
-                  <div className="col-5">
-                    <div id="btn-group">
-                      <button type="submit" id="btn-success">
-                        <strong>SAVE & CONTINUE</strong>
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="row"> */}
-                  {/* <div className="col-5"> */}
-                    {/* <div className="form-group"> */}
-                      <button
-                        className="btn btn-success btn-block"
-                        onClick={this.continue}
-                      >
-                        <strong>SAVE & CONTINUE</strong>
-                      </button>
-                    {/* </div> */}
-                    {/* <div className="col-5"> */}
-                      <button
-                        className="btn btn-success btn-block"
-                        onClick={this.back}
-                      >
-                        <strong>BACK</strong>
-                      </button>
-                    {/* </div> */}
-                  {/* </div> */}
-                {/* </div> */}
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={this.continue}
+                >
+                  <strong>SAVE & CONTINUE</strong>
+                </button>
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={this.back}
+                >
+                  <strong>BACK</strong>
+                </button>
               </div>
             </form>
           </div>

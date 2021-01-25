@@ -19,11 +19,11 @@ export const addServiceProvider = serviceprovider => (dispatch, getState) => {
         dispatch({
           type: ADD_SERVICEPROVIDER,
           payload: res.data
-        });
+        }); 
       })
       .catch(err =>{
         dispatch(returnErrors(err.response.data, err.response.status));
-        dispatch(createMessage({ loginfail: "Incorrect credentials supplied" }));
+        // dispatch(createMessage({ loginfail: "Incorrect credentials supplied" }));
       });
   };
   

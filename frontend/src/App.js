@@ -64,16 +64,16 @@ export default class App extends Component {
                   <PrivateRoute path="/splist" exact component={SPlist} />
                   <PrivateRoute path="/bookingForm" exact component={BookingForm} />
                   <PrivateRoute path="/request" exact component={Request} />
-                  {/* <PrivateRoute
-                    path="/signupservicep"
-                    exact
-                    component={ServiceReg}
-                  /> */}
                   <PrivateRoute
                     path="/signupservicep"
                     exact
-                    component={JointForm}
+                    component={ServiceReg}
                   />
+                  {/* <PrivateRoute
+                    path="/signupservicep"
+                    exact
+                    component={JointForm}
+                  /> */}
                   <Route component={notfound} />
                 </Switch>
               </div>
