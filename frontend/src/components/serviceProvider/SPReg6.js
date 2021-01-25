@@ -5,27 +5,34 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import { List, ListItem, ListItemText } from "@material-ui/core/";
 import Button from "@material-ui/core/Button";
 
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { addServiceProvider } from "../../actions/serviceProviders"
+// import { connect } from "react-redux";
+// import PropTypes from "prop-types";
+// import { addServiceProvider } from "../../actions/serviceProviders"
 
 export class SPReg6 extends Component {
+  constructor() {
+    super();
 
-  static propTypes = {
-    addServiceProvider: PropTypes.func.isRequired,
-    // isAuthenticated: PropTypes.bool
-  };
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  onSubmit = (values, { setSubmitting }) => {
-    this.props.addServiceProvider(values);
-    this.setSubmitting = setSubmitting;
-    this.props.history.push("/");
-  };
+  // static propTypes = {
+  //   addServiceProvider: PropTypes.func.isRequired,
+  //   isAuthenticated: PropTypes.bool
+  // };
+
+  // handleSubmit = (values) => {
+  //   this.props.addServiceProvider(values);
+  //   // this.props.history.push("/");
+  // };
+  
+
 
   continue = (e) => {
     e.preventDefault();
-    // PROCESS FORM //
-    this.props.nextStep();
+    // PROCESS FORM //post to the api
+    this.props.handleSubmit();
+    // this.props.nextStep();
   };
 
   back = (e) => {
@@ -76,17 +83,18 @@ export class SPReg6 extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <Dialog open fullWidth maxWidth="sm">
+          {/* <Dialog open fullWidth maxWidth="sm"> */}
             <AppBar title="Confirm User Data" />
+            {/* <form onSubmit={this.handleSubmit}> */}
             <List>
               <ListItem>
-                <ListItemText primary="Full Name" secondary={fullname} />
+                <ListItemText primary="Full Name" secondary={fullname}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary="Phone number" secondary={phone} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Email" secondary={email} />
+                <ListItemText primary="Email" secondary={email}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary="NIN" secondary={nin} />
@@ -95,58 +103,64 @@ export class SPReg6 extends Component {
                 <ListItemText primary="DOB" secondary={dob} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Gender" secondary={gender} />
+                <ListItemText primary="Gender" secondary={gender}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary="Physical Address" secondary={phyadd} />
+                <ListItemText primary="Physical Address" secondary={phyadd}/>
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="One year Experience in your profession"
                   secondary={yearexp}
+                  
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="You're not a middleman"
                   secondary={notmidman}
+                  
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="You have the skillset to give proffesional service"
                   secondary={skillset}
+                  
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="You have a phone/computer with active internet"
                   secondary={internet}
+                  
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Qualificatoins"
                   secondary={qualification}
+                  
                 />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Web link" secondary={portifolio} />
+                <ListItemText primary="Web link" secondary={portifolio}  />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="Tell us about yourself"
                   secondary={profession}
+                  
                 />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Ref 1 name" secondary={ref1name} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Ref 1 title" secondary={ref1title} />
+                <ListItemText primary="Ref 1 title" secondary={ref1title}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary="Ref 1 email" secondary={ref1email} />
+                <ListItemText primary="Ref 1 email" secondary={ref1email}/>
               </ListItem>
               <ListItem>
                 <ListItemText
@@ -167,6 +181,7 @@ export class SPReg6 extends Component {
                 <ListItemText
                   primary="Ref 2 phone number"
                   secondary={ref2phone}
+                  
                 />
               </ListItem>
               <ListItem>
@@ -209,12 +224,14 @@ export class SPReg6 extends Component {
                 <ListItemText
                   primary="Price per visit"
                   secondary={pricevisit}
+                  // name="pricevisit"
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="I agree to the terms and conditions set by Dasuns"
                   secondary={terms}
+                  // name="terms"
                 />
               </ListItem>
             </List>
@@ -224,16 +241,17 @@ export class SPReg6 extends Component {
               Back
             </Button>
 
-            <Button color="primary" variant="contained" type="submit" onClick={this.onSubmit}>
+            <Button color="primary" variant="contained" type="submit" onClick={this.continue}>
               Confirm & Submit
             </Button>
-          </Dialog>
+            {/* </form> */}
+          {/* </Dialog> */}
         </>
       </MuiThemeProvider>
     );
   }
 }
 
-// export default SPReg6;
+export default SPReg6;
 
-export default connect(null, { addServiceProvider })(SPReg6);
+// export default connect(null, { addServiceProvider })(SPReg6);

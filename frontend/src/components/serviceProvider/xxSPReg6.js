@@ -9,11 +9,12 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 // import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addServiceProvider } from "../../actions/serviceProviders";
+import { addServiceProvider, oneServiceProvider } from "../../actions/serviceProviders";
 
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
+import axios from "axios";
 
 const formSchema = Yup.object().shape({
   fullname: Yup.string()
@@ -22,43 +23,43 @@ const formSchema = Yup.object().shape({
     .required("You must specify your full name"),
 });
 
-const initialValues = {
-  fullname: "",
-  phone: "",
-  email: "",
-  nin: "",
-  dob: "",
-  gender: "",
-  phyadd: "",
-  yearexp: "",
-  notmidman: "",
-  skillset: "",
-  internet: "",
-  qualification: "",
-  portifolio: "",
-  profession: "",
-  ref1name: "",
-  ref1email: "",
-  ref1title: "",
-  ref1phone: "",
-  ref2name: "",
-  ref2email: "",
-  ref2title: "",
-  ref2phone: "",
-  category: "",
-  service: "",
-  sunday: "",
-  monday: "",
-  tuesday: "",
-  wednesday: "",
-  thursday: "",
-  friday: "",
-  saturday: "",
-  starttime: "",
-  endtime: "",
-  pricevisit: "",
-  terms: "",
-};
+// const initialValues = {
+//   fullname: "",
+//   phone: "",
+//   email: "",
+//   nin: "",
+//   dob: "",
+//   gender: "",
+//   phyadd: "",
+//   yearexp: "",
+//   notmidman: "",
+//   skillset: "",
+//   internet: "",
+//   qualification: "",
+//   portifolio: "",
+//   profession: "",
+//   ref1name: "",
+//   ref1email: "",
+//   ref1title: "",
+//   ref1phone: "",
+//   ref2name: "",
+//   ref2email: "",
+//   ref2title: "",
+//   ref2phone: "",
+//   category: "",
+//   service: "",
+//   sunday: "",
+//   monday: "",
+//   tuesday: "",
+//   wednesday: "",
+//   thursday: "",
+//   friday: "",
+//   saturday: "",
+//   starttime: "",
+//   endtime: "",
+//   pricevisit: "",
+//   terms: "",
+// };
 class SPReg6 extends Component {
   constructor(props) {
     super(props);
@@ -69,14 +70,28 @@ class SPReg6 extends Component {
 
   static propTypes = {
     addServiceProvider: PropTypes.func.isRequired,
+    serviceProvider: PropTypes.object.isRequired,
+    // oneServiceProvider: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
   };
+
+  // componentDidMount() {
+  //   this.props.oneServiceProvider();
+  // }
 
   onSubmit = (values, { setSubmitting }) => {
     this.props.addServiceProvider(values);
     this.setSubmitting = setSubmitting;
-    this.props.history.push("/");
+    // this.props.history.push("/");
+    console.log(values)
   };
+
+  // onSubmit = (values, { setSubmitting }) => {
+  //   this.props.updateProject(this.props.match.params.id, values);
+  //   this.setSubmitting = setSubmitting;
+  //   this.props.history.push("/display");
+  // };
+
 
   continue = (e) => {
     e.preventDefault();
@@ -91,6 +106,7 @@ class SPReg6 extends Component {
 
   render() {
     const { history } = this.props;
+    const { handleChange } = this.props;
     const {
       values: {
         fullname,
@@ -136,7 +152,8 @@ class SPReg6 extends Component {
           <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Confirm User Data" />
             <Formik
-              initialValues={initialValues}
+              // enableReinitialize={true}
+              initialValues={this.values}
               validationSchema={formSchema}
               onSubmit={this.onSubmit}
             >
@@ -154,7 +171,7 @@ class SPReg6 extends Component {
                   <div>
                     <div>
                       <div>
-                        <h2>Confirm </h2>
+                        <h2>Confirm</h2>
                       </div>
                       {/* <div> */}
                       <div
@@ -165,13 +182,15 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          className="form-control"
+                          placeholder="Full Name (Required)"
                           name="fullname"
-                          label="Full Name"
-                          //   value={values.fullname}
-                          value={fullname}
+                          onChange={handleChange("fullname")}
+                          // defaultValue={values.fullname}
+                          // value={fullname}
                         />
                       </div>
-
                       <div
                         style={{
                           paddingTop: 10,
@@ -180,10 +199,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          className="form-control"
+                          placeholder="Phone Number(Required)"
                           name="phone"
-                          label="Phone"
-                          //   value={values.fullname}
-                          value={phone}
+                          onChange={handleChange("phone")}
+                          // defaultValue={values.phone}
+                          // value={phone}
                         />
                       </div>
                       <div
@@ -194,10 +216,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="email"
+                          className="form-control"
+                          placeholder="Email(Required)"
                           name="email"
-                          label="Email"
-                          //   value={values.fullname}
-                          value={email}
+                          onChange={handleChange("email")}
+                          // defaultValue={values.email}
+                          // value={email}
                         />
                       </div>
 
@@ -209,10 +234,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          className="form-control"
+                          placeholder="NIN(Required)"
                           name="nin"
-                          label="NIN"
-                          //   value={values.nin}
-                          value={nin}
+                          onChange={handleChange("nin")}
+                          // defaultValue={values.nin}
+                          // value={nin}
                         />
                       </div>
 
@@ -224,10 +252,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="date"
+                          className="form-control"
+                          placeholder="DOB(Required)"
                           name="dob"
-                          label="DOB"
-                          //   value={values.dob}
-                          value={dob}
+                          onChange={handleChange("dob")}
+                          // defaultValue={values.dob}
+                          // value={dob}
                         />
                       </div>
 
@@ -238,12 +269,29 @@ class SPReg6 extends Component {
                           backgroundColor: "#fff",
                         }}
                       >
-                        <Input
+                        {/* <Input
                           name="gender"
                           label="Gender"
-                          //   value={values.gender}
+                            // value={values.gender}
                           value={gender}
-                        />
+                        /> */}
+                        <div className="row">
+                          <div className="col-12 ">
+                            <div className="form-group">
+                              <select
+                                className="form-control"
+                                name="gender"
+                                onChange={handleChange("gender")}
+                                // defaultValue={values.gender}
+                                // value={gender}
+                              >
+                                <option value="Default">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div
@@ -254,22 +302,23 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          className="form-control"
+                          placeholder="Physical Address(Required)"
                           name="phyadd"
-                          label="Physical Address"
-                          //   value={values.phyadd}
-                          value={phyadd}
+                          onChange={handleChange("phyadd")}
+                          // defaultValue={values.phyadd}
+                          // value={phyadd}
                         />
                       </div>
 
                       <FormControlLabel
                         control={
                           <Checkbox
-                            // checked={state.checkedB}
-                            // onChange={handleChange}
                             name="yearexp"
-                            // checked={state.notMiddle}
                             onChange={handleChange("yearexp")}
-                            checked={values.yearexp}
+                            // checked={values.yearexp}
+                            // checked={yearexp}
                             color="primary"
                           />
                         }
@@ -287,7 +336,8 @@ class SPReg6 extends Component {
                             name="notmidman"
                             // checked={state.notmidman}
                             onChange={handleChange("notmidman")}
-                            checked={values.notmidman}
+                            // checked={values.notmidman}
+                            // checked={notmidman}
                             color="primary"
                           />
                         }
@@ -302,7 +352,8 @@ class SPReg6 extends Component {
                           <Checkbox
                             name="skillset"
                             onChange={handleChange("skillset")}
-                            checked={values.skillset}
+                            // checked={values.skillset}
+                            // checked={skillset}
                             color="primary"
                           />
                         }
@@ -319,7 +370,8 @@ class SPReg6 extends Component {
                             // onChange={handleChange}
                             name="internet"
                             onChange={handleChange("internet")}
-                            checked={values.internet}
+                            // checked={values.internet}
+                            // checked={internet}
                             color="primary"
                           />
                         }
@@ -337,10 +389,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="file"
+                          className="form-control"
+                          placeholder="Please Add your Qualification here (Required)"
                           name="qualification"
-                          label="Qualification"
-                          //   value={values.qualification}
-                          value={qualification}
+                          onChange={handleChange("qualification")}
+                          // defaultValue={values.qualification}
+                          // value={qualification}
                         />
                       </div>
 
@@ -352,10 +407,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          className="form-control"
+                          placeholder="Please Add your link here (Optional)"
                           name="portifolio"
-                          label="Portifolio"
-                          //   value={values.portifolio}
-                          value={portifolio}
+                          onChange={handleChange("portifolio")}
+                          // defaultValue={values.portifolio}
+                          // value={portifolio}
                         />
                       </div>
 
@@ -366,11 +424,14 @@ class SPReg6 extends Component {
                           backgroundColor: "#fff",
                         }}
                       >
-                        <Input
+                        <textarea
+                          type="text"
+                          className="form-control"
                           name="profession"
-                          label="Profession"
-                          //   value={values.profession}
-                          value={profession}
+                          onChange={handleChange("profession")}
+                          // defaultValue={values.profession}
+                          // value={profession}
+                          // required
                         />
                       </div>
 
@@ -382,10 +443,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Full Name"
                           name="ref1name"
-                          label="Ref 1 Full name"
-                          //   value={values.ref1name}
-                          value={ref1name}
+                          className="form-control"
+                          onChange={handleChange("ref1name")}
+                          // defaultValue={values.ref1name}
+                          // value={ref1name}
                         />
                       </div>
 
@@ -397,10 +461,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Description/Title"
                           name="ref1title"
-                          label="Ref 1 Title"
-                          //   value={values.ref1title}
-                          value={ref1title}
+                          className="form-control"
+                          onChange={handleChange("ref1title")}
+                          // defaultValue={values.ref1title}
+                          // value={ref1title}
                         />
                       </div>
 
@@ -412,10 +479,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Email"
                           name="ref1email"
-                          label="Ref1 Email"
-                          //   value={values.ref1email}
-                          value={ref1email}
+                          className="form-control"
+                          onChange={handleChange("ref1email")}
+                          // defaultValue={values.ref1email}
+                          // value={ref1email}
                         />
                       </div>
 
@@ -427,10 +497,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Phone Number"
                           name="ref1phone"
-                          label="Ref 1 Phone"
-                          //   value={values.ref1phone}
-                          value={ref1phone}
+                          className="form-control"
+                          onChange={handleChange("ref1phone")}
+                          // defaultValue={values.ref1phone}
+                          // value={ref1phone}
                         />
                       </div>
                       <div
@@ -441,10 +514,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Full Name"
                           name="ref2name"
-                          label="Ref 2 Full name"
-                          //   value={values.ref2name}
-                          value={ref2name}
+                          className="form-control"
+                          onChange={handleChange("ref2name")}
+                          // defaultValue={values.ref2name}
+                          // value={ref2name}
                         />
                       </div>
 
@@ -456,10 +532,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Description/Title"
                           name="ref2title"
-                          label="Ref 2 Title"
-                          //   value={values.ref2title}
-                          value={ref2title}
+                          className="form-control"
+                          onChange={handleChange("ref2title")}
+                          // defaultValue={values.ref2title}
+                          // value={ref2title}
                         />
                       </div>
 
@@ -471,10 +550,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Email"
                           name="ref2email"
-                          label="Ref2 Email"
-                          //   value={values.ref2email}
-                          value={ref2email}
+                          className="form-control"
+                          onChange={handleChange("ref2email")}
+                          // defaultValue={values.ref2email}
+                          // value={ref2email}
                         />
                       </div>
 
@@ -486,10 +568,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="text"
+                          placeholder="Phone Number"
                           name="ref2phone"
-                          label="Ref 2 Phone"
-                          //   value={values.ref2phone}
-                          value={ref2phone}
+                          className="form-control"
+                          onChange={handleChange("ref2phone")}
+                          // defaultValue={values.ref2phone}
+                          // value={ref2phone}
                         />
                       </div>
 
@@ -500,12 +585,27 @@ class SPReg6 extends Component {
                           backgroundColor: "#fff",
                         }}
                       >
-                        <Input
+                        <select
+                          className="form-control"
                           name="category"
-                          label="Service Category"
-                          //   value={values.category}
-                          value={category}
-                        />
+                          onChange={handleChange("category")}
+                          // defaultValue={values.category}
+                          // value={category}
+                        >
+                          <option value="Default">
+                            Select Service Category
+                          </option>
+                          <option value="Deaf and physica">
+                            Deaf and Physical
+                          </option>
+                          <option value="Deaf">Deaf</option>
+                          <option value="hard of hearing">
+                            Hard Of Hearing
+                          </option>
+                          <option value="Physical support">
+                            Physical Support
+                          </option>
+                        </select>
                       </div>
 
                       <div
@@ -515,12 +615,20 @@ class SPReg6 extends Component {
                           backgroundColor: "#fff",
                         }}
                       >
-                        <Input
-                          name="service"
-                          label="Service"
-                          //   value={values.service}
-                          value={service}
-                        />
+                        <select
+                        className="form-control"
+                        name="service"
+                        onChange={handleChange("service")}
+                        // defaultValue={values.service}
+                        // value={service}
+                      >
+                        <option value="Default">Select Service </option>
+                        <option value="personal assistant">
+                          Personal Assistant
+                        </option>
+                        <option value="Interpreter">Interpreter</option>
+                        <option value="Captioner">Captioner </option>
+                      </select>
                       </div>
 
                       <div className="row" style={{ fontSize: "12px" }}>
@@ -530,7 +638,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("sunday")}
-                                checked={values.sunday}
+                                // checked={values.sunday}
+                                // checked={sunday}
                                 name="sunday"
                                 color="primary"
                               />
@@ -544,7 +653,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("monday")}
-                                checked={values.monday}
+                                // checked={values.monday}
+                                // checked={monday}
                                 name="monday"
                                 color="primary"
                               />
@@ -558,7 +668,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("tuesday")}
-                                checked={values.tuesday}
+                                // checked={values.tuesday}
+                                // checked={tuesday}
                                 name="tuesday"
                                 color="primary"
                               />
@@ -572,7 +683,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("wednesday")}
-                                checked={values.wednesday}
+                                // checked={values.wednesday}
+                                // checked={wednesday}
                                 name="wednesday"
                                 color="primary"
                               />
@@ -586,7 +698,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("thursday")}
-                                checked={values.thursday}
+                                // checked={values.thursday}
+                                // checked={thursday}
                                 name="thursday"
                                 color="primary"
                               />
@@ -600,7 +713,8 @@ class SPReg6 extends Component {
                               <Checkbox
                                 // checked={state.checkedB}
                                 onChange={handleChange("friday")}
-                                checked={values.friday}
+                                // checked={values.friday}
+                                // checked={friday}
                                 name="friday"
                                 color="primary"
                               />
@@ -613,9 +727,9 @@ class SPReg6 extends Component {
                             control={
                               <Checkbox
                                 // checked={state.checkedB}
-                                // onChange={handleChange("saturday")}
-                                value={saturday}
+                                onChange={handleChange("saturday")}
                                 // checked={values.saturday}
+                                // value={saturday}
                                 name="saturday"
                                 color="primary"
                               />
@@ -632,10 +746,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
-                          name="starttime"
-                          label="Start Time"
-                          //   value={values.starttime}
-                          value={starttime}
+                           type="time"
+                           placeholder="Start Time"
+                           name="starttime"
+                           className="form-control"
+                           onChange={handleChange("starttime")}
+                          //  defaultValue={values.starttime}
+                          // value={starttime}
                         />
                       </div>
 
@@ -647,10 +764,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
+                          type="time"
+                          placeholder="End Time"
                           name="endtime"
-                          label="End Time"
-                          //   value={values.endtime}
-                          value={endtime}
+                          className="form-control"
+                          onChange={handleChange("endtime")}
+                          // defaultValue={values.endtime}
+                          // value={endtime}
                         />
                       </div>
 
@@ -662,9 +782,13 @@ class SPReg6 extends Component {
                         }}
                       >
                         <Input
-                          name="pricevisit"
-                          label="Price per Visit"
-                          value={values.pricevisit}
+                           type="text"
+                           label= "Price Per Visit(UGX)"
+                           placeholder="Price Per Visit(UGX)"
+                           name="pricevisit"
+                           className="form-control"
+                           onChange={handleChange("pricevisit")}
+                          //  defaultValue={values.pricevisit}
                           // value={pricevisit}
                         />
                       </div>
@@ -674,9 +798,9 @@ class SPReg6 extends Component {
                           control={
                             <Switch
                               onChange={handleChange("terms")}
-                              checked={values.terms}
+                              // checked={values.terms}
                               name="terms"
-                              value={terms}
+                              // value={terms}
                               color="primary"
                             />
                           }
@@ -711,10 +835,20 @@ class SPReg6 extends Component {
   }
 }
 
-// export default connect(null, {  addServiceProvider })(SPReg6);
+// export default SPReg6;
 
-const mapStateToProps = (state) => ({
-  serviceProvider: state.serviceProviders.serviceProvider,
+const mapStateToProps = state => ({
+  serviceProvider: state.serviceProviders.serviceProvider
 });
 
-export default connect(mapStateToProps, { addServiceProvider })(SPReg6);
+export default connect(mapStateToProps, { oneServiceProvider, addServiceProvider })(
+  SPReg6
+);
+
+// export default connect(null, { addServiceProvider })(SPReg6);
+
+// const mapStateToProps = (state) => ({
+//   serviceProvider: state.serviceProviders.serviceProvider,
+// });
+
+// export default connect(mapStateToProps, { addServiceProvider })(SPReg6);

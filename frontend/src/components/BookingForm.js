@@ -56,7 +56,7 @@ class BookingForm extends Component {
 
   static propTypes = {
     addBooking: PropTypes.func.isRequired,
-    // isAuthenticated: PropTypes.bool,
+    isAuthenticated: PropTypes.bool,
   };
 
   onSubmit = (values, { setSubmitting }) => {

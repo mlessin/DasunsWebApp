@@ -78,14 +78,12 @@ export class Landing extends Component {
     const authLinks = (
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#">
-          <a href="#">
-            <img
-              src={Logo}
-              alt={"logo"}
-              style={{ height: "50px" }}
-              onClick={() => history.push("/")}
-            />
-          </a>
+          <img
+            src={Logo}
+            alt={"logo"}
+            style={{ height: "50px" }}
+            onClick={() => history.push("/")}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -119,14 +117,12 @@ export class Landing extends Component {
     const guestLinks = (
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#">
-          <a href="#">
-            <img
-              src={Logo}
-              alt={"logo"}
-              style={{ height: "50px" }}
-              onClick={() => history.push("/")}
-            />
-          </a>
+          <img
+            src={Logo}
+            alt={"logo"}
+            style={{ height: "50px" }}
+            onClick={() => history.push("/")}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -288,7 +284,7 @@ export class Landing extends Component {
                               float="right"
                             >
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                               />
                             </svg>
@@ -335,7 +331,7 @@ export class Landing extends Component {
                               float="right"
                             >
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                               />
                             </svg>
@@ -382,7 +378,7 @@ export class Landing extends Component {
                               float="right"
                             >
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                               />
                             </svg>
@@ -433,7 +429,7 @@ export class Landing extends Component {
                               float="right"
                             >
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                               />
                             </svg>
@@ -463,7 +459,7 @@ export class Landing extends Component {
             </div>
           </div>
 
-          <div className="howItWorks" fluid>
+          <div className="howItWorks" fluid="true">
             <h3 id="how-it-works"> How it works</h3>
             <div>
               <Container fluid>
@@ -491,7 +487,7 @@ export class Landing extends Component {
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                               d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                             />
                           </svg>
@@ -528,7 +524,7 @@ export class Landing extends Component {
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                               d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                             />
                           </svg>
@@ -564,7 +560,7 @@ export class Landing extends Component {
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              fill-rule="evenodd"
+                              fillRule="evenodd"
                               d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                             />
                           </svg>
@@ -818,7 +814,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                           float="right"
 //                         >
 //                           <path
-//                             fill-rule="evenodd"
+//                             fillRule="evenodd"
 //                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
 //                           />
 //                         </svg>
@@ -865,7 +861,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                           float="right"
 //                         >
 //                           <path
-//                             fill-rule="evenodd"
+//                             fillRule="evenodd"
 //                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
 //                           />
 //                         </svg>
@@ -912,7 +908,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                           float="right"
 //                         >
 //                           <path
-//                             fill-rule="evenodd"
+//                             fillRule="evenodd"
 //                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
 //                           />
 //                         </svg>
@@ -963,7 +959,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                           float="right"
 //                         >
 //                           <path
-//                             fill-rule="evenodd"
+//                             fillRule="evenodd"
 //                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
 //                           />
 //                         </svg>
@@ -1021,7 +1017,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                         xmlns="http://www.w3.org/2000/svg"
 //                       >
 //                         <path
-//                           fill-rule="evenodd"
+//                           fillRule="evenodd"
 //                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
 //                         />
 //                       </svg>
@@ -1058,7 +1054,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                         xmlns="http://www.w3.org/2000/svg"
 //                       >
 //                         <path
-//                           fill-rule="evenodd"
+//                           fillRule="evenodd"
 //                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
 //                         />
 //                       </svg>
@@ -1094,7 +1090,7 @@ export default connect(mapStateToProps, { logout })(Landing);
 //                         xmlns="http://www.w3.org/2000/svg"
 //                       >
 //                         <path
-//                           fill-rule="evenodd"
+//                           fillRule="evenodd"
 //                           d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
 //                         />
 //                       </svg>

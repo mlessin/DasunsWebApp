@@ -14,6 +14,7 @@ export class SPReg2 extends Component {
     this.props.prevStep();
   };
 
+
   render() {
     const { values, handleChange } = this.props;
     return (
@@ -98,6 +99,7 @@ export class SPReg2 extends Component {
                       name="internet"
                       onChange={handleChange("internet")}
                       checked={values.internet}
+                      // defaultChecked={isChecked()}
                       color="primary"
                     />
                   }

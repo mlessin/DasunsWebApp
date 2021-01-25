@@ -89,7 +89,7 @@ export class SPReg1 extends Component {
                       <select className="form-control" 
                       name="gender"
                       onChange={handleChange("gender")}
-                  defaultValue={values.gender}>
+                      defaultValue={values.gender}>
                         <option value="Default">Select gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>

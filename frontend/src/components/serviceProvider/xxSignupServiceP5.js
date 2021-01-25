@@ -173,7 +173,7 @@ export const SignupServiceP5 = (
               <b>Enter your Service Pricing</b>
             </p>
             <div className="row">
-              <div className="col-5">
+              {/* <div className="col-5">
                 <div className="form-inputs">
                   <label>
                     <b>Per Hour(UGX)</b>
@@ -187,11 +187,11 @@ export const SignupServiceP5 = (
                     // required
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="col-2"></div>
+              <div className="col-4"></div>
 
-              <div className="col-5">
+              <div className="col-8">
                 <div className="form-inputs">
                   <label>
                     <b>Per Day(UGX)</b>
@@ -216,6 +216,7 @@ export const SignupServiceP5 = (
                 type="checkbox"
                 class="custom-control-input"
                 id="customSwitches"
+                name="terms"
                 // required
               />
               <label class="custom-control-label" for="customSwitches" id="terms">

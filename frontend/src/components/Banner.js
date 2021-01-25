@@ -71,14 +71,12 @@ export class Banner extends Component {
     return (
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#">
-        <a href="#">
             <img
               src={Logo}
               alt={"logo"}
               style={{ height: "50px" }}
               onClick={() => history.push("/")}
             />
-          </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

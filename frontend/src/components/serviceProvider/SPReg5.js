@@ -4,18 +4,25 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 export class SPReg5 extends Component {
+  
+  // submit = () => {
+  //   // event.preventDefault();
+  //   this.props.handleSubmit();
+  // };
+
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
+    
   };
 
-  back = (e) => {
-    e.preventDefault();
+  back = (event) => {
+    event.preventDefault();
     this.props.prevStep();
   };
 
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange} = this.props;
     return (
       <div className="main-service">
         <div className="card" id="signup-service-card">
@@ -225,22 +232,6 @@ export class SPReg5 extends Component {
                 <p>
                   <b>Enter your Service Pricing</b>
                 </p>
-                {/* <div className="row">
-              <div className="col-5">
-                <div className="form-inputs">
-                  <label>
-                    <b>Per Hour(UGX)</b>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Price Per Hour(UGX)"
-                    name="price"
-                    className="form-control"
-                    // className="left-inputs"
-                    // required
-                  />
-                </div>
-              </div> */}
 
                 <div className="col-2"></div>
 
@@ -322,6 +313,7 @@ export class SPReg5 extends Component {
                   onClick={this.continue}
                 >
                   <strong>SAVE & CONTINUE</strong>
+                  {/* <strong>SUBMIT</strong> */}
                 </button>
                 <button
                   className="btn btn-success btn-block"
