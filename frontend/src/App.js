@@ -56,7 +56,7 @@ export default class App extends Component {
                 {/* <ServiceReg /> */}
                 <Alerts />
                 {/* <Banner /> */}
-                {/* <SPlist /> */}
+                <SPlist />
                 {/* <Landing /> */}
                 <Switch>
                   <Route path="/parent" exact component={ParentModal} />

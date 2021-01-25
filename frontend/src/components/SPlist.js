@@ -1,73 +1,43 @@
 import React, { Component } from "react";
-
 import "bootstrap/dist/css/bootstrap.css";
-
-import Logo from "../images/Logo.png";
+// import Logo from "../images/Logo.png";
 import LogoWhite from "../images/LogoWhite.png";
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
-import { Link } from "react-router-dom";
+import worker from "../images/worker.jpg";
+// import { Link } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
+import Banner from "./Banner";
 
-import { withRouter } from "react-router-dom";
-
-
-import {
-  Navbar,
-  Nav,
-  // Badge,
-  // Image,
-  // Container,
-  // Row,
-  // Col,
-  // Card,
-  // Button,
-} from "react-bootstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getServiceProviders } from "../actions/serviceProviders";
 
 export class SPlist extends Component {
+  static propTypes = {
+    serviceProviders: PropTypes.array.isRequired,
+    getServiceProviders: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.getServiceProviders();
+  }
+
   render() {
     const { history } = this.props;
 
-    const mystyle1 = {
-      color: "#fff",
-      backgroundColor: "#006712",
-      borderRadius: "10px",
-      fontFamily: "Montserrat",
-      textDecoration: "none",
-      padding: "8px",
-    };
+    // const mystyle1 = {
+    //   color: "#fff",
+    //   backgroundColor: "#006712",
+    //   borderRadius: "10px",
+    //   fontFamily: "Montserrat",
+    //   textDecoration: "none",
+    //   padding: "8px",
+    // };
 
     return (
       <div>
-        <Navbar
-          className="navbar"
-          bg-primary
-          sticky="top"
-          collapseOnSelect
-          expand="md"
-        >
-          <Navbar.Brand href="#">
-          <a href="#">
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} onClick={() => history.push("/")} />
-          </a>
-        </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#features"></Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="#deets">Services</Nav.Link>
-              <Nav.Link href="#req">My Requests</Nav.Link>
-              <Nav.Link href="#bell">Bell icon</Nav.Link>
-              <Nav.Link href="#bash">Bash Shadrack</Nav.Link>
-              <Nav.Link href="#service">
-                <Link to="/bookingForm" style={mystyle1}>
-                  Request Service
-                </Link>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Banner />
         <section
           id="header"
           class="jumbotron text-center text-white img-responsive"
@@ -82,9 +52,44 @@ export class SPlist extends Component {
           <h2>Available Interpreters</h2>
         </div>
         <div className="subavail">Only allowed to book one interpreter</div>
-        <div className="availlist">
-          [we shall have a list of available interpreters here for the user to
-          select from; from the backend]
+        <div className="ServiceP-list">
+          {this.props.serviceProviders.map((serviceProvider) => (
+            <div key={serviceProvider.id}>
+              <div className="overallcontainer">
+                <div className="container">
+                  <div className= "row">
+                    <div className= "col-1">
+                    <img
+                          src={worker}
+                          alt={"Service-provider"}
+                          style={{ height: "50px" }}
+                          onClick={() => history.push("/")}
+                        />
+                      </div>
+
+                      <div className= "col-11">
+                        <p>
+                          <strong>D00{serviceProvider.id}-</strong>
+                          {serviceProvider.fullname}
+                        </p>
+                        <p>
+                          <strong> UGX: {serviceProvider.pricevisit} Per Visit</strong>
+                        </p>
+                        <p>
+                          <strong>Quality: </strong>
+                        </p>
+                        <p>
+                          <strong> {serviceProvider.phyadd}</strong>
+                        </p>
+                        <div style={{ marginTop: "-70px", marginBottom:"20px" }}>
+                          <button className="btn btn-success btn-sm">BOOK INTERPRETER</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
         <div>
           <footer className="footer">
@@ -133,4 +138,8 @@ export class SPlist extends Component {
   }
 }
 
-export default withRouter(SPlist);
+const mapStateToProps = (state) => ({
+  serviceProviders: state.serviceProviders.serviceProviders,
+});
+
+export default connect(mapStateToProps, { getServiceProviders })(SPlist);

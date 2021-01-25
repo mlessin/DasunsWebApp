@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import axios from "axios";
-
 import SPReg1 from "./SPReg1";
 import SPReg2 from "./SPReg2";
 import SPReg3 from "./SPReg3";
@@ -139,7 +137,7 @@ export class ServiceReg extends Component {
         console.log(data)
 
         this.props.addServiceProvider(data);
-        this.props.history.push("/Request");
+        this.props.history.push("/splist");
   }
 
  
