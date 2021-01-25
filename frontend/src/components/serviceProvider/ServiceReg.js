@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import { Stepper } from "@progress/kendo-react-layout";
+
+import axios from "axios";
 
 import SPReg1 from "./SPReg1";
 import SPReg2 from "./SPReg2";
@@ -9,6 +10,10 @@ import SPReg5 from "./SPReg5";
 import SPReg6 from "./SPReg6";
 
 import Banner from "../Banner";
+
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addServiceProvider } from "../../actions/serviceProviders"
 
 export class ServiceReg extends Component {
   state = {
@@ -54,6 +59,12 @@ export class ServiceReg extends Component {
     terms: false,
   };
 
+  static propTypes = {
+    addServiceProvider: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+  };
+
+ 
   //go to next step
   nextStep = () => {
     const { step } = this.state;
@@ -72,35 +83,66 @@ export class ServiceReg extends Component {
 
   //Handle field change
 
-  handleChange = (input) => (event) => {
-    const isCheckbox = event.target.type === "checkbox";
-    this.setState({
-      [event.target.name]: isCheckbox
-        ? event.target.checked
-        : event.target.value,
-    });
+  // handleChangeCheck = (input) => (event) => {
+  //   const isCheckbox = event.target.type === "checkbox";
+  //   this.setState({
+  //     [event.target.name]: isCheckbox
+  //       ? event.target.value
+  //       : event.target.value,
+  //   });
+  // };
+
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
   };
 
-  // handleChange = input => e => {
-  //     this.setState({[input]: e.target.value});
-  // }
 
-  //  handleChange = evt => {
-  //     const value =
-  //       evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
-  //     this.setState({
-  //       ...state,
-  //       [evt.target.name]: value
-  //     });
-  //   }
+  handleSubmit = ()  => {
+   
+    const data = {
+          fullname: this.state.fullname,
+          phone: this.state.phone,
+          email: this.state.email,
+          nin: this.state.nin,
+          dob: this.state.dob,
+          gender: this.state.gender,
+          phyadd: this.state.phyadd,
+          yearexp: this.state.yearexp.toString(),
+          notmidman: this.state.notmidman.toString(),
+          skillset: this.state.skillset.toString(),
+          internet: this.state.internet.toString(),
+          qualification: this.state.qualification,
+          portifolio: this.state.portifolio,
+          profession: this.state.profession,
+          ref1name: this.state.ref1name,
+          ref1email: this.state.ref1email,
+          ref1title: this.state.ref1title,
+          ref1phone: this.state.ref1phone,
+          ref2name: this.state.ref2name,
+          ref2email: this.state.ref2email,
+          ref2title: this.state.ref2title,
+          ref2phone: this.state.ref2phone,
+          category: this.state.category,
+          service: this.state.service,
+          sunday: this.state.sunday.toString(),
+          monday: this.state.monday.toString(),
+          tuesday: this.state.tuesday.toString(),
+          wednesday: this.state.wednesday.toString(),
+          thursday: this.state.thursday.toString(),
+          friday: this.state.friday.toString(),
+          saturday: this.state.saturday.toString(),
+          starttime: this.state.starttime,
+          endtime: this.state.endtime,
+          pricevisit: this.state.pricevisit,
+          terms: this.state.terms.toString()
+        };
+        console.log(data)
 
-  // handleCheckboxChange = checkbox => e =>
-  // this.setState({ [checkbox]: e.target.checked })
+        this.props.addServiceProvider(data);
+        this.props.history.push("/Request");
+  }
 
-  // handleCheck = event =>{
-  // this.setState({ checked: event.target.checked })
-  // }
-
+ 
   render() {
     const { step } = this.state;
     const {
@@ -178,7 +220,7 @@ export class ServiceReg extends Component {
       pricevisit,
       terms,
     };
-
+    console.log(this.state)
     switch (step) {
       case 1:
         return (
@@ -200,6 +242,7 @@ export class ServiceReg extends Component {
               nextStep={this.nextStep}
               prevStep={this.prevStep}
               handleChange={this.handleChange}
+              // handleChange={this.handleChangeCheck}
               values={values}
             />
           </>
@@ -236,7 +279,9 @@ export class ServiceReg extends Component {
               nextStep={this.nextStep}
               prevStep={this.prevStep}
               handleChange={this.handleChange}
+              // handleChange={this.handleChangeCheck}
               values={values}
+             
             />
           </>
         );
@@ -245,17 +290,16 @@ export class ServiceReg extends Component {
           <>
             <Banner />
             <SPReg6
-              nextStep={this.nextStep}
               prevStep={this.prevStep}
-              handleChange={this.handleChange}
               values={values}
+              handleSubmit={this.handleSubmit}
             />
           </>
         );
-      // default:
-      //   return state;
+        default:
+          return null
     }
   }
 }
 
-export default ServiceReg;
+export default connect(null, { addServiceProvider })(ServiceReg);

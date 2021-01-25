@@ -21,6 +21,7 @@ import Alerts from "./components/layout/Alerts";
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
+import JointForm from "./components/serviceProvider/xxJointForm"
 
 // import Banner from "./components/Banner";
 // import Headers from "./components/layout/Headers";
@@ -63,11 +64,16 @@ export default class App extends Component {
                   <PrivateRoute path="/splist" exact component={SPlist} />
                   <PrivateRoute path="/bookingForm" exact component={BookingForm} />
                   <PrivateRoute path="/request" exact component={Request} />
-                  <Route
+                  <PrivateRoute
                     path="/signupservicep"
                     exact
                     component={ServiceReg}
                   />
+                  {/* <PrivateRoute
+                    path="/signupservicep"
+                    exact
+                    component={JointForm}
+                  /> */}
                   <Route component={notfound} />
                 </Switch>
               </div>

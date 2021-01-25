@@ -14,15 +14,17 @@ export const addServiceProvider = serviceprovider => (dispatch, getState) => {
     axios
       .post("/backend/api/serviceproviders/", serviceprovider, tokenConfig(getState))
       .then(res => {
+        console.log(res.data);
         dispatch(createMessage({ addServiceProvider: "Service Provider Added!" }));
         dispatch({
           type: ADD_SERVICEPROVIDER,
           payload: res.data
-        });
+        }); 
       })
-      .catch(err =>
-        dispatch(returnErrors(err.response.data, err.response.status))
-      );
+      .catch(err =>{
+        dispatch(returnErrors(err.response.data, err.response.status));
+        // dispatch(createMessage({ loginfail: "Incorrect credentials supplied" }));
+      });
   };
   
 //GET SERVICEPROVIDERS

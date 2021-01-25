@@ -2,15 +2,17 @@ import React, { Component } from "react";
 
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
+// import Switch from "@material-ui/core/Switch";
 export class SPReg5 extends Component {
+
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
+    
   };
 
-  back = (e) => {
-    e.preventDefault();
+  back = (event) => {
+    event.preventDefault();
     this.props.prevStep();
   };
 
@@ -95,6 +97,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("sunday")}
                           checked={values.sunday}
                           name="sunday"
+                          value="Sunday"
                           color="primary"
                         />
                       }
@@ -109,6 +112,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("monday")}
                           checked={values.monday}
                           name="monday"
+                          value="Monday"
                           color="primary"
                         />
                       }
@@ -123,6 +127,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("tuesday")}
                           checked={values.tuesday}
                           name="tuesday"
+                          value="Tuesday"
                           color="primary"
                         />
                       }
@@ -137,6 +142,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("wednesday")}
                           checked={values.wednesday}
                           name="wednesday"
+                          value="Wednesday"
                           color="primary"
                         />
                       }
@@ -151,6 +157,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("thursday")}
                           checked={values.thursday}
                           name="thursday"
+                          value="Thursday"
                           color="primary"
                         />
                       }
@@ -165,6 +172,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("friday")}
                           checked={values.friday}
                           name="friday"
+                          value="Friday"
                           color="primary"
                         />
                       }
@@ -179,6 +187,7 @@ export class SPReg5 extends Component {
                           onChange={handleChange("saturday")}
                           checked={values.saturday}
                           name="saturday"
+                          value="Saturday"
                           color="primary"
                         />
                       }
@@ -225,22 +234,6 @@ export class SPReg5 extends Component {
                 <p>
                   <b>Enter your Service Pricing</b>
                 </p>
-                {/* <div className="row">
-              <div className="col-5">
-                <div className="form-inputs">
-                  <label>
-                    <b>Per Hour(UGX)</b>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Price Per Hour(UGX)"
-                    name="price"
-                    className="form-control"
-                    // className="left-inputs"
-                    // required
-                  />
-                </div>
-              </div> */}
 
                 <div className="col-2"></div>
 
@@ -265,57 +258,20 @@ export class SPReg5 extends Component {
               <small style={{ color: "green" }}>
                 <b>+ Add Service</b>
               </small>
-
-              {/* <div class="custom-control custom-switch">
-                <input
-                type="checkbox"
-                  onChange={handleChange("terms")}
-                  checked={values.terms}
-                  name="terms"
-                  color="primary"
-                  // required
-                />
-                <label
-                  class="custom-control-label"
-                  for="customSwitches"
-                  name="terms"
-                  
-                >
-                  I agree to the terms and conditions set by Dasuns
-                </label>
-              </div> */}
-
               <div className="col-3">
                 <FormControlLabel
                   control={
-                    <Switch
+                    <Checkbox
                       onChange={handleChange("terms")}
                       checked={values.terms}
                       name="terms"
+                      value="Agree"
                       color="primary"
                     />
                   }
                   label="I agree to the terms and conditions set by Dasuns"
                 />
               </div>
-
-              {/* <div className="row">
-                <div className="col-5">
-                <button
-                    className="btn btn-success btn-block"
-                    onClick={this.continue}
-                  >
-                    <strong>SAVE & CONTINUE</strong>
-                  </button>
-
-                  <button
-                    className="btn btn-success btn-block"
-                    onClick={this.back}
-                  >
-                    <strong>BACK</strong>
-                  </button>
-                </div>
-              </div> */}
               <div className="form-group">
                 <button
                   className="btn btn-success btn-block"

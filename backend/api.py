@@ -14,7 +14,7 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
 
     def get_queryset(self):
-        return self.request.user.Book.all()
+        return self.request.user.booking.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -30,7 +30,7 @@ class ServiceproviderViewSet(viewsets.ModelViewSet):
     serializer_class = ServiceproviderSerializer
 
     def get_queryset(self):
-        return self.request.user.Serviceprovider.all()
+        return self.request.user.serviceProviders.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -38,7 +38,7 @@ class ServiceproviderViewSet(viewsets.ModelViewSet):
 
 
 # viewsets without authentication
-# # Book Viewset
+# # # Book Viewset
 # class BookViewSet(viewsets.ModelViewSet):
 #     queryset = Book.objects.all()
 #     permission_class = [
