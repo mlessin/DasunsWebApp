@@ -31,8 +31,7 @@ export class SPReg5 extends Component {
                   We would like to capture your availability and your pricing
                   per service
                 </p>
-
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-12 ">
                     <div className="form-group">
                       <label>
@@ -46,7 +45,7 @@ export class SPReg5 extends Component {
                         defaultValue={values.category}
                       >
                         <option value="Default">Select Service Category</option>
-                        <option value="Deaf and physica">
+                        <option value="Deaf and physical">
                           Deaf and Physical
                         </option>
                         <option value="Deaf">Deaf</option>
@@ -57,7 +56,7 @@ export class SPReg5 extends Component {
                       </select>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="row">
                   <div className="col-12 ">
                     <div className="form-group">
@@ -72,11 +71,13 @@ export class SPReg5 extends Component {
                         defaultValue={values.service}
                       >
                         <option value="Default">Select Service </option>
-                        <option value="personal assistant">
-                          Personal Assistant
+                        <option value="Personal Support Assistance">
+                          Personal Support Assistance
                         </option>
-                        <option value="Interpreter">Interpreter</option>
-                        <option value="Captioner">Captioner </option>
+                        <option value="Ugandan Sign Language Interpreter">Ugandan Sign language Interpreter</option>
+                        <option value="International Sign Language Interpreter">International Sign language Interpreter</option>
+                        <option value="Captioning">Captioning</option>
+                        <option value="Mobility Guide">Mobility Guide</option>
                       </select>
                     </div>
                   </div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../style.css";
-import Logo from "../../images/Logo.png";
+import Banner from "./Banner";
+import Landing from "./Landing";
+import Dialog from "@material-ui/core/Dialog";
 import Modal from "react-bootstrap/Modal";
-import FullWidthTabs from "./FullWidthTabs"
 
-export class ParentModal extends Component {
+export class MessageModal extends Component {
   render() {
     return (
       <div>
@@ -15,12 +15,14 @@ export class ParentModal extends Component {
           centered
         >
           <Modal.Header closeButton>
-            <div className>
-            <img src={Logo} alt={"logo"} style={{ height: "50px" }} />
+            <div>
+              <h1 style={{ margin: "20px" }}>Sorry!</h1>
             </div>
           </Modal.Header>
           <Modal.Body>
-            <FullWidthTabs/>
+            <h3 style={{ margin: "20px" }}>
+              Please Signup or Login to use this Service :-)
+            </h3>
           </Modal.Body>
         </Modal>
       </div>
@@ -28,4 +30,4 @@ export class ParentModal extends Component {
   }
 }
 
-export default ParentModal;
+export default MessageModal;

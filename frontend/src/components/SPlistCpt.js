@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import LogoWhite from "../images/LogoWhite.png";
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
-import worker from "../images/worker.jpg";
+import personIcon from "../images/personIcon.png";
 // import { Link } from "react-router-dom";
 // import { withRouter } from "react-router-dom";
 import Banner from "./Banner";
@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getServiceProviders } from "../actions/serviceProviders";
 
-export class SPlist extends Component {
+export class SplistCpt extends Component {
   static propTypes = {
     serviceProviders: PropTypes.array.isRequired,
     getServiceProviders: PropTypes.func.isRequired,
@@ -42,25 +42,26 @@ export class SPlist extends Component {
           id="header"
           class="jumbotron text-center text-white img-responsive"
         >
-          <h1 class="display-6">All available interpreters</h1>
+          <h1 class="display-6">All available Captioners</h1>
           <p class="lead">
-            Browse through the list of professional interpreters and make your
+            Browse through the list of professional Captioners and make your
             booking
           </p>
         </section>
         <div className="availHead">
-          <h2>Available Interpreters</h2>
+          <h2>Available Captioners</h2>
         </div>
-        <div className="subavail">Only allowed to book one interpreter</div>
+        <div className="subavail">Only allowed to book one Captioner</div>
         <div className="ServiceP-list">
           {this.props.serviceProviders.map((serviceProvider) => (
             <div key={serviceProvider.id}>
               <div className="overallcontainer">
+              {serviceProvider.service === "Captioning" ? (
                 <div className="container">
                   <div className= "row">
                     <div className= "col-1">
                     <img
-                          src={worker}
+                          src={personIcon}
                           alt={"Service-provider"}
                           style={{ height: "50px" }}
                           onClick={() => history.push("/")}
@@ -79,14 +80,20 @@ export class SPlist extends Component {
                           <strong>Quality: </strong>
                         </p>
                         <p>
-                          <strong> {serviceProvider.phyadd}</strong>
+                          Location: <strong> {serviceProvider.phyadd}</strong>
+                        </p>
+                        <p>
+                          Service: <strong> {serviceProvider.service}</strong>
                         </p>
                         <div style={{ marginTop: "-70px", marginBottom:"20px" }}>
-                          <button className="btn btn-success btn-sm">BOOK INTERPRETER</button>
+                          <button className="btn btn-success btn-sm"
+                          onClick={() => history.push("/bookingForm")}
+                          >BOOK CAPTIONER</button>
                         </div>
                       </div>
                     </div>
                 </div>
+                ) : null}
               </div>
             </div>
           ))}
@@ -142,4 +149,4 @@ const mapStateToProps = (state) => ({
   serviceProviders: state.serviceProviders.serviceProviders,
 });
 
-export default connect(mapStateToProps, { getServiceProviders })(SPlist);
+export default connect(mapStateToProps, { getServiceProviders })(SplistCpt);

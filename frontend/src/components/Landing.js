@@ -32,12 +32,14 @@ import ParentModal from "./accounts/ParentModal";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../actions/auth";
+import MessageModal from "./MessageModal";
 
 export class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       addModalShowParent: false,
+      addModalShowMessage: false
     };
   }
   static propTypes = {
@@ -50,6 +52,8 @@ export class Landing extends Component {
     const { history } = this.props;
     let addModalCloseParent = () =>
       this.setState({ addModalShowParent: false });
+    let addModalCloseMessage = () =>
+      this.setState({ addModalShowMessage: false });
 
     const mystyle = {
       color: "#fff",
@@ -77,13 +81,14 @@ export class Landing extends Component {
 
     const authLinks = (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
+        <Link to="/">
           <img
             src={Logo}
             alt={"logo"}
             style={{ height: "50px" }}
-            onClick={() => history.push("/")}
           />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -94,9 +99,10 @@ export class Landing extends Component {
             <Nav.Link href="#services">Services</Nav.Link>
             <Nav.Link href="#who-we-are">Who We Are</Nav.Link>
             <Nav.Link href="#how-it-works">How It Works</Nav.Link>
-            <Link to="/bookingForm" style={mystyle}>
+            <Nav.Link href="#services" style={mystyle}>Request Now</Nav.Link>
+            {/* <Link to="/splist" style={mystyle}>
               Request Now
-            </Link>
+            </Link> */}
             <Link to="/signupservicep" style={mystyle1}>
               Provide a Service
             </Link>
@@ -116,13 +122,14 @@ export class Landing extends Component {
 
     const guestLinks = (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
+        <Link to="/">
           <img
             src={Logo}
             alt={"logo"}
             style={{ height: "50px" }}
-            onClick={() => history.push("/")}
           />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -142,12 +149,30 @@ export class Landing extends Component {
                 onHide={addModalCloseParent}
               />
             </ButtonToolbar>
-            <Link to="/bookingForm" style={mystyle}>
-              Request Now
-            </Link>
-            <Link to="/signupservicep" style={mystyle1}>
-              Provide a Service
-            </Link>
+            <ButtonToolbar>
+              <button
+                style={mystyle}
+                onClick={() => this.setState({ addModalShowMessage: true })}
+              >
+                Request Now
+              </button>
+              <MessageModal
+                show={this.state.addModalShowMessage}
+                onHide={addModalCloseMessage}
+              />
+            </ButtonToolbar>
+            <ButtonToolbar>
+              <button
+                style={mystyle1}
+                onClick={() => this.setState({ addModalShowMessage: true })}
+              >
+                Provide a Service
+              </button>
+              <MessageModal
+                show={this.state.addModalShowMessage}
+                onHide={addModalCloseMessage}
+              />
+            </ButtonToolbar>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -171,12 +196,12 @@ export class Landing extends Component {
               <br />
               persons with disabilities
             </p>
-            <button
+            {/* <button
               className="btn btn-success"
               onClick={() => history.push("/bookingForm")}
             >
               Request Service
-            </button>
+            </button> */}
           </section>
 
           <div className="green-service " fluid="md">
@@ -203,41 +228,56 @@ export class Landing extends Component {
                   <div>
                     <Image
                       src={physical2}
-                      alt="Physical support"
+                      alt="personal support assistance"
                       style={{ height: "60px" }}
+                      onClick={() => history.push("/splist-psa")}
                     />
                   </div>
-                  <div>Physical support</div>
+                  <div>Personal Support Assistance</div>
                 </Col>
                 <Col>
                   <div>
                     <Image
                       src={deaf2}
-                      alt="Deaf support"
+                      alt="ugandan interpreter"
                       style={{ height: "60px" }}
+                      onClick={() => history.push("/splist-usi")}
                     />
                   </div>
-                  <div>Deaf</div>
+                  <div>Ugandan Sign-language Interpreter</div>
+                </Col>
+                <Col>
+                  <div>
+                    <Image
+                      src={deaf2}
+                      alt="international interpreter"
+                      style={{ height: "60px" }}
+                      onClick={() => history.push("/splist-isi")}
+                    />
+                  </div>
+                  <div>International Sign-language Interpreter</div>
                 </Col>
                 <Col>
                   <div>
                     <Image
                       src={phydeaf}
-                      alt="Physical support"
+                      alt="mobility guide"
                       style={{ height: "60px" }}
+                      onClick={() => history.push("/splist-mg")}
                     />
                   </div>
-                  <div>Deaf & Physical</div>
+                  <div>Mobility Guide</div>
                 </Col>
                 <Col>
                   <div>
                     <Image
                       src={hear2}
-                      alt="Physical support"
+                      alt="captioning"
                       style={{ height: "60px" }}
+                      onClick={() => history.push("/splist-cpt")}
                     />
                   </div>
-                  <div>Hard of hearing</div>
+                  <div>Captioning</div>
                 </Col>
               </Row>
             </Container>
@@ -254,6 +294,7 @@ export class Landing extends Component {
                       height: "auto",
                       marginBottom: 40,
                     }}
+                    onClick={() => history.push("/splist-psa")}
                   >
                     <Card.Body>
                       <Container>
@@ -262,7 +303,7 @@ export class Landing extends Component {
                             <div>
                               <Image
                                 src={physical}
-                                alt={"physical"}
+                                alt={"personal support assistance"}
                                 style={{
                                   height: "70px",
                                 }}
@@ -270,7 +311,7 @@ export class Landing extends Component {
                             </div>
                           </Col>
                           <Col md="auto">
-                            <h4>Physical Support</h4>
+                            <h4>Personal Support Assistance</h4>
                             View service providers
                           </Col>
                           <Col>
@@ -301,6 +342,7 @@ export class Landing extends Component {
                       height: "auto",
                       marginBottom: 40,
                     }}
+                    onClick={() => history.push("/splist-usi")}
                   >
                     <Card.Body>
                       <Container>
@@ -309,7 +351,7 @@ export class Landing extends Component {
                             <div>
                               <Image
                                 src={deaf}
-                                alt={"physical"}
+                                alt={"ugandan interpreter"}
                                 style={{
                                   height: "70px",
                                 }}
@@ -317,7 +359,56 @@ export class Landing extends Component {
                             </div>
                           </Col>
                           <Col md="auto">
-                            <h4>Deaf</h4>
+                            <h4>Ugandan Sign-language Interpreter</h4>
+                            View service providers
+                          </Col>
+                          <Col>
+                            <svg
+                              width="2em"
+                              height="4em"
+                              viewBox="0 0 16 16"
+                              className="bi bi-chevron-right"
+                              fill="currentColor"
+                              xmlns="http://www.w3.org/2000/svg"
+                              float="right"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                              />
+                            </svg>
+                          </Col>
+                        </Row>
+                      </Container>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md="auto">
+                  <Card
+                    style={{
+                      width: "auto",
+                      height: "auto",
+                      marginBottom: 40,
+                    }}
+                    onClick={() => history.push("/splist-isi")}
+                  >
+                    <Card.Body>
+                      <Container>
+                        <Row>
+                          <Col>
+                            <div>
+                              <Image
+                                src={deaf}
+                                alt={"international interpreter"}
+                                style={{
+                                  height: "70px",
+                                }}
+                              />
+                            </div>
+                          </Col>
+                          <Col md="auto">
+                            <h4>International Sign-language Interpreter</h4>
                             View service providers
                           </Col>
                           <Col>
@@ -348,6 +439,7 @@ export class Landing extends Component {
                       height: "auto",
                       marginBottom: 40,
                     }}
+                    onClick={() => history.push("/splist-mg")}
                   >
                     <Card.Body>
                       <Container>
@@ -356,7 +448,7 @@ export class Landing extends Component {
                             <div>
                               <Image
                                 src={phydeaf2}
-                                alt={"physical"}
+                                alt={"mobility guide"}
                                 style={{
                                   height: "70px",
                                 }}
@@ -364,7 +456,7 @@ export class Landing extends Component {
                             </div>
                           </Col>
                           <Col md="auto">
-                            <h4>Deaf & Physical</h4>
+                            <h4>Mobility Guide</h4>
                             View service providers
                           </Col>
                           <Col>
@@ -389,8 +481,8 @@ export class Landing extends Component {
                   </Card>
                 </Col>
               </Row>
-            </Container>
-            <Container fluid>
+            {/* </Container>
+            <Container fluid> */}
               <Row>
                 <Col md="auto">
                   <Card
@@ -399,6 +491,7 @@ export class Landing extends Component {
                       height: "auto",
                       marginBottom: 40,
                     }}
+                    onClick={() => history.push("/splist-cpt")}
                   >
                     <Card.Body>
                       <Container>
@@ -407,7 +500,7 @@ export class Landing extends Component {
                             <div>
                               <Image
                                 src={hear}
-                                alt={"Hard of hearing"}
+                                alt={"captioning"}
                                 style={{
                                   height: "70px",
                                 }}
@@ -415,7 +508,7 @@ export class Landing extends Component {
                             </div>
                           </Col>
                           <Col md="auto">
-                            <h4>Hard of Hearing</h4>
+                            <h4>Captioning</h4>
                             View service providers
                           </Col>
                           <Col>
