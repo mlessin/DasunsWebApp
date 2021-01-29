@@ -9,7 +9,7 @@ import {
   // ButtonToolbar
 } from "react-bootstrap";
 import Logo from "../images/Logo.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 // import SignupModal from "./accounts/SignupModal";
 // import LoginModal from "./accounts/LoginModal";
 // import { withRouter } from "react-router-dom";
@@ -66,17 +66,18 @@ export class Banner extends Component {
       color: "gray",
       padding: "8px",
       paddingBottom: "15px",
-    }
+    };
 
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#">
-            <img
-              src={Logo}
-              alt={"logo"}
-              style={{ height: "50px" }}
-              onClick={() => history.push("/")}
-            />
+        <Navbar.Brand>
+          <Link to="/">
+          <img
+            src={Logo}
+            alt={"logo"}
+            style={{ height: "50px" }}
+          />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -85,14 +86,18 @@ export class Banner extends Component {
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Services</Nav.Link>
-            <span><Link to="/request" style={request}>My Requests</Link></span>
+            <span>
+              <Link to="/request" style={request}>
+                My Requests
+              </Link>
+            </span>
             <Nav.Link href="#bell">Bell icon</Nav.Link>
             <span className="navbar-text mr-3">
               <strong>{user ? `${user.username}` : ""}</strong>
             </span>
-            <Link to="/bookingForm" style={mystyle}>
+            {/* <Link to="/bookingForm" style={mystyle}>
               Request Now
-            </Link>
+            </Link> */}
             <Link to="/signupservicep" style={mystyle1}>
               Provide a Service
             </Link>

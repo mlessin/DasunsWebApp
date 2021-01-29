@@ -20,8 +20,9 @@ import { Link } from "react-router-dom";
 import Banner from "./Banner";
 
 export class Request extends Component {
+
   render() {
-    const { history } = this.props;
+    // const { history } = this.props;
 
     const mystyle1 = {
       color: "#fff",

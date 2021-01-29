@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import axios from "axios";
-
 import SPReg1 from "./SPReg1";
 import SPReg2 from "./SPReg2";
 import SPReg3 from "./SPReg3";
@@ -44,7 +42,7 @@ export class ServiceReg extends Component {
     ref2email: "",
     ref2phone: "",
 
-    category: "",
+    // category: "",
     service: "",
     sunday: false,
     monday: false,
@@ -122,7 +120,7 @@ export class ServiceReg extends Component {
           ref2email: this.state.ref2email,
           ref2title: this.state.ref2title,
           ref2phone: this.state.ref2phone,
-          category: this.state.category,
+          // category: this.state.category,
           service: this.state.service,
           sunday: this.state.sunday.toString(),
           monday: this.state.monday.toString(),
@@ -139,7 +137,7 @@ export class ServiceReg extends Component {
         console.log(data)
 
         this.props.addServiceProvider(data);
-        this.props.history.push("/Request");
+        this.props.history.push("/splist");
   }
 
  
@@ -168,7 +166,7 @@ export class ServiceReg extends Component {
       ref2email,
       ref2title,
       ref2phone,
-      category,
+      // category,
       service,
       sunday,
       monday,
@@ -206,7 +204,7 @@ export class ServiceReg extends Component {
       ref2email,
       ref2title,
       ref2phone,
-      category,
+      // category,
       service,
       sunday,
       monday,

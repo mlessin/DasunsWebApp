@@ -6,13 +6,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addBooking } from "../actions/bookings";
+import { oneServiceProvider } from "../actions/serviceProviders"
 import "bootstrap/dist/css/bootstrap.css";
-import Logo from "../images/Logo.png";
+// import Logo from "../images/Logo.png";
 // import "./style.css";
 //import { Link } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+// import { Navbar, Nav } from "react-bootstrap";
 import Banner from "./Banner";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import { withRouter } from "react-router-dom";
 
 import "./style.css"
@@ -54,9 +55,18 @@ class BookingForm extends Component {
     };
   }
 
+  componentDidMount() {
+    const id = this.props.route.params.serviceProviderId;
+    console.log("ayooo----------------------------------", id);
+
+    this.props.oneServiceProvider(id);
+  }
+
   static propTypes = {
     addBooking: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
+    serviceProvider: PropTypes.object.isRequired,
+    
   };
 
   onSubmit = (values, { setSubmitting }) => {
@@ -66,7 +76,9 @@ class BookingForm extends Component {
   };
 
   render() {
-    const { history } = this.props;
+    const { history, route } = this.props;
+    const { serviceProvider } = this.props;
+    
     const mystyle1 = {
       color: "#fff",
       backgroundColor: "#006712",
@@ -106,8 +118,33 @@ class BookingForm extends Component {
             setFieldTouched,
           }) => (
             <div className="main-booking">
-              <div className="card" id="booking-card">
-                {/* <div className="card-body" id="card-body"> */}
+            <div key={serviceProvider.id}>
+              <div className="overallcontainer">
+                <div className="container">
+                  <div className= "row">
+                      <div className= "col-11">
+                        <p>
+                          <strong>D00{serviceProvider.id}-</strong>
+                          {serviceProvider.fullname}
+                        </p>
+                        <p>
+                          <strong> UGX: {serviceProvider.pricevisit} Per Visit</strong>
+                        </p>
+                        <p>
+                          <strong>Quality: </strong>
+                        </p>
+                        <p>
+                          Location: <strong> {serviceProvider.phyadd}</strong>
+                        </p>
+                        <p>
+                          Service: <strong> {serviceProvider.service}</strong>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div className="card" id="booking-card">
                 <Form id="form">
                   <h4 className="heading3">
                     <small
@@ -208,7 +245,6 @@ class BookingForm extends Component {
                 </Form>
               </div>
             </div>
-            // </div>
           )}
         </Formik>
       </div>
@@ -216,4 +252,11 @@ class BookingForm extends Component {
   }
 }
 
-export default connect(null, { addBooking })(BookingForm);
+const mapStateToProps = state => ({
+  serviceProvider: state.serviceProviders.serviceProvider
+});
+
+export default connect(mapStateToProps, { addBooking, oneServiceProvider })(BookingForm);
+
+
+
