@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-// import Logo from "../images/Logo.png";
 import LogoWhite from "../images/LogoWhite.png";
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 import personIcon from "../images/personIcon.png";
-// import { Link } from "react-router-dom";
-// import { withRouter } from "react-router-dom";
 import Banner from "./Banner";
-
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getServiceProviders } from "../actions/serviceProviders";
@@ -26,15 +22,6 @@ export class SplistIsi extends Component {
   render() {
     const { history } = this.props;
 
-    // const mystyle1 = {
-    //   color: "#fff",
-    //   backgroundColor: "#006712",
-    //   borderRadius: "10px",
-    //   fontFamily: "Montserrat",
-    //   textDecoration: "none",
-    //   padding: "8px",
-    // };
-
     return (
       <div>
         <Banner />
@@ -42,10 +29,12 @@ export class SplistIsi extends Component {
           id="header"
           class="jumbotron text-center text-white img-responsive"
         >
-          <h1 class="display-6">All available International Sign Language interpreters</h1>
+          <h1 class="display-6">
+            All available International Sign Language interpreters
+          </h1>
           <p class="lead">
-            Browse through the list of professional International Sign Language interpreters and make your
-            booking
+            Browse through the list of professional International Sign Language
+            interpreters and make your booking
           </p>
         </section>
         <div className="availHead">
@@ -56,11 +45,17 @@ export class SplistIsi extends Component {
           {this.props.serviceProviders.map((serviceProvider) => (
             <div key={serviceProvider.id}>
               <div className="overallcontainer">
-              {serviceProvider.service === "International Sign Language Interpreter" ? (
-                <div className="container">
-                  <div className= "row">
-                    <div className= "col-1">
-                    <img
+                {serviceProvider.service !==
+                "International Sign Language Interpreter" ? (
+                  <span style={{ display: "flex", justifyContent: "center" }}>
+                    There are no International Sign Language Interpreters now,
+                    check again later
+                  </span>
+                ) : (
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-1">
+                        <img
                           src={personIcon}
                           alt={"Service-provider"}
                           style={{ height: "50px" }}
@@ -68,13 +63,16 @@ export class SplistIsi extends Component {
                         />
                       </div>
 
-                      <div className= "col-11">
+                      <div className="col-11">
                         <p>
                           <strong>D00{serviceProvider.id}-</strong>
                           {serviceProvider.fullname}
                         </p>
                         <p>
-                          <strong> UGX: {serviceProvider.pricevisit} Per Visit</strong>
+                          <strong>
+                            {" "}
+                            UGX: {serviceProvider.pricevisit} Per Visit
+                          </strong>
                         </p>
                         <p>
                           <strong>Quality: </strong>
@@ -85,15 +83,20 @@ export class SplistIsi extends Component {
                         <p>
                           Service: <strong> {serviceProvider.service}</strong>
                         </p>
-                        <div style={{ marginTop: "-70px", marginBottom:"20px" }}>
-                          <button className="btn btn-success btn-sm"
-                          onClick={() => history.push("/bookingForm")}
-                          >BOOK INTERPRETER</button>
+                        <div
+                          style={{ marginTop: "-70px", marginBottom: "20px" }}
+                        >
+                          <button
+                            className="btn btn-success btn-sm"
+                            onClick={() => history.push("/bookingForm")}
+                          >
+                            BOOK INTERPRETER
+                          </button>
                         </div>
                       </div>
                     </div>
-                </div>
-                 ) : null}
+                  </div>
+                )}
               </div>
             </div>
           ))}

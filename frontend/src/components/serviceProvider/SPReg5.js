@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import Switch from "@material-ui/core/Switch";
+
 export class SPReg5 extends Component {
 
   continue = (e) => {
@@ -31,32 +30,6 @@ export class SPReg5 extends Component {
                   We would like to capture your availability and your pricing
                   per service
                 </p>
-                {/* <div className="row">
-                  <div className="col-12 ">
-                    <div className="form-group">
-                      <label>
-                        Service Category
-                        <small style={{ color: "red" }}> (Required)</small>
-                      </label>
-                      <select
-                        className="form-control"
-                        name="category"
-                        onChange={handleChange("category")}
-                        defaultValue={values.category}
-                      >
-                        <option value="Default">Select Service Category</option>
-                        <option value="Deaf and physical">
-                          Deaf and Physical
-                        </option>
-                        <option value="Deaf">Deaf</option>
-                        <option value="hard of hearing">Hard Of Hearing</option>
-                        <option value="Physical support">
-                          Physical Support
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                </div> */}
                 <div className="row">
                   <div className="col-12 ">
                     <div className="form-group">

@@ -27,8 +27,6 @@ import store from "./store";
 import { loadUser } from "./actions/auth";
 import Message from "./components/MessageModal"
 
-// import Banner from "./components/Banner";
-// import Headers from "./components/layout/Headers";
 
 const alertOptions = {
   timeout: 3000,
@@ -71,19 +69,14 @@ export default class App extends Component {
                   <PrivateRoute path="/splist-isi" exact component={SPlistIsi} />
                   <PrivateRoute path="/splist-cpt" exact component={SPlistCpt} />
                   <PrivateRoute path="/splist-mg" exact component={SPlistMg} />
-                  {/* <PrivateRoute path='/bookingForm/:id' exact component={BookingForm} /> */}
-                  <PrivateRoute path='/bookingForm/:id' render={(props) => <BookingForm {...props}/>}/>
+                  <PrivateRoute path='/bookingForm/${id}' exact component={BookingForm} />
+                  {/* <PrivateRoute path='/bookingForm/:id' render={(props) => <BookingForm {...props}/>}/> */}
                   <PrivateRoute path="/request" exact component={Request} />
                   <PrivateRoute
                     path="/signupservicep"
                     exact
                     component={ServiceReg}
                   />
-                  {/* <PrivateRoute
-                    path="/signupservicep"
-                    exact
-                    component={JointForm}
-                  /> */}
                   <Route component={notfound} />
                 </Switch>
               </div>
