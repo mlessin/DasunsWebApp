@@ -1,4 +1,3 @@
-
 import { Formik, Field, Form, ErrorMessage } from "formik";
 // import { Form, Datepicker, Button, Textarea, Input } from "react-formik-ui";
 import * as Yup from "yup";
@@ -6,7 +5,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addBooking } from "../actions/bookings";
-import { oneServiceProvider } from "../actions/serviceProviders"
+import { oneServiceProvider } from "../actions/serviceProviders";
+// import { getServiceProviders } from "../actions/serviceProviders";
 import "bootstrap/dist/css/bootstrap.css";
 // import Logo from "../images/Logo.png";
 // import "./style.css";
@@ -16,7 +16,7 @@ import Banner from "./Banner";
 // import { Link } from "react-router-dom";
 // import { withRouter } from "react-router-dom";
 
-import "./style.css"
+import "./style.css";
 const formSchema = Yup.object().shape({
   meetplace: Yup.string()
     .min(2, "Too Short!")
@@ -56,7 +56,7 @@ class BookingForm extends Component {
   }
 
   componentDidMount() {
-    const id = this.props.route.params.serviceProviderId;
+    const id = this.props.match.params.serviceProviderId;
     console.log("ayooo----------------------------------", id);
 
     this.props.oneServiceProvider(id);
@@ -66,7 +66,6 @@ class BookingForm extends Component {
     addBooking: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
     serviceProvider: PropTypes.object.isRequired,
-    
   };
 
   onSubmit = (values, { setSubmitting }) => {
@@ -76,17 +75,9 @@ class BookingForm extends Component {
   };
 
   render() {
+    // let serviceProviderd = this.props.serviceProviders.filter( t => t.id === this.props.match.params.id)[0];
     const { history, route } = this.props;
     const { serviceProvider } = this.props;
-    
-    const mystyle1 = {
-      color: "#fff",
-      backgroundColor: "#006712",
-      borderRadius: "10px",
-      fontFamily: "Montserrat",
-      textDecoration: "none",
-      padding: "8px",
-    };
 
     const field = {
       marginLeft: "25px",
@@ -118,131 +109,120 @@ class BookingForm extends Component {
             setFieldTouched,
           }) => (
             <div className="main-booking">
-            <div key={serviceProvider.id}>
-              <div className="overallcontainer">
-                <div className="container">
-                  <div className= "row">
-                      <div className= "col-11">
-                        <p>
-                          <strong>D00{serviceProvider.id}-</strong>
-                          {serviceProvider.fullname}
-                        </p>
-                        <p>
-                          <strong> UGX: {serviceProvider.pricevisit} Per Visit</strong>
-                        </p>
-                        <p>
-                          <strong>Quality: </strong>
-                        </p>
-                        <p>
-                          Location: <strong> {serviceProvider.phyadd}</strong>
-                        </p>
-                        <p>
-                          Service: <strong> {serviceProvider.service}</strong>
-                        </p>
-                        </div>
+              <div className="card" id="booking-card">
+                <div key={serviceProvider.id}>
+                  <Form id="form">
+                    <h4 className="heading3">
+                      <small
+                        style={{
+                          color: "black",
+                          fontSize: "30px",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        BOOKING
+                      </small>
+                      <strong>D00{serviceProvider.id}-</strong>
+                      {serviceProvider.fullname}
+                    </h4>
+                    <h6 className="heading3">
+                      Location: <strong> {serviceProvider.phyadd}</strong>
+                    </h6>
+                    <h6 className="heading3">
+                      <strong>
+                        UGX: {serviceProvider.pricevisit} Per Visit
+                      </strong>
+                    </h6>
+                    <div className="form-group">
+                      <label htmlFor="meetplace">Meeting Place:</label>
+                      <Field
+                        style={field}
+                        name="meetplace"
+                        type="text"
+                        placeholder="Preferred Meeting Place"
+                      />
+                      <br />
+                      <small style={err}>
+                        <ErrorMessage name="meetplace" style={err} />
+                      </small>
                     </div>
-                </div>
-              </div>
-            </div>
-            <div className="card" id="booking-card">
-                <Form id="form">
-                  <h4 className="heading3">
-                    <small
-                      style={{
-                        color: "black",
-                        fontSize: "30px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      BOOKING
-                    </small>
-                    MARK SHARNTY.
-                  </h4>
-                  <h6 className="heading3">From Muyenga Kampala UG</h6>
-                  <h6 className="heading3">20000UGX, Per Hour.</h6>
-
-                  <div className="form-group">
-                    <label htmlFor="meetplace">Meeting Place:</label>
-                    <Field
-                      style={field}
-                      name="meetplace"
-                      type="text"
-                      placeholder="Preferred Meeting Place"
-                    />
-                     <br/>
-                    <small style={err}>
-                      <ErrorMessage name="meetplace" style={err} />
-                    </small>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="meetdate">Meeting Date:</label>
-                    <Field
-                      style={field}
-                      name="meetdate"
-                      type="date"
-                      placeholder="Schedule Your Preferred Date"
-                    />
-                     <br/>
-                    <small style={err}>
-                      <ErrorMessage name="meetdate" />
-                    </small>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="phone"> Phone No:</label>
-                    <Field
-                      style={field}
-                      name="phone"
-                      type="text"
-                      placeholder="Enter Your Phone Number"
-                    />
-                    <br/>
-                    <small style={err}>
-                      <ErrorMessage name="phone" />
-                    </small>
-                  </div>
-
-                  <div className="form-group">
-                    <div>
-                      <label><b>Meeting Time:</b></label>
+                    <div className="form-group">
+                      <label htmlFor="meetdate">Meeting Date:</label>
+                      <Field
+                        style={field}
+                        name="meetdate"
+                        type="date"
+                        placeholder="Schedule Your Preferred Date"
+                      />
+                      <br />
+                      <small style={err}>
+                        <ErrorMessage name="meetdate" />
+                      </small>
                     </div>
-                  </div>
-                  <br/>
 
-                  <div className="form-group">
-                    <label htmlFor="starttime">Start Time:</label>
-                    <label htmlFor="endtime">End Time:</label>
+                    <div className="form-group">
+                      <label htmlFor="phone"> Phone No:</label>
+                      <Field
+                        style={field}
+                        name="phone"
+                        type="text"
+                        placeholder="Enter Your Phone Number"
+                      />
+                      <br />
+                      <small style={err}>
+                        <ErrorMessage name="phone" />
+                      </small>
+                    </div>
+
+                    <div className="form-group">
+                      <div>
+                        <label>
+                          <b>Meeting Time:</b>
+                        </label>
+                      </div>
                     </div>
                     <br />
 
                     <div className="form-group">
-                    <Field
-                      name="starttime"
-                      id="starttime"
-                      type="time"
-                      placeholder="Enter Starting time"
-                    />
-                    <Field
-                      name="endtime"
-                      id="endtime"
-                      type="time"
-                      placeholder="Enter Ending time"
-                    />
-                     <br/>
-                     <small style={err}>
-                      <ErrorMessage name="starttime" />
-                    </small> &nbsp;&nbsp; &nbsp;&nbsp;
-                    <small style={err}>
-                      <ErrorMessage name="endtime" />
-                    </small>
-                  </div>
+                      <label htmlFor="starttime">Start Time:</label>
+                      <label htmlFor="endtime">End Time:</label>
+                    </div>
+                    <br />
 
-                  <div className="form-group">
-                    <button type="submit" id="booking" className="btn btn-success btn-block">
-                      <strong>BOOK NOW</strong>
-                    </button>
-                  </div>
-                </Form>
+                    <div className="form-group">
+                      <Field
+                        name="starttime"
+                        id="starttime"
+                        type="time"
+                        placeholder="Enter Starting time"
+                      />
+                      <Field
+                        name="endtime"
+                        id="endtime"
+                        type="time"
+                        placeholder="Enter Ending time"
+                      />
+                      <br />
+                      <small style={err}>
+                        <ErrorMessage name="starttime" />
+                      </small>{" "}
+                      &nbsp;&nbsp; &nbsp;&nbsp;
+                      <small style={err}>
+                        <ErrorMessage name="endtime" />
+                      </small>
+                    </div>
+
+                    <div className="form-group">
+                      <button
+                        type="submit"
+                        id="booking"
+                        className="btn btn-success btn-block"
+                      >
+                        <strong>BOOK NOW</strong>
+                      </button>
+                    </div>
+                  </Form>
+                </div>
               </div>
             </div>
           )}
@@ -251,12 +231,16 @@ class BookingForm extends Component {
     );
   }
 }
+// const mapStateToProps = (state) => ({
+//   serviceProviders: state.serviceProviders.serviceProviders,
+// });
 
-const mapStateToProps = state => ({
-  serviceProvider: state.serviceProviders.serviceProvider
+// export default connect(mapStateToProps, { addBooking, getServiceProviders })(BookingForm);
+
+const mapStateToProps = (state) => ({
+  serviceProvider: state.serviceProviders.serviceProvider,
 });
 
-export default connect(mapStateToProps, { addBooking, oneServiceProvider })(BookingForm);
-
-
-
+export default connect(mapStateToProps, { addBooking, oneServiceProvider })(
+  BookingForm
+);
